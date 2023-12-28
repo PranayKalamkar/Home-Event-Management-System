@@ -1,0 +1,70 @@
+﻿<div class="outer">
+<div class="login-container">
+    <div class="row">
+    <div class="col-12">
+        <h2>Login</h2>
+        <form id="loginform">
+            <div class="input-group">
+                <input type="email" id="email" name="Email" autocomplete="off" required>
+                <label for="email">Email:</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="password" name="SPassword" autocomplete="off" required>
+                <label for="password">Password:</label>
+            </div>
+            <div class="options">
+                <div>
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember Me</label>
+                </div>
+                <a href="#" class="forget-password">Forget Password?</a>
+            </div>
+                    <button type="button" onclick="Login()">Login</button>
+            <div>
+                Don't have an account? <a href="SignUp">Register</a>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+
+            
+<script>
+
+    function Login() {
+
+        var emailData = {
+            Email: $('#email').val()
+        }
+
+        var passwordData = {
+            SPassword: $('#password').val()
+        }
+
+        var formData = new FormData();
+        formData.append("email", JSON.stringify(emailData));
+        formData.append("password", JSON.stringify(passwordData));
+
+        $.ajax({
+            type: "POST",
+            url: "/User/LoginPost",
+            data: formData,
+            contentType: false,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                if (data === "Valid") {
+                    alert('Login Successfull!');
+                    window.location.href = '/User/Dashboard';
+                }
+                else {
+                    alert('Invalid Credential!');
+                }
+            },
+            error: function (error) {
+                console.error("Error Login user : ", error);
+            }
+        });
+    }
+</script>

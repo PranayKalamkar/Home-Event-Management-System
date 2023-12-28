@@ -1,0 +1,67 @@
+﻿<div class="outer">
+    <div class="login-container registration-container">
+        <div class="col-12">
+            <h3>Register</h3>
+            <form id="registerform">
+
+                <div class="input-group">
+                    <input type="text" id="username" name="Username" autocomplete="off" required>
+                    <label for="username">Full Name:</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" name="Email" autocomplete="off" required>
+                    <label for="email">Email:</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="password" name="SPassword" autocomplete="off" required>
+                    <label for="password">Password:</label>
+                </div>
+
+                @* <input name="submit" type="submit" value="Register"/> *@
+
+                <button type="button" id="registerBtn" class="btn btn-success" onclick="SignUp()">Register</button>
+
+                <div class="register-option">
+                    Already have an account? <a asp-controller="User" asp-action="Login">Login</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+                    
+<script>
+
+    function SignUp() {
+        debugger;
+        var loginFormData = {
+            Username: $('#username').val(),
+            Email: $('#email').val(),
+            SPassword: $('#password').val(),
+        }
+        console.log(loginFormData);
+        var formData = new FormData();
+        formData.append("model", JSON.stringify(loginFormData));
+
+        $.ajax({
+            type: "POST",
+            url: "/User/SignUpPost",
+            data: formData,
+            contentType: false,
+            processData: false,
+            Cache: false,
+            success: function (data) {
+                alert('Registered Successfully!');
+                window.location.href = "/User/Login";
+
+            },
+            error: function (error) {
+                console.error("Error Register user:", error);
+            }
+        });
+    }
+
+</script>
