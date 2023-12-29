@@ -103,7 +103,17 @@ button:hover{
     color: #000;
 }
 
-.register-option a:hover{
+.login-option a:hover{
+    color: firebrick;
+}
+
+.login-option a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #000;
+}
+
+.register-option a:hover {
     color: firebrick;
 }
 

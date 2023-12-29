@@ -10,14 +10,17 @@ namespace Event_Management_App.Models
 
         [Required]
         [StringLength(50)]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Username must contain only letters and numbers.")]
         public string? Username { get; set; }
 
         [Required]
         [StringLength(50)]
+        [EmailAddress]
         public string? Email { get; set; }
 
         [Required]
         [StringLength(50)]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,50}$", ErrorMessage = "Password must meet complexity requirements.")]
         public string? SPassword { get; set; }
     }
 }

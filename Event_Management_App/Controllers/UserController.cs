@@ -47,9 +47,9 @@ namespace Event_Management_App.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginPost(string email, string pass)
+        public IActionResult LoginPost(string email, string password)
         {
-            var result = _IEventBAL.LoginUser(email,pass);
+            var result = _IEventBAL.LoginUser(email, password);
 
             if(result == "Valid")
             {

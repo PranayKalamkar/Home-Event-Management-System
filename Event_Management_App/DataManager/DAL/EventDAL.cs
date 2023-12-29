@@ -56,10 +56,9 @@ namespace Event_Management_App.DataManager.DAL
         {
             string existingPassword = null;
             
-            _dBManager.InitDbCommandText("select SPassword from SignUp where Email=@Email;");
+            _dBManager.InitDbCommandText("select SPassword from SignUp where Email = @Email;");
 
             _dBManager.AddCMDParam("@Email", email);
-
 
             DataSet ds = _dBManager.ExecuteDataSet();
 
