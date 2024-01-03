@@ -5,7 +5,7 @@ using Event_Management_App.DataManager.IDAL;
 using Event_Management_App.Models;
 
 namespace Event_Management_App.BussinessManager.BAL
-{
+{       
     public class EventBAL : IEventBAL
     {
         IEventDAL _IEventDAL;
@@ -20,29 +20,51 @@ namespace Event_Management_App.BussinessManager.BAL
             return _IEventDAL.GetUserList();
         }
 
-        public SignUpModel AddUser(SignUpModel sign)
+        public string SignUp(SignUpModel sign)
         {
-            sign.SPassword = PasswordHash.ComputeMD5(sign.SPassword);
-            return _IEventDAL.AddUser(sign);
+           // sign.SPassword = PasswordHash.ComputeMD5(sign.SPassword);
+
+            bool emailExist = _IEventDAL.CheckEmailExist(sign.Email);
+
+            if (emailExist)
+            {
+                return "Exist";
+            }
+
+            _IEventDAL.AddUser(sign);
+            return "Success";
+       
+        }
+
+        public bool CheckEmailExist(string emailId)
+        {
+            return _IEventDAL.CheckEmailExist(emailId);
         }
 
         public string LoginUser(string email, string pass)
         {
-            string existingPassword = _IEventDAL.LoginUser(email);
+            return null;
 
-            Console.WriteLine(existingPassword);
-
-            bool result = PasswordHash.DecryptMD5(existingPassword, pass);
-
-            if(result)
-            {
-                return "Valid";
-            }
-            else
-            {
-                return "Invalid Pasword!";
-            }
+            //return _IEventDAL.LoginUser();
         }
+        //{
+        //    //string existingPassword = _IEventDAL.LoginUser(email);
+
+        //    //Console.WriteLine(existingPassword);
+
+        //    //bool result = PasswordHash.DecryptMD5(existingPassword, pass);
+
+        //    bool result = null;
+
+        //    if(result)
+        //    {
+        //        return "Valid";
+        //    }
+        //    else
+        //    {
+        //        return "Invalid Pasword!";
+        //    }
+        //}
     }
 }
 

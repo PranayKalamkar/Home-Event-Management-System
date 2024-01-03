@@ -18,7 +18,8 @@ namespace Event_Management_App.DataManager.DAL
         {
             List<SignUpModel> userList = new List<SignUpModel>();
 
-            _dBManager.InitDbCommandText("select * from SignUp;");
+            //_dBManager.InitDbCommandText("select * from SignUp;");
+            _dBManager.InitDbCommand("GetAllUser",CommandType.StoredProcedure);
 
             DataSet ds = _dBManager.ExecuteDataSet();
 
@@ -41,18 +42,20 @@ namespace Event_Management_App.DataManager.DAL
 
         public SignUpModel AddUser(SignUpModel sign)
         {
-            _dBManager.InitDbCommandText("Insert into SignUp(Username,Email,SPassword) values (@Username,@Email,@SPassword);");
+            //_dBManager.InitDbCommandText("Insert into SignUp(Username,Email,SPassword) values (@Username,@Email,@SPassword);");
+            _dBManager.InitDbCommand("InsertUser", CommandType.StoredProcedure);
 
             _dBManager.AddCMDParam("@Username", sign.Username);
             _dBManager.AddCMDParam("@Email", sign.Email);
             _dBManager.AddCMDParam("@SPassword", sign.SPassword);
+
 
             _dBManager.ExecuteNonQuery();
 
             return sign;
         }
 
-        public string LoginUser(string email)
+        public string LoginUser(string email, string pass)
         {
             string existingPassword = null;
             
@@ -68,6 +71,19 @@ namespace Event_Management_App.DataManager.DAL
             }
 
             return existingPassword;
+        }
+
+        public bool CheckEmailExist(string emailId)
+        {
+            _dBManager.InitDbCommand("CheckEmailExist", CommandType.StoredProcedure);
+
+            _dBManager.AddCMDParam("@newEmail", emailId);
+
+            var result = _dBManager.ExecuteScalar();
+
+            bool emailExist = Convert.ToBoolean(result);
+
+            return emailExist;
         }
     }
 }

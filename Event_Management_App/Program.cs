@@ -1,4 +1,5 @@
 using Event_Management_App.Extension;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
 namespace Event_Management_App
 {
@@ -13,6 +14,11 @@ namespace Event_Management_App
 
             builder.Services.AddControllers().AddJsonOptions(options => 
                 options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+            builder.Services.AddControllers(options =>
+            {
+                options.ModelMetadataDetailsProviders.Add(new SystemTextJsonValidationMetadataProvider());
+            });
 
             builder.Services.AddAppSetting();
 

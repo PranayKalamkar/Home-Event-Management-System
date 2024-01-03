@@ -1,25 +1,50 @@
-﻿<div class="outer">
+﻿@model SignUpModel;
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/SignUpOrLogin.css" asp-append-version="true" />
+}
+
+
+<div class="outer">
     <div class="login-container registration-container">
         <div class="col-12">
             <h3>Register</h3>
             <form id="registerform">
 
                 <div class="input-group">
-                    <input type="text" id="username" name="Username" autocomplete="off" required>
-                    <label for="username">Full Name:</label>
+                    @* <input type="text" id="username" asp-for="Username" autocomplete="off" required> *@
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { placeholder = "Username..", autocomplete = "off"}})
+                    <label asp-for="Username">Full Name:</label>
+                    @* <span asp-validation-for="Username" class="text-danger"></span> *@
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="input-group">
-                    <input type="email" id="email" name="Email" autocomplete="off" required>
-                    <label for="email">Email:</label>
+                    @* <input type="email" id="email" asp-for="Email" autocomplete="off" required> *@
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Email..", autocomplete = "off" } })
+                    <label asp-for="Email">Email:</label>
+                    @* <span asp-validation-for="Email" class="text-danger"></span> *@
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="input-group">
-                    <input type="text" id="password" name="SPassword" autocomplete="off" required>
-                    <label for="password">Password:</label>
+                    @* <input type="password" id="password" asp-for="SPassword" autocomplete="off" required> *@
+                    @Html.PasswordFor(model => model.SPassword, new {  @placeholder = "SPassword..", autocomplete = "off" } )
+                    <label asp-for="SPassword">Password:</label>
+                    @* <span asp-validation-for="SPassword" class="text-danger"></span> *@
+                    @Html.ValidationMessageFor(model => model.SPassword, "", new { @class = "text-danger" })
+                    <span><i class="fa-solid fa-eye-slash mx-2"></i></span>
                 </div>
 
-                @* <input name="submit" type="submit" value="Register"/> *@
+                <div class="input-group">
+                    @* <input type="password" id="password" asp-for="SPassword" autocomplete="off" required> *@
+                    @Html.PasswordFor(model => model.ConfirmSPassword, new {  @placeholder = "ConfirmSPassword..", autocomplete = "off" } )
+                    <label asp-for="SPassword">Confirm Password:</label>
+                    @* <label asp-for="ConfirmSPassword">Confirm Password:</label> *@
+                    @Html.ValidationMessageFor(model => model.ConfirmSPassword, "", new { @class = "text-danger" })
+                    <span><i class="fa-solid fa-eye-slash mx-2"></i></span>
+                </div>
 
                 <button type="button" id="registerBtn" class="btn btn-success" onclick="SignUp()">Register</button>
 
@@ -32,36 +57,73 @@
     </div>
 </div>
 
-                    
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+                  
 <script>
 
     function SignUp() {
-        debugger;
-        var loginFormData = {
-            Username: $('#username').val(),
-            Email: $('#email').val(),
-            SPassword: $('#password').val(),
-        }
-        console.log(loginFormData);
-        var formData = new FormData();
-        formData.append("model", JSON.stringify(loginFormData));
-
-        $.ajax({
-            type: "POST",
-            url: "/User/SignUpPost",
-            data: formData,
-            contentType: false,
-            processData: false,
-            Cache: false,
-            success: function (data) {
-                alert('Registered Successfully!');
-                window.location.href = "/User/Login";
-
-            },
-            error: function (error) {
-                console.error("Error Register user:", error);
+         if ($("#registerform").valid()) {
+            debugger;
+            var loginFormData = {
+                Username: $('#Username').val(),
+                Email: $('#Email').val(),
+                SPassword: $('#SPassword').val(),
+                SPassword: $('#ConfirmSPassword').val()
             }
-        });
+            console.log(loginFormData);
+            var formData = new FormData();
+            formData.append("model", JSON.stringify(loginFormData));
+
+            $.ajax({
+                type: "POST",
+                url: "/User/SignUpPost",
+                data: formData,
+                contentType: false,
+                processData: false,
+                Cache: false,
+                success: function (data) {
+                    // if (data == "Email Already Exist!")
+                    // {
+                    //     alert('Oops Email already exist!');
+                    // }
+                    // else
+                    // {
+                    //     alert('Registered Successfully!');
+                    //     window.location.href = "/User/Login";
+                    // }
+
+                    if (data.status === "success") {
+                        alert(data.message);
+                        window.location.href = "/User/Login";
+                    }
+                    else if (data.status === "warning") {
+                        alert(data.message);
+                    }
+
+                },
+                error: function (error) {
+                    console.error("Error Register user:", error);
+                }
+            });
+         }
     }
 
+    window.onload = function () {
+        var togglePasswords = document.querySelectorAll('.fa-eye-slash');
+        var passwordFields = document.querySelectorAll('input[type="password"]');
+
+        togglePasswords.forEach((togglePassword, index) => {
+            togglePassword.addEventListener('click', function () {
+                // toggle the type attribute
+                const type = passwordFields[index].getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordFields[index].setAttribute('type', type);
+                // toggle the eye slash icon
+                this.classList.toggle('fa-eye');
+            });
+        });
+    }
 </script>

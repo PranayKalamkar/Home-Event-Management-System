@@ -36,9 +36,19 @@ namespace Event_Management_App.Controllers
         {
             SignUpModel sign = JsonSerializer.Deserialize<SignUpModel>(model)!;
 
-            _IEventBAL.AddUser(sign);
+           if(ModelState.IsValid)
+            {
+                var result = _IEventBAL.SignUp(sign);
 
-            return Json("Login");
+                if(result == "Exist")
+                {
+                    //return Json("Email Already Exist!");
+                    return Json(new { status = "warning", message = "Email Id Already Exists!" });
+                }
+            }
+
+            //return Json("Login");
+            return Json(new { status = "success", message = "User register successfully!" });
         }
 
         public IActionResult Login()

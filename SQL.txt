@@ -13,9 +13,41 @@ SignUpPassword varchar(255),
 ConfirmSignUpPassword varchar(255)
 );
 
-Insert into SignUp(Username,Email,SignUpPassword,ConfirmSignUpPassword) values("Suraj","suraj@gmail.com","suraj@123","suraj@123");
+delimiter //
+CREATE PROCEDURE `GetAllUser`()
+begin
+	select * from SignUp;
+end //
+delimiter ;
 
-desc SignUp;
-desc Login;
+delimiter //
+CREATE PROCEDURE `GetUserPassword`(
+	IN IEmail varchar(100)
+)
+BEGIN
+	 SELECT SPassword from SignUp where Email = @IEmail;
+END //
+delimiter ;
 
-select * from SignUp;
+delimiter //
+CREATE  PROCEDURE `InsertUser`(
+	IN UserName varchar(100),
+	IN Email varchar(100),
+	IN SPassword varchar(100)
+)
+BEGIN
+	INSERT INTO SignUp(Username, Email, SPassword)
+	VALUES(UserName,Email,md5(SPassword)); 
+END //
+delimiter ;
+
+delimiter //
+CREATE PROCEDURE `CheckEmailExist`(IN newEmail VARCHAR(60))
+BEGIN
+    DECLARE emailExists BOOLEAN;
+    SELECT EXISTS(
+		SELECT 1 FROM SignUp WHERE Email = newEmail
+	) INTO emailExists;
+    SELECT emailExists AS IsExists;
+END //
+delimiter ;

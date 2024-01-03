@@ -1,4 +1,11 @@
-﻿<div class="outer">
+﻿@model SignUpModel;
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/SignUpOrLogin.css" asp-append-version="true" />
+}
+
+<div class="outer">
 <div class="login-container">
     <div class="row">
     <div class="col-12">
@@ -12,7 +19,7 @@
             </div>
 
             <div class="input-group">
-                <input type="text" id="password" name="SPassword" autocomplete="off" required>
+                <input type="password" id="password" name="SPassword" autocomplete="off" required>
                 <label for="password">Password:</label>
             </div>
 
