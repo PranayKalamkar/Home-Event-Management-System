@@ -55,13 +55,29 @@ namespace Event_Management_App.DataManager.DAL
             return sign;
         }
 
-        public string LoginUser(string email, string pass)
+        public string GetPassword(string pass)
+        {
+            _dBManager.InitDbCommand("GetPassword", CommandType.StoredProcedure);
+
+            _dBManager.AddCMDParam("@user_pass", pass);
+
+            var result = _dBManager.ExecuteScalar();
+
+            string getPassword = Convert.ToString(result);
+
+            return getPassword;
+
+        }
+
+        public string LoginUser(string email)
         {
             string existingPassword = null;
             
-            _dBManager.InitDbCommandText("select SPassword from SignUp where Email = @Email;");
+            //_dBManager.InitDbCommandText("select SPassword from SignUp where Email = @Email;");
+            _dBManager.InitDbCommand("GetUserPassword", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("@Email", email);
+
+            _dBManager.AddCMDParam("@IEmail", email);
 
             DataSet ds = _dBManager.ExecuteDataSet();
 

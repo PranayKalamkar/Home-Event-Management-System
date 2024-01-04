@@ -3,6 +3,7 @@ using Event_Management_App.Extension;
 using Event_Management_App.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using System.Text.Json;
 
 namespace Event_Management_App.Controllers
@@ -57,15 +58,22 @@ namespace Event_Management_App.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginPost(string email, string password)
+        public IActionResult LoginPost(string Email, string SPassword)
         {
-            var result = _IEventBAL.LoginUser(email, password);
+            var result = _IEventBAL.LoginUser(Email, SPassword);
 
-            if(result == "Valid")
+            if(result == "Invalid Password")
             {
-                return Json("Valid");
+                return Json(new { status = "warning", message = "Invalid Passowrd!" });
             }
-            return Json("Invalid");
+            return Json(new { status = "success", message = "User Login successfully!" });
         }
     }
 }
+
+
+//if (result == "exists")
+//{
+//    return Json(new { status = "warning", message = "Email Id Already Exists!" });
+//}
+//return Json(new { status = "success", message = "User register successfully!" });

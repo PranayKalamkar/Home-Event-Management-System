@@ -34,7 +34,7 @@
                     <label asp-for="SPassword">Password:</label>
                     @* <span asp-validation-for="SPassword" class="text-danger"></span> *@
                     @Html.ValidationMessageFor(model => model.SPassword, "", new { @class = "text-danger" })
-                    <span><i class="fa-solid fa-eye-slash mx-2"></i></span>
+                    @* <span><i class="fa-solid fa-eye-slash mx-2"></i></span> *@
                 </div>
 
                 <div class="input-group">
@@ -43,7 +43,7 @@
                     <label asp-for="SPassword">Confirm Password:</label>
                     @* <label asp-for="ConfirmSPassword">Confirm Password:</label> *@
                     @Html.ValidationMessageFor(model => model.ConfirmSPassword, "", new { @class = "text-danger" })
-                    <span><i class="fa-solid fa-eye-slash mx-2"></i></span>
+                    @* <span><i class="fa-solid fa-eye-slash mx-2"></i></span> *@
                 </div>
 
                 <button type="button" id="registerBtn" class="btn btn-success" onclick="SignUp()">Register</button>
@@ -112,18 +112,18 @@
          }
     }
 
-    window.onload = function () {
-        var togglePasswords = document.querySelectorAll('.fa-eye-slash');
-        var passwordFields = document.querySelectorAll('input[type="password"]');
+    // window.onload = function () {
+    //     var togglePasswords = document.querySelectorAll('.fa-eye-slash');
+    //     var passwordFields = document.querySelectorAll('input[type="password"]');
 
-        togglePasswords.forEach((togglePassword, index) => {
-            togglePassword.addEventListener('click', function () {
-                // toggle the type attribute
-                const type = passwordFields[index].getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordFields[index].setAttribute('type', type);
-                // toggle the eye slash icon
-                this.classList.toggle('fa-eye');
-            });
-        });
-    }
+    //     togglePasswords.forEach((togglePassword, index) => {
+    //         togglePassword.addEventListener('click', function () {
+    //             // toggle the type attribute
+    //             const type = passwordFields[index].getAttribute('type') === 'password' ? 'text' : 'password';
+    //             passwordFields[index].setAttribute('type', type);
+    //             // toggle the eye slash icon
+    //             this.classList.toggle('fa-eye');
+    //         });
+    //     });
+    // }
 </script>

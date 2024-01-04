@@ -13,6 +13,9 @@ SignUpPassword varchar(255),
 ConfirmSignUpPassword varchar(255)
 );
 
+
+
+
 delimiter //
 CREATE PROCEDURE `GetAllUser`()
 begin
@@ -20,14 +23,19 @@ begin
 end //
 delimiter ;
 
+
+
 delimiter //
 CREATE PROCEDURE `GetUserPassword`(
 	IN IEmail varchar(100)
 )
 BEGIN
-	 SELECT SPassword from SignUp where Email = @IEmail;
+	 SELECT SPassword from SignUp where Email = IEmail;
 END //
 delimiter ;
+
+
+
 
 delimiter //
 CREATE  PROCEDURE `InsertUser`(
@@ -41,6 +49,8 @@ BEGIN
 END //
 delimiter ;
 
+
+
 delimiter //
 CREATE PROCEDURE `CheckEmailExist`(IN newEmail VARCHAR(60))
 BEGIN
@@ -49,5 +59,27 @@ BEGIN
 		SELECT 1 FROM SignUp WHERE Email = newEmail
 	) INTO emailExists;
     SELECT emailExists AS IsExists;
+END //
+delimiter ;
+
+
+
+delimiter //
+create procedure EncryptMD5(
+	IN existingEmail varchar(255),
+	IN existingPassword varchar(255)
+)
+begin
+	select Email, SPassword from SignUp 
+    where Email=existingEmail and SPassword = MD5(existingPassword);
+END //
+delimiter ;
+
+delimiter//
+CREATE PROCEDURE `GetPassword`(
+	IN user_pass varchar(100)
+)
+BEGIN
+	select MD5(user_pass);
 END //
 delimiter ;

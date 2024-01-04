@@ -43,10 +43,25 @@ namespace Event_Management_App.BussinessManager.BAL
 
         public string LoginUser(string email, string pass)
         {
-            return null;
+            string getPassword = _IEventDAL.GetPassword(pass);
 
-            //return _IEventDAL.LoginUser();
+            string existingPassword = _IEventDAL.LoginUser(email);
+
+            if(getPassword != existingPassword)
+            {
+                return "Invalid Password";
+            }
+            else
+            {
+                return "Valid Passowrd";
+            }
+
         }
+
+
+        //return null;
+
+        //return _IEventDAL.LoginUser();
         //{
         //    //string existingPassword = _IEventDAL.LoginUser(email);
 

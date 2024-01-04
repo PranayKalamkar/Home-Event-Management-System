@@ -6,7 +6,8 @@ namespace Event_Management_App.DataManager.IDAL
     {
         public List<SignUpModel> GetUserList();
         public SignUpModel AddUser(SignUpModel sign);
-        public string LoginUser(string email, string pass);
+        public string GetPassword(string pass);
+        public string LoginUser(string email);
         public bool CheckEmailExist(string emailId);
     }
 }

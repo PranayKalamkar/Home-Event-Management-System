@@ -6,80 +6,104 @@
 }
 
 <div class="outer">
-<div class="login-container">
-    <div class="row">
-    <div class="col-12">
-        <h2>Login</h2>
+    <div class="login-container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Login</h2>
 
-        <form id="loginform">
+                <form id="loginform">
 
-            <div class="input-group">
-                <input type="email" id="email" name="Email" autocomplete="off" required>
-                <label for="email">Email:</label>
+                    @* <div class="input-group">
+                    <input type="email" id="email" name="Email" autocomplete="off" required>
+                    <label for="email">Email:</label>
+                    </div>
+
+                    <div class="input-group">
+                    <input type="password" id="password" name="SPassword" autocomplete="off" required>
+                    <label for="password">Password:</label>
+                    </div> *@
+
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Email..", autocomplete = "off" } })
+                        <label asp-for="Email">Email:</label>
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-group">
+                        @Html.PasswordFor(model => model.SPassword, new { @placeholder = "SPassword..", autocomplete = "off" })
+                        <label asp-for="SPassword">Password:</label>
+                        @Html.ValidationMessageFor(model => model.SPassword, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="options">
+                        <div>
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">Remember Me</label>
+                        </div>
+                        <a href="#" class="forget-password">Forget Password?</a>
+                    </div>
+
+                    <button type="button" onclick="Login()">Login</button>
+
+                    <div class="login-option">
+                        Don't have an account? <a asp-controller="User" asp-action="SignUp">Register</a>
+                    </div>
+
+                </form>
             </div>
-
-            <div class="input-group">
-                <input type="password" id="password" name="SPassword" autocomplete="off" required>
-                <label for="password">Password:</label>
-            </div>
-
-            <div class="options">
-                <div>
-                    <input type="checkbox" id="rememberMe">
-                    <label for="rememberMe">Remember Me</label>
-                </div>
-                <a href="#" class="forget-password">Forget Password?</a>
-            </div>
-
-            <button type="button" onclick="Login()">Login</button>
-
-            <div class="login-option">
-                Don't have an account? <a asp-controller="User" asp-action="SignUp">Register</a>
-            </div>
-
-        </form>
-    </div>
+        </div>
     </div>
 </div>
-</div>
 
-            
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
 <script>
 
     function Login() {
-        debugger;
-        var emailData = {
-            Email: $('#email').val()
-        }
-        debugger;
-        var passwordData = {
-            SPassword: $('#password').val()
-        }
-        console.log(passwordData);
-        debugger;
-
-        var formData = new FormData();
-        formData.append("email", emailData.Email);
-        formData.append("password", passwordData.SPassword);
-
-        $.ajax({
-            type: "POST",
-            url: "/User/LoginPost",
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (data) {
-                if (data === "Valid") {
-                    alert('Login Successfull!');
-                    window.location.href = '/User/Dashboard';
-                }
-                else {
-                    alert('Invalid Credential!');
-                }
-            },
-            error: function (error) {
-                console.error("Error Login user : ", error);
+        if ($("#loginform").valid()) {
+            debugger;
+            var emailData = {
+                // Email: $('#email').val()
+                Email: $('#Email').val()
             }
-        });
+            debugger;
+            var passwordData = {
+                // SPassword: $('#password').val()
+                SPassword: $('#SPassword').val()
+            }
+            console.log(passwordData);
+            debugger;
+
+            var formData = new FormData();
+            // formData.append("email", emailData.Email);
+            // formData.append("password", passwordData.SPassword);
+            formData.append("Email", emailData.Email);
+            formData.append("SPassword", passwordData.SPassword);
+
+            $.ajax({
+                type: "POST",
+                url: "/User/LoginPost",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data.status === "warning") {
+                        alert(data.message);
+                    }
+                    else if (data.status === "success") {
+                        alert(data.message);
+                        window.location.href = '/User/Dashboard';
+                    }
+                },
+                error: function (error) {
+                    console.error("Error Login user : ", error);
+                }
+            });
+        }
     }
+
 </script>
