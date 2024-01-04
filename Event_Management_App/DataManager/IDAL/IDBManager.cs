@@ -21,5 +21,7 @@ namespace Event_Management_App.DataManager.IDAL
         Task<object?> ExecuteScalarAsync();
         int ExecuteNonQuery();
         Task<int> ExecuteNonQueryAsync();
+
+        public string getSalt();
     }
 }

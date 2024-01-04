@@ -8,13 +8,20 @@ namespace Event_Management_App.DataManager.DAL
     public class DBManager : IDisposable, IDBManager
     {
         private readonly DbConnection _DbConnection;
+        private readonly string _salt;
         private string _DBCmd;
         private CommandType _CommandType;
         private List<DBParam> _InputParam;
         private List<DBParam> _OutParam;
-        public DBManager(DbConnection dbcon)
+        public DBManager(DbConnection dbcon, string salt)
         {
             _DbConnection = dbcon;
+            _salt = salt;
+        }
+
+        public string getSalt()
+        {
+            return _salt;
         }
 
         void Open()

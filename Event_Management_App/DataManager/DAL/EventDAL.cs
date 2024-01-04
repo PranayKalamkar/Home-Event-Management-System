@@ -7,6 +7,8 @@ namespace Event_Management_App.DataManager.DAL
 {
     public class EventDAL : IEventDAL
     {
+        //readonly string salt = "Strange User";
+
         readonly IDBManager _dBManager;
 
         public EventDAL(IDBManager dbManager)
@@ -42,6 +44,8 @@ namespace Event_Management_App.DataManager.DAL
 
         public SignUpModel AddUser(SignUpModel sign)
         {
+            sign.SPassword = sign.SPassword + _dBManager.getSalt();
+
             //_dBManager.InitDbCommandText("Insert into SignUp(Username,Email,SPassword) values (@Username,@Email,@SPassword);");
             _dBManager.InitDbCommand("InsertUser", CommandType.StoredProcedure);
 
@@ -57,6 +61,8 @@ namespace Event_Management_App.DataManager.DAL
 
         public string GetPassword(string pass)
         {
+            pass = pass + _dBManager.getSalt();
+
             _dBManager.InitDbCommand("GetPassword", CommandType.StoredProcedure);
 
             _dBManager.AddCMDParam("@user_pass", pass);
