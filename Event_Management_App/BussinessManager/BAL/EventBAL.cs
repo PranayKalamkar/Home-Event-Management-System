@@ -5,7 +5,7 @@ using Event_Management_App.DataManager.IDAL;
 using Event_Management_App.Models;
 
 namespace Event_Management_App.BussinessManager.BAL
-{       
+{
     public class EventBAL : IEventBAL
     {
         IEventDAL _IEventDAL;
@@ -22,7 +22,7 @@ namespace Event_Management_App.BussinessManager.BAL
 
         public string SignUp(SignUpModel sign)
         {
-           // sign.SPassword = PasswordHash.ComputeMD5(sign.SPassword);
+            // sign.SPassword = PasswordHash.ComputeMD5(sign.SPassword);
 
             bool emailExist = _IEventDAL.CheckEmailExist(sign.Email);
 
@@ -33,7 +33,7 @@ namespace Event_Management_App.BussinessManager.BAL
 
             _IEventDAL.AddUser(sign);
             return "Success";
-       
+
         }
 
         public bool CheckEmailExist(string emailId)
@@ -43,11 +43,19 @@ namespace Event_Management_App.BussinessManager.BAL
 
         public string LoginUser(string email, string pass)
         {
+            bool emailExist = _IEventDAL.CheckEmailExist(email);
+
             string getPassword = _IEventDAL.GetPassword(pass);
 
             string existingPassword = _IEventDAL.LoginUser(email);
 
-            if(getPassword != existingPassword)
+            //bool emailExist = _IEventDAL.CheckEmailExist(sign.Email);
+
+            if (!emailExist)
+            {
+                return "Exist";
+            }
+            else if (getPassword != existingPassword)
             {
                 return "Invalid Password";
             }
@@ -57,29 +65,6 @@ namespace Event_Management_App.BussinessManager.BAL
             }
 
         }
-
-
-        //return null;
-
-        //return _IEventDAL.LoginUser();
-        //{
-        //    //string existingPassword = _IEventDAL.LoginUser(email);
-
-        //    //Console.WriteLine(existingPassword);
-
-        //    //bool result = PasswordHash.DecryptMD5(existingPassword, pass);
-
-        //    bool result = null;
-
-        //    if(result)
-        //    {
-        //        return "Valid";
-        //    }
-        //    else
-        //    {
-        //        return "Invalid Pasword!";
-        //    }
-        //}
     }
 }
 

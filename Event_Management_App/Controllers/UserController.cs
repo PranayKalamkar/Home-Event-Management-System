@@ -60,11 +60,24 @@ namespace Event_Management_App.Controllers
         [HttpPost]
         public IActionResult LoginPost(string Email, string SPassword)
         {
-            var result = _IEventBAL.LoginUser(Email, SPassword);
+            //SignUpModel sign = JsonSerializer.Deserialize<SignUpModel>(model)!;
 
-            if(result == "Invalid Password")
+            if (ModelState.IsValid)
             {
-                return Json(new { status = "warning", message = "Invalid Passowrd!" });
+                var result = _IEventBAL.LoginUser(Email, SPassword);
+
+                if( result == "Exist")
+                {
+                    return Json(new { status = "warning", message = "Email does Not Exist!" });
+                }
+                else if(result == "Invalid Password")
+                {
+                    return Json(new { status = "warning", message = "Invalid Password!" });
+                }
+                //if (result == "Invalid Password")
+                //{
+                //    return Json(new { status = "warning", message = "Invalid Passowrd!" });
+                //}
             }
             return Json(new { status = "success", message = "User Login successfully!" });
         }

@@ -2,7 +2,7 @@
 
 namespace Event_Management_App.Controllers
 {
-    public class DashboardController : Controller
+    public class AdminDashboardController : Controller
     {
         public IActionResult Index()
         {
