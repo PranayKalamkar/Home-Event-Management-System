@@ -33,6 +33,7 @@ namespace Event_Management_App.DataManager.DAL
                 model.Username = item["Username"].ConvertDBNullToString();
                 model.Email = item["Email"].ConvertDBNullToString();
                 model.SPassword = item["SPassword"].ConvertDBNullToString();
+                model.Role = item["Role"].ConvertDBNullToString();
 
                 userList.Add(model);
 
@@ -52,6 +53,7 @@ namespace Event_Management_App.DataManager.DAL
             _dBManager.AddCMDParam("@Username", sign.Username);
             _dBManager.AddCMDParam("@Email", sign.Email);
             _dBManager.AddCMDParam("@SPassword", sign.SPassword);
+            _dBManager.AddCMDParam("@AccessRole", sign.Role);
 
 
             _dBManager.ExecuteNonQuery();
@@ -73,6 +75,19 @@ namespace Event_Management_App.DataManager.DAL
 
             return getPassword;
 
+        }
+
+        public string GetRole(string email)
+        {
+            _dBManager.InitDbCommand("GetRole", CommandType.StoredProcedure);
+
+            _dBManager.AddCMDParam("@IEmail", email);
+
+            var result = _dBManager.ExecuteScalar();
+
+            string role = Convert.ToString(result);
+
+            return role;
         }
 
         public string LoginUser(string email)

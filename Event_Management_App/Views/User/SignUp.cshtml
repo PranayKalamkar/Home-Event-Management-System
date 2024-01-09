@@ -14,7 +14,7 @@
 
                 <div class="input-group">
                     @* <input type="text" id="username" asp-for="Username" autocomplete="off" required> *@
-                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { placeholder = "Username..", autocomplete = "off"}})
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { placeholder = "Username..", autocomplete = "off" } })
                     <label asp-for="Username">Full Name:</label>
                     @* <span asp-validation-for="Username" class="text-danger"></span> *@
                     @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
@@ -30,7 +30,7 @@
 
                 <div class="input-group">
                     @* <input type="password" id="password" asp-for="SPassword" autocomplete="off" required> *@
-                    @Html.PasswordFor(model => model.SPassword, new {  @placeholder = "SPassword..", autocomplete = "off" } )
+                    @Html.PasswordFor(model => model.SPassword, new { @placeholder = "SPassword..", autocomplete = "off" })
                     <label asp-for="SPassword">Password:</label>
                     @* <span asp-validation-for="SPassword" class="text-danger"></span> *@
                     @Html.ValidationMessageFor(model => model.SPassword, "", new { @class = "text-danger" })
@@ -39,11 +39,16 @@
 
                 <div class="input-group">
                     @* <input type="password" id="password" asp-for="SPassword" autocomplete="off" required> *@
-                    @Html.PasswordFor(model => model.ConfirmSPassword, new {  @placeholder = "ConfirmSPassword..", autocomplete = "off" } )
+                    @Html.PasswordFor(model => model.ConfirmSPassword, new { @placeholder = "ConfirmSPassword..", autocomplete = "off" })
                     <label asp-for="SPassword">Confirm Password:</label>
                     @* <label asp-for="ConfirmSPassword">Confirm Password:</label> *@
                     @Html.ValidationMessageFor(model => model.ConfirmSPassword, "", new { @class = "text-danger" })
                     @* <span><i class="fa-solid fa-eye-slash mx-2"></i></span> *@
+                </div>
+
+                <div class="input-group">
+                    @Html.DropDownListFor(model => model.Role, new SelectList(new List<string>() { "Admin", "User"}), "Select Role", new { @class = "w-100 border-0" })
+                    @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
                 </div>
 
                 <button type="button" id="registerBtn" class="btn btn-success" onclick="SignUp()">Register</button>
@@ -62,17 +67,18 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-                  
+
 <script>
 
     function SignUp() {
-         if ($("#registerform").valid()) {
+        if ($("#registerform").valid()) {
             debugger;
             var loginFormData = {
                 Username: $('#Username').val(),
                 Email: $('#Email').val(),
                 SPassword: $('#SPassword').val(),
-                SPassword: $('#ConfirmSPassword').val()
+                SPassword: $('#ConfirmSPassword').val(),
+                Role: $('#Role').val()
             }
             console.log(loginFormData);
             var formData = new FormData();
@@ -109,7 +115,7 @@
                     console.error("Error Register user:", error);
                 }
             });
-         }
+        }
     }
 
     // window.onload = function () {

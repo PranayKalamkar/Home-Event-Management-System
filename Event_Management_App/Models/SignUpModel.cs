@@ -32,5 +32,8 @@ namespace Event_Management_App.Models
         //[RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,50}$", ErrorMessage = "Password must meet complexity requirements.")]
         [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$", ErrorMessage = "Password must meet complexity requirements.")]
         public string? ConfirmSPassword { get; set; }
+
+        [Required]
+        public string? Role { get; set; }
     }
 }

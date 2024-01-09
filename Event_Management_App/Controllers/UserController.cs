@@ -74,6 +74,7 @@ namespace Event_Management_App.Controllers
                 {
                     return Json(new { status = "warning", message = "Invalid Password!" });
                 }
+                //else if(result == "True")
                 //if (result == "Invalid Password")
                 //{
                 //    return Json(new { status = "warning", message = "Invalid Passowrd!" });

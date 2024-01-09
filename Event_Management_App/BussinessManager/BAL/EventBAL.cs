@@ -49,6 +49,8 @@ namespace Event_Management_App.BussinessManager.BAL
 
             string existingPassword = _IEventDAL.LoginUser(email);
 
+            string getRole = _IEventDAL.GetRole(email);
+
             //bool emailExist = _IEventDAL.CheckEmailExist(sign.Email);
 
             if (!emailExist)
@@ -58,6 +60,10 @@ namespace Event_Management_App.BussinessManager.BAL
             else if (getPassword != existingPassword)
             {
                 return "Invalid Password";
+            }
+            else if (getRole == "Admin")
+            {
+                return "True";
             }
             else
             {

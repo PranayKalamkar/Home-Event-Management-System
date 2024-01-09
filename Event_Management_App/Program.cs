@@ -22,6 +22,8 @@ namespace Event_Management_App
 
             builder.Services.AddAppSetting();
 
+            //builder.Services.AddAuthe
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -41,10 +43,10 @@ namespace Event_Management_App
 
             app.MapControllerRoute(
                 name: "default",
-            //pattern: "{controller=Home}/{action=Index}/{id?}");
-            //pattern: "{controller=Login}/{action=Login}/{id?}");
-            //pattern: "{controller=User}/{action=SignUp}/{id?}");
-            pattern: "{controller=AdminDashboard}/{action=Dashboard}/{id?}");
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+        //pattern: "{controller=Login}/{action=Login}/{id?}");
+        //pattern: "{controller=User}/{action=SignUp}/{id?}");
+        //pattern: "{controller=AdminDashboard}/{action=Dashboard}/{id?}");
 
             app.Run();
         }
