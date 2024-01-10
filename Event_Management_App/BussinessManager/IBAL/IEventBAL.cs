@@ -6,8 +6,8 @@ namespace Event_Management_App.BussinessManager.IBAL
     {
         public List<SignUpModel> GetUserList();
         public string SignUp(SignUpModel user);
-        public string LoginUser(string email, string pass);
+        public LoginModel LoginUser(string email, string pass);
 
-        public bool CheckEmailExist(string emailId);
+        // public bool CheckEmailExist(string emailId);
     }
 }

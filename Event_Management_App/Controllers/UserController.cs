@@ -61,33 +61,40 @@ namespace Event_Management_App.Controllers
         public IActionResult LoginPost(string Email, string SPassword)
         {
             //SignUpModel sign = JsonSerializer.Deserialize<SignUpModel>(model)!;
+            LoginModel login = new LoginModel();
 
             if (ModelState.IsValid)
             {
-                var result = _IEventBAL.LoginUser(Email, SPassword);
+                login = _IEventBAL.LoginUser(Email, SPassword);
 
-                if( result == "Exist")
+                //Console.WriteLine(result);
+                
+                if (!login.EmailExist)
                 {
                     return Json(new { status = "warning", message = "Email does Not Exist!" });
                 }
-                else if(result == "Invalid Password")
+                else if(login.GetPassword != login.ExistingPassword)
                 {
                     return Json(new { status = "warning", message = "Invalid Password!" });
                 }
-                //else if(result == "True")
-                //if (result == "Invalid Password")
+                //else if(login.GetRole != "Admin")
                 //{
-                //    return Json(new { status = "warning", message = "Invalid Passowrd!" });
+                //    return Json(new { status = "warning", message = "Check Your Credential" });
                 //}
+
             }
-            return Json(new { status = "success", message = "User Login successfully!" });
+            //else if(login.GetRole == "Admin")
+            //{
+            //    return RedirectToAction("Dashboard", "AdminDashboard");
+            //}
+            //else
+            //{
+            //    return RedirectToAction("UserView","Userpage");
+            //}
+
+
+            return Json(new { role = login.GetRole, status = "success", message = "Login successfully!" });
         }
     }
 }
 
-
-//if (result == "exists")
-//{
-//    return Json(new { status = "warning", message = "Email Id Already Exists!" });
-//}
-//return Json(new { status = "success", message = "User register successfully!" });

@@ -36,39 +36,47 @@ namespace Event_Management_App.BussinessManager.BAL
 
         }
 
-        public bool CheckEmailExist(string emailId)
+        //public bool CheckEmailExist(string emailId)
+        //{
+        //    return _IEventDAL.CheckEmailExist(emailId);
+        //}
+
+        public LoginModel LoginUser(string email, string pass)
         {
-            return _IEventDAL.CheckEmailExist(emailId);
-        }
+            LoginModel login = new LoginModel();
 
-        public string LoginUser(string email, string pass)
-        {
-            bool emailExist = _IEventDAL.CheckEmailExist(email);
+            login.EmailExist = _IEventDAL.CheckEmailExist(email);
 
-            string getPassword = _IEventDAL.GetPassword(pass);
+            login.GetPassword = _IEventDAL.GetPassword(pass);
 
-            string existingPassword = _IEventDAL.LoginUser(email);
+            login.ExistingPassword = _IEventDAL.LoginUser(email);
 
-            string getRole = _IEventDAL.GetRole(email);
+            login.GetRole = _IEventDAL.GetRole(email);
+
+            
+
+            return login;
+
+            //return new { EmailExist = emailExist, GetPassword = getPassword, ExistingPassword = existingPassword, GetRole = getRole };
 
             //bool emailExist = _IEventDAL.CheckEmailExist(sign.Email);
 
-            if (!emailExist)
-            {
-                return "Exist";
-            }
-            else if (getPassword != existingPassword)
-            {
-                return "Invalid Password";
-            }
-            else if (getRole == "Admin")
-            {
-                return "True";
-            }
-            else
-            {
-                return "Valid Passowrd";
-            }
+            //if (!emailExist)
+            //{
+            //    return "Exist";
+            //}
+            //else if (getPassword != existingPassword)
+            //{
+            //    return "Invalid Password";
+            //}
+            //else if (getRole == "Admin")
+            //{
+            //    return "True";
+            //}
+            //else
+            //{
+            //    return "Valid Passowrd";
+            //}
 
         }
     }

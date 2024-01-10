@@ -94,11 +94,18 @@
                     if (data.status === "warning") {
                         alert(data.message);
                     }
-                    else if (data.status === "success") {
+                    else if (data.status === "success" && data.role === "Admin") {
                         alert(data.message);
                         // window.location.href = '/User/Dashboard';
                         window.location.href = '/AdminDashboard/Dashboard';
                     }
+                    else if (data.status === "success" && data.role === "User") {
+                        alert(data.message);
+                        // window.location.href = '/User/Dashboard';
+                        window.location.href = '/UserPage/UserView';
+                    }
+
+                    
                 },
                 error: function (error) {
                     console.error("Error Login user : ", error);
