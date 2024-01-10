@@ -22,7 +22,7 @@ namespace Event_Management_App
 
             builder.Services.AddAppSetting();
 
-            //builder.Services.AddAuthe
+            builder.Services.AddSession();
 
             var app = builder.Build();
 
@@ -40,6 +40,8 @@ namespace Event_Management_App
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
