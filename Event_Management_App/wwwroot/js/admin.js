@@ -1,55 +1,53 @@
-﻿let sideMenu = document.querySelectorAll(".nav-link");
-sideMenu.forEach((item) => {
-    let li = item.parentElement;
+﻿/* globals Chart:false, feather:false */
 
-    item.addEventListener("click", () => {
-        sideMenu.forEach((link) => {
-            link.parentElement.classList.remove("active");
-        });
-        li.classList.add("active");
-    });
-});
+(function () {
+    'use strict'
 
-let menuBar = document.querySelector(".menu-btn");
-let sideBar = document.querySelector(".sidebar");
-menuBar.addEventListener("click", () => {
-    sideBar.classList.toggle("hide");
-});
+    feather.replace({ 'aria-hidden': 'true' })
 
-let switchMode = document.getElementById("switch-mode");
-switchMode.addEventListener("change", (e) => {
-    if (e.target.checked) {
-        document.body.classList.add("dark");
-    } else {
-        document.body.classList.remove("dark");
-    }
-});
-
-let searchFrom = document.querySelector(".content nav form");
-let searchBtn = document.querySelector(".search-btn");
-let searchIcon = document.querySelector(".search-icon");
-searchBtn.addEventListener("click", (e) => {
-    if (window.innerWidth < 576) {
-        e.preventDefault();
-        searchFrom.classList.toggle("show");
-        if (searchFrom.classList.contains("show")) {
-            searchIcon.classList.replace("fa-search", "fa-times");
-        } else {
-            searchIcon.classList.replace("fa-times", "fa-search");
+    // Graphs
+    var ctx = document.getElementById('myChart')
+    // eslint-disable-next-line no-unused-vars
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [
+                'Sunday',
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday'
+            ],
+            datasets: [{
+                data: [
+                    15339,
+                    21345,
+                    18483,
+                    24003,
+                    23489,
+                    24092,
+                    12034
+                ],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 4,
+                pointBackgroundColor: '#007bff'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            }
         }
-    }
-});
-
-window.addEventListener("resize", () => {
-    if (window.innerWidth > 576) {
-        searchIcon.classList.replace("fa-times", "fa-search");
-        searchFrom.classList.remove("show");
-    }
-    if (window.innerWidth < 768) {
-        sideBar.classList.add("hide");
-    }
-});
-
-if (window.innerWidth < 768) {
-    sideBar.classList.add("hide");
-}
+    })
+})()

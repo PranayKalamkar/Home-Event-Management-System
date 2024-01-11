@@ -1,0 +1,208 @@
+﻿@model IEnumerable<Event_Management_App.Models.AddEventModel>
+
+@{
+    ViewData["title"] = "Add Event";
+    Layout = "_AdminLayout";
+}
+
+<div class="col-xl-12" style=" display: flex; justify-content: space-between;">
+
+    <h2>@ViewData["title"]</h2>
+
+    <p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEvent">
+            AddEvent
+        </button>
+    </p>
+</div>
+
+<!-- Modal for Add Data -->
+<div class="modal fade" id="addEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addEventeLabel">Add Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form action="#" name="add">
+
+                    <div class="mb-3">
+                        <label for="Id" class="form-label">Id : </label>
+                        <input id="Id" type="text" onblur="validateField('Id')" name="Id" class="form-control" autocomplete="off" maxlength="30" required />
+                        
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Category" class="form-label">Category : </label>
+                        <input id="Category" type="text" onblur="validateField('Category')" name="Category" class="form-control" autocomplete="off" maxlength="30" required />
+                        
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Location" class="form-label">Location : </label>
+                        <input id="Location" type="text" onblur="validateField('Location')" name="Location" class="form-control" autocomplete="off" maxlength="30" required />
+                        
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Capacity" class="form-label">Capacity : </label>
+                        <input id="Capacity" type="text" onblur="validateField('Capacity')" name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />   
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Amount" class="form-label">Amount : </label>
+                        <input id="Amount" type="text" onblur="validateField('Amount')" name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
+                        
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Description : </label>
+                        <input id="Description" type="text" onblur="validateField('Description')" name="Description" class="form-control" autocomplete="off" maxlength="50" required />
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Status" class="form-label">Status : </label>
+                        <input id="Status" type="text" onblur="validateField('Status')" name="Status" class="form-control" autocomplete="off" maxlength="30" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ImageFile" class="form-label">Image : </label>
+                        <input id="ImageFile" name="ImageFile" type="file" class="form-control" autocomplete="off" required />
+                        
+                    </div>
+                    
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" onclick="addEvent()" action="#" class="btn btn-success">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-striped" id="myTable" style="width=100% !important">
+    <thead class="table-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Category)</th>
+            <th>@Html.DisplayNameFor(model => model.Location)</th>
+            <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+            <th>@Html.DisplayNameFor(model => model.Amount)</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+
+<script>
+
+    var datatable;
+
+    $(document).ready(function () {
+
+        getAddEventList();
+    });
+    function getAddEventList() {
+        $.ajax({
+
+            type: "Get",
+            url: "/AddEvent/AddEvent",
+            success: function (data) {
+
+                debugger;
+                datatable = $('#myTable').DataTable({
+                    data: data,
+                    columns: [
+                        { data: 'Id' },
+                        { data: 'Category' },
+                        { data: 'Location' },
+                        { data: 'Capacity' },
+                        { data: 'Amount' },
+                        { data: 'Description' },
+                        { data: 'Status' },
+                        {
+                            data: 'ImagePath', // Assume the data has a property named imageUrl that contains the image path
+                            render: function (data, type, row) {
+                                // Return an img tag with the image source and some attributes
+                                return '<img src="/addeventimages/' + data + '" class="rounded-image" width="50" height="50" alt="Image" />';
+                            }
+                        },
+                        {
+                            data: null,
+                            render: function (data, type, row) {
+
+                                return '<button type="button" onclick="populateFormData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEmployeeModal">EDIT</button>| <button type="button" onclick="deleteEmployee(' + row.Id + ')" class="btn btn-danger" >DELETE</button>| <button type="button" onclick="viewEmployee(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewExampleModal">VIEW</button>';
+
+                            }
+                        },
+
+                    ]
+                });
+
+            },
+            error: function (textStatus, errorThrown) {
+                Success = false; 
+            }
+
+        });
+    }
+     
+    //Add Data Function
+    function addEvent() {
+
+        debugger;
+
+        var eventObj = {
+            Id: $('#Id').val(),
+            Category: $('#Category').val(),
+            Location: $('#Location').val(),
+            Capacity: $('#Capacity').val(),
+            Amount: $('#Amount').val(),
+            Description: $('#Description').val(),
+            Status: $('#Status').val(),
+        }
+
+        var formData = new FormData();
+        formData.append("model", JSON.stringify(eventObj));
+        formData.append("file", $('#ImageFile')[0].files[0]);
+
+        $.ajax({
+            url: "/addEvent/Create",
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            type: "POST",
+            success: function (data) {
+                debugger;
+
+                    $('#addEvent').modal('hide');
+
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Event saved successfully!",
+                        icon: "success",
+                        button: "Ok",
+                    });
+                    datatable.destroy();
+                    getEmployeeList();
+
+            },
+            error: function (errorThrown) {
+                console.log("Error saving event:", errorThrown);
+                Swal.fire("Oops", "An error occurred while saving your data, Please try again later.", "error");
+            }
+        });
+    }
+
+</script>
