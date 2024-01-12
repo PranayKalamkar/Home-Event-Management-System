@@ -96,8 +96,8 @@ namespace Event_Management_App.DataManager.DAL
 
                 addeventmodel.Id = item["Id"].ConvertDBNullToString();
                 addeventmodel.Category = item["Category"].ConvertDBNullToString();
-                addeventmodel.Id = item["Location"].ConvertDBNullToString();
-                addeventmodel.Id = item["Capacity"].ConvertDBNullToString();
+                addeventmodel.Location = item["Location"].ConvertDBNullToString();
+                addeventmodel.Capacity = item["Capacity"].ConvertDBNullToString();
                 addeventmodel.Amount = item["Amount"].ConvertDBNullToString();
                 addeventmodel.Description = item["Description"].ConvertDBNullToString();
                 addeventmodel.Status = item["Status"].ConvertDBNullToString();

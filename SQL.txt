@@ -13,6 +13,17 @@ SignUpPassword varchar(255),
 ConfirmSignUpPassword varchar(255)
 );
 
+addevent
+Id	varchar(3)	NO	PRI		
+Category	varchar(50)	YES	UNI		
+Location	varchar(50)	YES			
+Capacity	varchar(50)	YES			
+Amount	varchar(50)	YES			
+Description	varchar(100)	YES			
+Status	varchar(50)	YES			
+Address	varchar(300)	YES			
+Contact	varchar(10)	YES			
+ImagePath	varchar(600)	YES			
 
 
 
@@ -83,3 +94,78 @@ BEGIN
 	select MD5(user_pass);
 END //
 delimiter ;
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `AddEventInsert`(
+	IN Id varchar(3),
+    IN Category varchar(50),
+    IN Location varchar(50),
+    IN Capacity varchar(10),
+    IN Amount varchar(50),
+    IN Description varchar(200),    
+    IN Status varchar(50),	
+	IN Address varchar(100),	
+	IN Contact varchar(10),
+    IN ImagePath varchar(600)
+)
+BEGIN
+	INSERT INTO addevent(Id, Category, Location, Capacity, Amount, Description, Status, Address, Contact, ImagePath)
+    VALUES(Id,Category,Location,Capacity, Amount, Description, Status, Address, Contact, ImagePath);
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteAddEventById`(
+    IN Id varchar(3)
+)
+BEGIN
+    DELETE FROM addevent
+    WHERE Id = Id;
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAddEventbyId`(IN id varchar(3))
+BEGIN
+    SELECT * FROM addevent WHERE Id = id;
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAllEvent`()
+BEGIN
+	SELECT * from addevent;
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetDBImagebyID`(IN ID varchar(3))
+BEGIN
+    SELECT ImagePath FROM addevent WHERE Id = ID;
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetRole`(
+	IN IEmail varchar(100)
+)
+BEGIN
+	 SELECT AccessRole from SignUp where Email = IEmail;
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateaddEventById`(
+    IN Id varchar(3),
+    IN Category varchar(50),
+    IN Location varchar(50),
+    IN Capacity varchar(10),
+    IN Amount varchar(50),
+    IN Description varchar(200),    
+    IN Status varchar(50),	
+	IN Address varchar(100),	
+	IN Contact varchar(10),
+    IN ImagePath varchar(600)
+)
+BEGIN
+    UPDATE addevent
+    SET
+        Category = Category,
+        last_name = last_name,
+        Location = Location,
+        Capacity = Capacity,
+        Amount = Amount,
+        Description = Description,
+		Status = Status,
+		Address = Address,
+		Contact = Contact,
+		ImagePath = ImagePath
+    WHERE Id = Id;
+END

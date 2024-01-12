@@ -117,17 +117,17 @@
 </div>
 
 <!-- Modal for Update Data -->
-<div class="modal fade" id="updateAddEventModal" tabindex="-1" aria-labelledby="updateAddEvenModal" aria-hidden="true">
+<div class="modal fade" id="updateAddEventModal" tabindex="-1" aria-labelledby="updateAddEventModal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateAddEvenModalLabel">Update Event Details</h5>
+                <h5 class="modal-title" id="updateAddEventModalLabel">Update Event Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-body">
 
-                <form action="#" name="update">
+                <form>
 
                     <input id="Id" name="Id" type="number" class="form-control" autocomplete="off" hidden />
 
@@ -135,13 +135,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Category" class="form-label">Category : </label>
-                                <input id="Category" type="text" onblur="validateField('Category')" name="Category" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="Category" type="text"  name="Category" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Location" class="form-label">Location : </label>
-                                <input id="Location" type="text" onblur="validateField('Location')" name="Location" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="Location" type="text"  name="Location" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
                     </div>
@@ -150,13 +150,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Capacity" class="form-label">Capacity : </label>
-                                <input id="Capacity" type="text" onblur="validateField('Capacity')" name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="Capacity" type="text"  name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Amount" class="form-label">Amount : </label>
-                                <input id="Amount" type="text" onblur="validateField('Amount')" name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="Amount" type="text"  name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
                     </div>
@@ -165,13 +165,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Description" class="form-label">Description : </label>
-                                <input id="Description" type="text" onblur="validateField('Description')" name="Description" class="form-control" autocomplete="off" maxlength="200" required />
+                                <input id="Description" type="text"  name="Description" class="form-control" autocomplete="off" maxlength="200" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Status" class="form-label">Status : </label>
-                                <input id="Status" type="text" onblur="validateField('Status')" name="Status" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="Status" type="text"  name="Status" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
                     </div>
@@ -180,13 +180,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Address" class="form-label">Address : </label>
-                                <input id="Address" type="text" onblur="validateField('Address')" name="Address" class="form-control" autocomplete="off" maxlength="100" required />
+                                <input id="Address" type="text" name="Address" class="form-control" autocomplete="off" maxlength="100" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Contact" class="form-label">Contact : </label>
-                                <input id="Contact" type="text" onblur="validateField('Contact')" name="Contact" class="form-control" autocomplete="off" maxlength="10" required />
+                                <input id="Contact" type="text" name="Contact" class="form-control" autocomplete="off" maxlength="10" required />
                             </div>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="ImageFile" class="form-label">Image : </label>
-                                <input id="ImageFile" type="text" name="ImageFile" class="form-control" onchange="previewImage(this)" autocomplete="off" required />
+                                <input id="ImageFile" type="file" name="ImageFile" class="form-control" onchange="previewImage(this)" autocomplete="off" required />
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -211,7 +211,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" onclick="updateAddEvent()" action="#" class="btn btn-success">Save changes</button>
+                <button type="button" onclick="updateAddEvent()" class="btn btn-success">Save changes</button>
             </div>
 
         </div>
@@ -220,7 +220,7 @@
 
 <!-- Modal for View Data -->
 <div class="modal fade" id="viewAddEventModal" tabindex="-1" aria-labelledby="viewExampleModal" aria-hidden="true">
-    <div class="modal-dialog ">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="viewExampleModalLabel">Employee View</h5>
@@ -721,128 +721,6 @@
 
     function validateField(fieldName) {
         $("form[name='add']").validate().element($("form[name='add'] input[name='" + fieldName + "']"));
-    }
-
-    $(function () {
-
-        $("form[name='update']").validate({
-            // Specify validation rules
-            rules: {
-
-                Category: {
-                    required: true,
-                    maxlength: 30
-                },
-                Location: {
-                    required: true,
-                    maxlength: 10
-                },
-                Capacity: {
-                    required: true,
-                    maxlength: 50,
-                },
-                Amount: {
-                    required: true,
-                    maxlength: 50
-                },
-                Description: {
-                    required: true,
-                    maxlength: 200
-                },
-                Status: {
-                    required: true,
-                    maxlength: 30
-                },
-                Address: {
-                    required: true,
-                    maxlength: 100
-                },
-                Contact: {
-                    required: true,
-                    maxlength: 10
-                }
-            },
-            // Specify validation error messages
-            messages: {
-
-                Category: {
-                    required: "Please provide a Category!",
-                    maxlength: "Your Category must be at max 30 characters long"
-                },
-                Location: {
-                    required: "Please provide a Location!",
-                    maxlength: "Your Contact Number must be at max 30 characters long"
-                },
-                Capacity: {
-                    required: "Please provide a Capacity!",
-                    maxlength: "Your Capacity must be at max 50 characters long"
-                },
-                Amount: {
-                    required: "Please provide a Amount!",
-                    maxlength: "Your Amount must be at max 30 characters long"
-                },
-                Description: {
-                    required: "Please provide a Description!",
-                    maxlength: "Your Description must be at max 200 characters long"
-                },
-                Status: {
-                    required: "Please provide a Status!",
-                    maxlength: "Your Status must be at max 30 characters long"
-                },
-                Address: {
-                    required: "Please provide a Address!",
-                    maxlength: "Your Address must be at max 100 characters long"
-                },
-                Contact: {
-                    required: "Please provide a Contact!",
-                    maxlength: "Your Contact must be at max 10 characters long"
-                }
-            },
-
-            errorClass: "error",
-            errorElement: "div",
-
-            submitHandler: function (form) {
-                form.submit();
-            }
-        });
-
-
-        $("form[name='update'] input[name='Category']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-
-        $("form[name='update'] input[name='Location']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-
-        $("form[name='update'] input[name='Capacity']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-
-        $("form[name='update'] input[name='Amount']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-
-        $("form[name='update'] input[name='Description']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-
-        $("form[name='update'] input[name='Status']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-
-        $("form[name='update'] input[name='Address']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-
-        $("form[name='update'] input[name='Contact']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
-    });
-
-    function validateField(fieldName) {
-        $("form[name='update']").validate().element($("form[name='update'] input[name='" + fieldName + "']"));
     }
 
 </script>
