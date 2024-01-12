@@ -14,6 +14,7 @@ namespace Event_Management_App.Extension
             services.AddScoped<IDBManager>(AddDBManager);
             //services.AddScoped<IEmployeeBAL, EmployeeBAL>;
             services.AddScoped<IEventBAL, EventBAL>();
+            services.AddScoped<IAddEventBAL, AddEventBAL>();
 
             return services;
         }

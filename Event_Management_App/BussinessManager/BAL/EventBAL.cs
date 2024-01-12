@@ -36,11 +36,6 @@ namespace Event_Management_App.BussinessManager.BAL
 
         }
 
-        //public bool CheckEmailExist(string emailId)
-        //{
-        //    return _IEventDAL.CheckEmailExist(emailId);
-        //}
-
         public LoginModel LoginUser(string email, string pass)
         {
             LoginModel login = new LoginModel();
@@ -53,30 +48,7 @@ namespace Event_Management_App.BussinessManager.BAL
 
             login.GetRole = _IEventDAL.GetRole(email);
 
-            
-
             return login;
-
-            //return new { EmailExist = emailExist, GetPassword = getPassword, ExistingPassword = existingPassword, GetRole = getRole };
-
-            //bool emailExist = _IEventDAL.CheckEmailExist(sign.Email);
-
-            //if (!emailExist)
-            //{
-            //    return "Exist";
-            //}
-            //else if (getPassword != existingPassword)
-            //{
-            //    return "Invalid Password";
-            //}
-            //else if (getRole == "Admin")
-            //{
-            //    return "True";
-            //}
-            //else
-            //{
-            //    return "Valid Passowrd";
-            //}
 
         }
     }

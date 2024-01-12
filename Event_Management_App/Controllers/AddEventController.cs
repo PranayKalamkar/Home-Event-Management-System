@@ -1,4 +1,5 @@
-﻿using Event_Management_App.Models;
+﻿using Event_Management_App.BussinessManager.IBAL;
+using Event_Management_App.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using System.Text.Json;
@@ -9,63 +10,61 @@ namespace Event_Management_App.Controllers
     {
         IConfiguration _configuration;
         string connectionString;
+        IAddEventBAL _IAddEventBAL;
 
-        public AddEventController(IConfiguration configuration)
+        public AddEventController(IConfiguration configuration, IAddEventBAL addeventBAL)
         {
             _configuration = configuration;
             connectionString = configuration.GetConnectionString("DefaultConnection");
-        }
-
-        public IActionResult Index()
-        {
-            List<AddEventModel> eventList = new List<AddEventModel>();
-            const string storedProcedure = "";
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            using (MySqlCommand command = new MySqlCommand(storedProcedure, connection))
-            {
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                connection.Open();
-
-                MySqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    AddEventModel eventmodel = new AddEventModel();
-
-                    eventmodel.Id = reader["Id"].ToString();
-                    eventmodel.Id = reader["Category"].ToString();
-                    eventmodel.Id = reader["Location"].ToString();
-                    eventmodel.Id = reader["Capacity"].ToString();
-                    eventmodel.Id = reader["Amount"].ToString();
-                    eventmodel.Id = reader["Desciption"].ToString();
-                    eventmodel.Id = reader["Status"].ToString();
-                    eventmodel.Id = reader["ImagePath"].ToString();
-
-                    eventList.Add(eventmodel);
-                }
-            }
-            return View(eventList);
+            _IAddEventBAL = addeventBAL;
         }
 
         public IActionResult AddEvent()
         {
             return View();
-            //return Json();
+        }
+
+        public IActionResult ListEvent()
+        {
+            return Json(_IAddEventBAL.AddEventList());
         }
 
         public IActionResult Create()
         {
             return View();
         }
+
+        [HttpPost]
         public IActionResult Create(string model, IFormFile file)
         {
 
             AddEventModel addevntmodel = JsonSerializer.Deserialize<AddEventModel>(model)!;
 
-            
+            _IAddEventBAL.AddEvent(addevntmodel, file);
 
-            return View();
+            return Json("AddEvent");
         }
 
+        public IActionResult Populate(string ID)
+        {
+            return Json(_IAddEventBAL.PopulateEventData(ID));
+        }
+
+
+        public IActionResult Update(string ID,string model, IFormFile file)
+        {
+            AddEventModel addeventmodel = JsonSerializer.Deserialize<AddEventModel>(model)!;
+
+            _IAddEventBAL.UpdateEventData(addeventmodel, ID, file);
+
+            return Json("Index");
+        }
+
+        public IActionResult Delete(string ID)
+        {
+            _IAddEventBAL.DeleteEventData(ID);
+
+            return Json("Index");
+        }
     }
 }

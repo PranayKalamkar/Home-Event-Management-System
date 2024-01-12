@@ -18,7 +18,7 @@
 
 <!-- Modal for Add Data -->
 <div class="modal fade" id="addEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addEventeLabel">Add Details</h5>
@@ -29,52 +29,81 @@
 
                 <form action="#" name="add">
 
-                    <div class="mb-3">
-                        <label for="Id" class="form-label">Id : </label>
-                        <input id="Id" type="text" onblur="validateField('Id')" name="Id" class="form-control" autocomplete="off" maxlength="30" required />
-                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Id" class="form-label">Id : </label>
+                                <input id="Id" type="text" onblur="validateField('Id')" name="Id" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Category" class="form-label">Category : </label>
+                                <input id="Category" type="text" onblur="validateField('Category')" name="Category" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="Category" class="form-label">Category : </label>
-                        <input id="Category" type="text" onblur="validateField('Category')" name="Category" class="form-control" autocomplete="off" maxlength="30" required />
-                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Location" class="form-label">Location : </label>
+                                <input id="Location" type="text" onblur="validateField('Location')" name="Location" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Capacity" class="form-label">Capacity : </label>
+                                <input id="Capacity" type="text" onblur="validateField('Capacity')" name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="Location" class="form-label">Location : </label>
-                        <input id="Location" type="text" onblur="validateField('Location')" name="Location" class="form-control" autocomplete="off" maxlength="30" required />
-                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Amount" class="form-label">Amount : </label>
+                                <input id="Amount" type="text" onblur="validateField('Amount')" name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Description" class="form-label">Description : </label>
+                                <input id="Description" type="text" onblur="validateField('Description')" name="Description" class="form-control" autocomplete="off" maxlength="50" required />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="Capacity" class="form-label">Capacity : </label>
-                        <input id="Capacity" type="text" onblur="validateField('Capacity')" name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />   
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Status" class="form-label">Status : </label>
+                                <input id="Status" type="text" onblur="validateField('Status')" name="Status" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Address" class="form-label">Address : </label>
+                                <input id="Address" type="text" onblur="validateField('Address')" name="Address" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="Amount" class="form-label">Amount : </label>
-                        <input id="Amount" type="text" onblur="validateField('Amount')" name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
-                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Contact" class="form-label">Contact : </label>
+                                <input id="Contact" type="text" onblur="validateField('Contact')" name="Contact" class="form-control" autocomplete="off" maxlength="10" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="ImageFile" class="form-label">Image : </label>
+                                <input id="ImageFile" name="ImageFile" type="file" class="form-control" autocomplete="off" required />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="Description" class="form-label">Description : </label>
-                        <input id="Description" type="text" onblur="validateField('Description')" name="Description" class="form-control" autocomplete="off" maxlength="50" required />
-
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="Status" class="form-label">Status : </label>
-                        <input id="Status" type="text" onblur="validateField('Status')" name="Status" class="form-control" autocomplete="off" maxlength="30" required />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="ImageFile" class="form-label">Image : </label>
-                        <input id="ImageFile" name="ImageFile" type="file" class="form-control" autocomplete="off" required />
-                        
-                    </div>
-                    
                 </form>
 
             </div>
@@ -83,6 +112,205 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" onclick="addEvent()" action="#" class="btn btn-success">Save changes</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Update Data -->
+<div class="modal fade" id="updateAddEventModal" tabindex="-1" aria-labelledby="updateAddEvenModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateAddEvenModalLabel">Update Event Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form action="#" name="update">
+
+                    <input id="Id" name="Id" type="number" class="form-control" autocomplete="off" hidden />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Category" class="form-label">Category : </label>
+                                <input id="Category" type="text" onblur="validateField('Category')" name="Category" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Location" class="form-label">Location : </label>
+                                <input id="Location" type="text" onblur="validateField('Location')" name="Location" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Capacity" class="form-label">Capacity : </label>
+                                <input id="Capacity" type="text" onblur="validateField('Capacity')" name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Amount" class="form-label">Amount : </label>
+                                <input id="Amount" type="text" onblur="validateField('Amount')" name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Description" class="form-label">Description : </label>
+                                <input id="Description" type="text" onblur="validateField('Description')" name="Description" class="form-control" autocomplete="off" maxlength="200" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Status" class="form-label">Status : </label>
+                                <input id="Status" type="text" onblur="validateField('Status')" name="Status" class="form-control" autocomplete="off" maxlength="30" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Address" class="form-label">Address : </label>
+                                <input id="Address" type="text" onblur="validateField('Address')" name="Address" class="form-control" autocomplete="off" maxlength="100" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Contact" class="form-label">Contact : </label>
+                                <input id="Contact" type="text" onblur="validateField('Contact')" name="Contact" class="form-control" autocomplete="off" maxlength="10" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="ImageFile" class="form-label">Image : </label>
+                                <input id="ImageFile" type="text" name="ImageFile" class="form-control" onchange="previewImage(this)" autocomplete="off" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3" style="display: flex; flex-direction: column;">
+                                <img id="imagePreviewUpdate" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="updateAddEvent()" action="#" class="btn btn-success">Save changes</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal for View Data -->
+<div class="modal fade" id="viewAddEventModal" tabindex="-1" aria-labelledby="viewExampleModal" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewExampleModalLabel">Employee View</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form>
+
+                    <input id="Id" name="Id" type="number" class="form-control" autocomplete="off" hidden />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Category" class="form-label">Category : </label>
+                                <input id="Category" type="text"  name="Category" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Location" class="form-label">Location : </label>
+                                <input id="Location" type="text"  name="Location" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Capacity" class="form-label">Capacity : </label>
+                                <input id="Capacity" type="text" name="Capacity" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Amount" class="form-label">Amount : </label>
+                                <input id="Amount" type="text" name="Amount" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Description" class="form-label">Description : </label>
+                                <input id="Description" type="text" name="Description" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Status" class="form-label">Status : </label>
+                                <input id="Status" type="text" name="Status" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Address" class="form-label">Address : </label>
+                                <input id="Address" type="text" name="Address" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Contact" class="form-label">Contact : </label>
+                                <input id="Contact" type="text" name="Contact" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="ImageFile" class="form-label">ImageFile : </label>
+                                <input id="ImageFile" type="text" name="ImageFile" class="form-control" onchange="previewImage(this)" autocomplete="off" hidden />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3" style="display: flex; flex-direction: column;">
+                                <img id="imagePreviewView" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+
+            </div>
+
         </div>
     </div>
 </div>
@@ -98,6 +326,8 @@
             <th>@Html.DisplayNameFor(model => model.Amount)</th>
             <th>@Html.DisplayNameFor(model => model.Description)</th>
             <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>@Html.DisplayNameFor(model => model.Address)</th>
+            <th>@Html.DisplayNameFor(model => model.Contact)</th>
             <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
             <th>Actions</th>
         </tr>
@@ -106,17 +336,18 @@
 
 <script>
 
-    var datatable;
-
     $(document).ready(function () {
 
         getAddEventList();
     });
+
+    var datatable;
+
     function getAddEventList() {
         $.ajax({
 
             type: "Get",
-            url: "/AddEvent/AddEvent",
+            url: "/AddEvent/ListEvent",
             success: function (data) {
 
                 debugger;
@@ -130,6 +361,8 @@
                         { data: 'Amount' },
                         { data: 'Description' },
                         { data: 'Status' },
+                        { data: 'Address' },
+                        { data: 'Contact' },
                         {
                             data: 'ImagePath', // Assume the data has a property named imageUrl that contains the image path
                             render: function (data, type, row) {
@@ -141,7 +374,7 @@
                             data: null,
                             render: function (data, type, row) {
 
-                                return '<button type="button" onclick="populateFormData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEmployeeModal">EDIT</button>| <button type="button" onclick="deleteEmployee(' + row.Id + ')" class="btn btn-danger" >DELETE</button>| <button type="button" onclick="viewEmployee(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewExampleModal">VIEW</button>';
+                                return '<button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateAddEventModal">EDIT</button>| <button type="button" onclick="deleteEmployee(' + row.Id + ')" class="btn btn-danger" >DELETE</button>| <button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">VIEW</button>';
 
                             }
                         },
@@ -151,12 +384,12 @@
 
             },
             error: function (textStatus, errorThrown) {
-                Success = false; 
+                Success = false;
             }
 
         });
     }
-     
+
     //Add Data Function
     function addEvent() {
 
@@ -170,6 +403,8 @@
             Amount: $('#Amount').val(),
             Description: $('#Description').val(),
             Status: $('#Status').val(),
+            Address: $('#Address').val(),
+            Contact: $('#Contact').val(),
         }
 
         var formData = new FormData();
@@ -177,7 +412,7 @@
         formData.append("file", $('#ImageFile')[0].files[0]);
 
         $.ajax({
-            url: "/addEvent/Create",
+            url: "/AddEvent/Create",
             data: formData,
             processData: false,
             contentType: false,
@@ -186,16 +421,17 @@
             success: function (data) {
                 debugger;
 
-                    $('#addEvent').modal('hide');
+                $('#addEvent').modal('hide');
 
-                    Swal.fire({
-                        title: "Good job!",
-                        text: "Event saved successfully!",
-                        icon: "success",
-                        button: "Ok",
-                    });
-                    datatable.destroy();
-                    getEmployeeList();
+                Swal.fire({
+                    title: "Good job!",
+                    text: "Event saved successfully!",
+                    icon: "success",
+                    button: "Ok",
+                });
+
+                datatable.destroy();
+                getAddEventList();
 
             },
             error: function (errorThrown) {
@@ -203,6 +439,410 @@
                 Swal.fire("Oops", "An error occurred while saving your data, Please try again later.", "error");
             }
         });
+    }
+
+    function previewImage(input) {
+        var file = input.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imagePreviewUpdate').attr('src', e.target.result).show();
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            // Clear the image preview if no file is selected
+            $('#imagePreviewUpdate').attr('src', '').hide();
+        }
+    }
+
+    //function for populating update data
+    function populateEventData(eventId) {
+
+        debugger;
+
+        $.ajax({
+
+            type: "GET",
+            url: "/AddEvent/Populate?ID=" + eventId,
+
+            success: function (addevent) {
+                debugger;
+
+                // Populate the form with the received employee details
+                $('#Id').val(addevent.Id);
+                $('#Category').val(addevent.Category);
+                $('#Location').val(addevent.Location);
+                $('#Capacity').val(addevent.Capacity);
+                $('#Amount').val(addevent.Amount);
+                $('#Description').val(addevent.Description);
+                $('#Status').val(addevent.Status);
+                $('#Address').val(addevent.Address);
+                $('#Contact').val(addevent.Contact);
+
+                var imagePreview = "/addeventimages/" + addevent.ImagePath;
+                $('#imagePreviewUpdate').attr('src', imagePreview).show();
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+    function updateAddEvent() {
+        debugger;
+
+        var eventAddID = {
+            id: $('#Id').val(),
+        }
+
+        debugger;
+
+        var addEventData = {
+            Category: $('#Category').val(),
+            Location: $('#Location').val(),
+            Capacity: $('#Capacity').val(),
+            Amount: $('#Amount').val(),
+            Description: $('#Description').val(),
+            Status: $('#Status').val(),
+            Address: $('#Address').val(),
+            Contact: $('#Contact').val(),
+        };
+
+        debugger;
+
+        var formData = new FormData();
+        formData.append("Id", eventAddID.id);
+        formData.append("model", JSON.stringify(addEventData));
+        formData.append("file", $("#ImageFile")[0].files[0]);
+
+        debugger;
+
+        $.ajax({
+            type: "POST",
+            url: "/AddEvent/Update",
+            data: formData,
+            contentType: false,
+            processData: false,
+            cache: false,
+
+            success: function (data) {
+
+                if (data === "Index") {
+                    Swal.fire({
+                        title: "Event updated successfully!",
+                        text: "close",
+                        icon: "success"
+                    });
+
+                    $('#updateAddEventModal').modal('hide');
+                    datatable.destroy();
+                    getAddEventList();
+
+                } else {
+                    Swal.fire({
+                        title: "Error updating event!",
+                        text: "close",
+                        icon: "Error"
+                    });
+
+                }
+            },
+            error: function (errormessage) {
+                Swal.fire({
+                    title: "Error updating event!",
+                    text: "close",
+                    icon: "Error"
+                });
+            }
+        });
+    }
+
+    function viewEventData(eventId) {
+        debugger;
+        $.ajax({
+            type: "GET",
+            url: "/AddEvent/Populate?ID=" + eventId, 
+
+            success: function (addevent) {
+                debugger;
+
+                // Populate the form with the received employee details
+                $('#Id').val(addevent.Id);
+                $('#Category').val(addevent.Category);
+                $('#Location').val(addevent.Location);
+                $('#Capacity').val(addevent.Capacity);
+                $('#Amount').val(addevent.Amount);
+                $('#Description').val(addevent.Description);
+                $('#Status').val(addevent.Status);
+                $('#Address').val(addevent.Address);
+                $('#Contact').val(addevent.Contact);
+
+                var imagePreview = "/addeventimages/" + addevent.ImagePath;
+                $('#imagePreviewView').attr('src', imagePreview).show();
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+
+    $(function () {
+
+        $("form[name='add']").validate({
+            // Specify validation rules
+            rules: {
+
+                Id: {
+                    required: true,
+                    maxlength: 30
+                },
+                Category: {
+                    required: true,
+                    maxlength: 30
+                },
+                Location: {
+                    required: true,
+                    maxlength: 10
+                },
+                Capacity: {
+                    required: true,
+                    maxlength: 50,
+                },
+                Amount: {
+                    required: true,
+                    maxlength: 50
+                },
+                Description: {
+                    required: true,
+                    maxlength: 200
+                },
+                Status: {
+                    required: true,
+                    maxlength: 30
+                },
+                Address: {
+                    required: true,
+                    maxlength: 100
+                },
+                Contact: {
+                    required: true,
+                    maxlength: 10 
+                }
+            },
+            // Specify validation error messages
+            messages: {
+                Id: {
+                    required: "Please provide a Id!",
+                    maxlength: "Your Id must be at max 3 characters long"
+                },
+                Category: {
+                    required: "Please provide a Category!",
+                    maxlength: "Your Category must be at max 30 characters long"
+                },
+                Location: {
+                    required: "Please provide a Location!",
+                    maxlength: "Your Contact Number must be at max 30 characters long"
+                },
+                Capacity: {
+                    required: "Please provide a Capacity!",
+                    maxlength: "Your Capacity must be at max 50 characters long"
+                },
+                Amount: {
+                    required: "Please provide a Amount!",
+                    maxlength: "Your Amount must be at max 30 characters long"
+                },
+                Description: {
+                    required: "Please provide a Description!",
+                    maxlength: "Your Description must be at max 200 characters long"
+                },
+                Status: {
+                    required: "Please provide a Status!",
+                    maxlength: "Your Status must be at max 30 characters long"
+                },
+                Address: {
+                    required: "Please provide a Address!",
+                    maxlength: "Your Address must be at max 100 characters long"
+                },
+                Contact: {
+                    required: "Please provide a Contact!",
+                    maxlength: "Your Contact must be at max 10 characters long"
+                }
+            },
+
+            errorClass: "error",
+            errorElement: "div",
+  
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+
+
+        $("form[name='add'] input[name='Id']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Category']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Location']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Capacity']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Amount']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Description']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Status']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Address']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='add'] input[name='Contact']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+    });
+
+    function validateField(fieldName) {
+        $("form[name='add']").validate().element($("form[name='add'] input[name='" + fieldName + "']"));
+    }
+
+    $(function () {
+
+        $("form[name='update']").validate({
+            // Specify validation rules
+            rules: {
+
+                Category: {
+                    required: true,
+                    maxlength: 30
+                },
+                Location: {
+                    required: true,
+                    maxlength: 10
+                },
+                Capacity: {
+                    required: true,
+                    maxlength: 50,
+                },
+                Amount: {
+                    required: true,
+                    maxlength: 50
+                },
+                Description: {
+                    required: true,
+                    maxlength: 200
+                },
+                Status: {
+                    required: true,
+                    maxlength: 30
+                },
+                Address: {
+                    required: true,
+                    maxlength: 100
+                },
+                Contact: {
+                    required: true,
+                    maxlength: 10
+                }
+            },
+            // Specify validation error messages
+            messages: {
+
+                Category: {
+                    required: "Please provide a Category!",
+                    maxlength: "Your Category must be at max 30 characters long"
+                },
+                Location: {
+                    required: "Please provide a Location!",
+                    maxlength: "Your Contact Number must be at max 30 characters long"
+                },
+                Capacity: {
+                    required: "Please provide a Capacity!",
+                    maxlength: "Your Capacity must be at max 50 characters long"
+                },
+                Amount: {
+                    required: "Please provide a Amount!",
+                    maxlength: "Your Amount must be at max 30 characters long"
+                },
+                Description: {
+                    required: "Please provide a Description!",
+                    maxlength: "Your Description must be at max 200 characters long"
+                },
+                Status: {
+                    required: "Please provide a Status!",
+                    maxlength: "Your Status must be at max 30 characters long"
+                },
+                Address: {
+                    required: "Please provide a Address!",
+                    maxlength: "Your Address must be at max 100 characters long"
+                },
+                Contact: {
+                    required: "Please provide a Contact!",
+                    maxlength: "Your Contact must be at max 10 characters long"
+                }
+            },
+
+            errorClass: "error",
+            errorElement: "div",
+
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+
+
+        $("form[name='update'] input[name='Category']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='update'] input[name='Location']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='update'] input[name='Capacity']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='update'] input[name='Amount']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='update'] input[name='Description']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='update'] input[name='Status']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='update'] input[name='Address']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+
+        $("form[name='update'] input[name='Contact']").on("blur", function () {
+            $("form[name='add']").validate().element($(this));
+        });
+    });
+
+    function validateField(fieldName) {
+        $("form[name='update']").validate().element($("form[name='update'] input[name='" + fieldName + "']"));
     }
 
 </script>

@@ -10,6 +10,12 @@
     @* <link rel="stylesheet" href="~/css/DashboardStyles.css" asp-append-version="true" /> *@
     <link rel="stylesheet" href="~/css/AdminLayout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Event_Management_App.styles.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     @RenderSection("Styles", required: false)
 
 </head>
@@ -83,7 +89,7 @@
 
     <div class="container-fluid">
         <section class="content">
-            <main role="main" class="pb-3">
+            <main>
                 @RenderBody()
             </main>
         </section>
@@ -92,6 +98,12 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/admin.js"  asp-append-version="true"></script>
+
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -28,6 +28,49 @@ namespace Event_Management_App.BussinessManager.BAL
             return _IAddEventDAL.AddEvent(addeventmodel);
         }
 
+        public AddEventModel PopulateEventData(string ID)
+        {
+            return _IAddEventDAL.PopulateEventData(ID);
+        }
+
+        public AddEventModel UpdateEventData(AddEventModel addeventmodel, string ID, IFormFile file)
+        {
+            addeventmodel.Id = ID;
+
+            addeventmodel.ImageFile = file;
+
+            string existingImage = _IAddEventDAL.GetDBImagebyID(ID);
+
+            if(addeventmodel.ImageFile != null)
+            {
+                addeventmodel.ImagePath = UploadImage(addeventmodel.ImageFile);
+            }
+            else
+            {
+                addeventmodel.ImagePath = existingImage;
+            }
+
+            return _IAddEventDAL.UpdateEventData(addeventmodel);
+
+        }
+
+        public void DeleteEventData(string ID)
+        {
+            string existingImage = _IAddEventDAL.GetDBImagebyID(ID);
+
+            if(!string.IsNullOrEmpty(existingImage))
+            {
+                string oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "addeventimages", existingImage);
+
+                if (System.IO.File.Exists(oldImagePath))
+                {
+                    System.IO.File.Delete(oldImagePath);
+                }
+            }
+
+            _IAddEventDAL.DeleteEventData(ID);
+        }
+
         public string UploadImage(IFormFile imageFile)
         {
 
@@ -38,8 +81,6 @@ namespace Event_Management_App.BussinessManager.BAL
                 if (imageFile != null)
                 {
                     string uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "addeventimages");
-
-                    // Create the directory if it doesn't exist
 
                     Console.WriteLine(Directory.GetCurrentDirectory());
 
