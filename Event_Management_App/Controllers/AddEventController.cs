@@ -45,13 +45,13 @@ namespace Event_Management_App.Controllers
             return Json("AddEvent");
         }
 
-        public IActionResult Populate(string ID)
+        public IActionResult Populate(int Id)
         {
-            return Json(_IAddEventBAL.PopulateEventData(ID));
+            return Json(_IAddEventBAL.PopulateEventData(Id));
         }
 
 
-        public IActionResult Update(string ID,string model, IFormFile file)
+        public IActionResult Update(int ID,string model, IFormFile file)
         {
             AddEventModel addeventmodel = JsonSerializer.Deserialize<AddEventModel>(model)!;
 
@@ -60,7 +60,7 @@ namespace Event_Management_App.Controllers
             return Json("Index");
         }
 
-        public IActionResult Delete(string ID)
+        public IActionResult Delete(int ID)
         {
             _IAddEventBAL.DeleteEventData(ID);
 

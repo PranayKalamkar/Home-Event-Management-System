@@ -17,11 +17,11 @@
 </div>
 
 <!-- Modal for Add Data -->
-<div class="modal fade" id="addEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addEvent" tabindex="-1" aria-labelledby="addEventLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addEventeLabel">Add Details</h5>
+                <h5 class="modal-title" id="addEventLabel">Add Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -32,70 +32,64 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="Id" class="form-label">Id : </label>
-                                <input id="Id" type="text" onblur="validateField('Id')" name="Id" class="form-control" autocomplete="off" maxlength="30" required />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
                                 <label for="Category" class="form-label">Category : </label>
                                 <input id="Category" type="text" onblur="validateField('Category')" name="Category" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Location" class="form-label">Location : </label>
                                 <input id="Location" type="text" onblur="validateField('Location')" name="Location" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Capacity" class="form-label">Capacity : </label>
                                 <input id="Capacity" type="text" onblur="validateField('Capacity')" name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Amount" class="form-label">Amount : </label>
                                 <input id="Amount" type="text" onblur="validateField('Amount')" name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Description" class="form-label">Description : </label>
                                 <input id="Description" type="text" onblur="validateField('Description')" name="Description" class="form-control" autocomplete="off" maxlength="50" required />
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Status" class="form-label">Status : </label>
                                 <input id="Status" type="text" onblur="validateField('Status')" name="Status" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Address" class="form-label">Address : </label>
                                 <input id="Address" type="text" onblur="validateField('Address')" name="Address" class="form-control" autocomplete="off" maxlength="30" required />
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Contact" class="form-label">Contact : </label>
                                 <input id="Contact" type="text" onblur="validateField('Contact')" name="Contact" class="form-control" autocomplete="off" maxlength="10" required />
                             </div>
                         </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="ImageFile" class="form-label">Image : </label>
@@ -117,11 +111,11 @@
 </div>
 
 <!-- Modal for Update Data -->
-<div class="modal fade" id="updateAddEventModal" tabindex="-1" aria-labelledby="updateAddEventModal" aria-hidden="true">
+<div class="modal fade" id="updateEvent" tabindex="-1" aria-labelledby="updateEventModal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateAddEventModalLabel">Update Event Details</h5>
+                <h5 class="modal-title" id="updateEventModalLabel">Update Event Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -129,19 +123,19 @@
 
                 <form>
 
-                    <input id="Id" name="Id" type="number" class="form-control" autocomplete="off" hidden />
+                    <input hidden id="u_Id" name="Id" />
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Category" class="form-label">Category : </label>
-                                <input id="Category" type="text"  name="Category" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="u_Category" type="text" name="Category" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Location" class="form-label">Location : </label>
-                                <input id="Location" type="text"  name="Location" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="u_Location" type="text" name="Location" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                     </div>
@@ -150,28 +144,28 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Capacity" class="form-label">Capacity : </label>
-                                <input id="Capacity" type="text"  name="Capacity" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="u_Capacity" type="text" name="Capacity" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Amount" class="form-label">Amount : </label>
-                                <input id="Amount" type="text"  name="Amount" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="u_Amount" type="text" name="Amount" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                     </div>
 
-                      <div class="row">
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Description" class="form-label">Description : </label>
-                                <input id="Description" type="text"  name="Description" class="form-control" autocomplete="off" maxlength="200" required />
+                                <input id="u_Description" type="text" name="Description" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Status" class="form-label">Status : </label>
-                                <input id="Status" type="text"  name="Status" class="form-control" autocomplete="off" maxlength="30" required />
+                                <input id="u_Status" type="text" name="Status" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                     </div>
@@ -180,13 +174,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Address" class="form-label">Address : </label>
-                                <input id="Address" type="text" name="Address" class="form-control" autocomplete="off" maxlength="100" required />
+                                <input id="u_Address" type="text" name="Address" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Contact" class="form-label">Contact : </label>
-                                <input id="Contact" type="text" name="Contact" class="form-control" autocomplete="off" maxlength="10" required />
+                                <input id="u_Contact" type="text" name="Contact" class="form-control" autocomplete="off" required />
                             </div>
                         </div>
                     </div>
@@ -204,7 +198,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </form>
 
             </div>
@@ -231,19 +225,19 @@
 
                 <form>
 
-                    <input id="Id" name="Id" type="number" class="form-control" autocomplete="off" hidden />
+                    <input id="v_Id" name="Id" hidden />
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Category" class="form-label">Category : </label>
-                                <input id="Category" type="text"  name="Category" class="form-control" />
+                                <input id="v_Category" type="text" name="Category" class="form-control" readonly />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Location" class="form-label">Location : </label>
-                                <input id="Location" type="text"  name="Location" class="form-control" />
+                                <input id="v_Location" type="text" name="Location" class="form-control" readonly />
                             </div>
                         </div>
                     </div>
@@ -252,13 +246,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Capacity" class="form-label">Capacity : </label>
-                                <input id="Capacity" type="text" name="Capacity" class="form-control" />
+                                <input id="v_Capacity" type="text" name="Capacity" class="form-control" readonly />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Amount" class="form-label">Amount : </label>
-                                <input id="Amount" type="text" name="Amount" class="form-control" />
+                                <input id="v_Amount" type="text" name="Amount" class="form-control" readonly />
                             </div>
                         </div>
                     </div>
@@ -267,13 +261,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Description" class="form-label">Description : </label>
-                                <input id="Description" type="text" name="Description" class="form-control" />
+                                <input id="v_Description" type="text" name="Description" class="form-control" readonly />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Status" class="form-label">Status : </label>
-                                <input id="Status" type="text" name="Status" class="form-control" />
+                                <input id="v_Status" type="text" name="Status" class="form-control" readonly />
                             </div>
                         </div>
                     </div>
@@ -282,13 +276,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Address" class="form-label">Address : </label>
-                                <input id="Address" type="text" name="Address" class="form-control" />
+                                <input id="v_Address" type="text" name="Address" class="form-control" readonly />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="Contact" class="form-label">Contact : </label>
-                                <input id="Contact" type="text" name="Contact" class="form-control" />
+                                <input id="v_Contact" type="text" name="Contact" class="form-control" readonly />
                             </div>
                         </div>
                     </div>
@@ -298,15 +292,18 @@
                             <div class="mb-3">
                                 <label for="ImageFile" class="form-label">ImageFile : </label>
                                 <input id="ImageFile" type="text" name="ImageFile" class="form-control" onchange="previewImage(this)" autocomplete="off" hidden />
+                                <div class="mb-3" style="display: flex; flex-direction: column;">
+                                    <img id="imagePreviewView" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        @* <div class="col-md-6">
                             <div class="mb-3" style="display: flex; flex-direction: column;">
                                 <img id="imagePreviewView" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
                             </div>
-                        </div>
+                        </div> *@
                     </div>
-                    
+
                 </form>
 
             </div>
@@ -374,7 +371,7 @@
                             data: null,
                             render: function (data, type, row) {
 
-                                return '<button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateAddEventModal">EDIT</button>| <button type="button" onclick="deleteEmployee(' + row.Id + ')" class="btn btn-danger" >DELETE</button>| <button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">VIEW</button>';
+                                return '<div class="btn-group" role="group" aria-label="Basic mixed styles example"><button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fa-solid fa-pen"></i></button><button type="button" onclick="deleteEventData(' + row.Id + ')" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal"><i class="fa-solid fa-eye"></i></button></div>';
 
                             }
                         },
@@ -396,7 +393,6 @@
         debugger;
 
         var eventObj = {
-            Id: $('#Id').val(),
             Category: $('#Category').val(),
             Location: $('#Location').val(),
             Capacity: $('#Capacity').val(),
@@ -422,6 +418,9 @@
                 debugger;
 
                 $('#addEvent').modal('hide');
+
+                // clearForm();
+
 
                 Swal.fire({
                     title: "Good job!",
@@ -459,28 +458,28 @@
     }
 
     //function for populating update data
-    function populateEventData(eventId) {
+    function populateEventData(Id) {
 
         debugger;
 
         $.ajax({
 
             type: "GET",
-            url: "/AddEvent/Populate?ID=" + eventId,
+            url: "/AddEvent/Populate/" + Id,
 
             success: function (addevent) {
                 debugger;
 
                 // Populate the form with the received employee details
-                $('#Id').val(addevent.Id);
-                $('#Category').val(addevent.Category);
-                $('#Location').val(addevent.Location);
-                $('#Capacity').val(addevent.Capacity);
-                $('#Amount').val(addevent.Amount);
-                $('#Description').val(addevent.Description);
-                $('#Status').val(addevent.Status);
-                $('#Address').val(addevent.Address);
-                $('#Contact').val(addevent.Contact);
+                $('#u_Id').val(addevent.Id);
+                $('#u_Category').val(addevent.Category);
+                $('#u_Location').val(addevent.Location);
+                $('#u_Capacity').val(addevent.Capacity);
+                $('#u_Amount').val(addevent.Amount);
+                $('#u_Description').val(addevent.Description);
+                $('#u_Status').val(addevent.Status);
+                $('#u_Address').val(addevent.Address);
+                $('#u_Contact').val(addevent.Contact);
 
                 var imagePreview = "/addeventimages/" + addevent.ImagePath;
                 $('#imagePreviewUpdate').attr('src', imagePreview).show();
@@ -495,26 +494,26 @@
         debugger;
 
         var eventAddID = {
-            id: $('#Id').val(),
+            id: $('#u_Id').val(),
         }
 
         debugger;
 
         var addEventData = {
-            Category: $('#Category').val(),
-            Location: $('#Location').val(),
-            Capacity: $('#Capacity').val(),
-            Amount: $('#Amount').val(),
-            Description: $('#Description').val(),
-            Status: $('#Status').val(),
-            Address: $('#Address').val(),
-            Contact: $('#Contact').val(),
+            Category: $('#u_Category').val(),
+            Location: $('#u_Location').val(),
+            Capacity: $('#u_Capacity').val(),
+            Amount: $('#u_Amount').val(),
+            Description: $('#u_Description').val(),
+            Status: $('#u_Status').val(),
+            Address: $('#u_Address').val(),
+            Contact: $('#u_Contact').val(),
         };
 
         debugger;
 
         var formData = new FormData();
-        formData.append("Id", eventAddID.id);
+        formData.append("ID", eventAddID.id);
         formData.append("model", JSON.stringify(addEventData));
         formData.append("file", $("#ImageFile")[0].files[0]);
 
@@ -537,7 +536,7 @@
                         icon: "success"
                     });
 
-                    $('#updateAddEventModal').modal('hide');
+                    $('#updateEvent').modal('hide');
                     datatable.destroy();
                     getAddEventList();
 
@@ -564,21 +563,21 @@
         debugger;
         $.ajax({
             type: "GET",
-            url: "/AddEvent/Populate?ID=" + eventId, 
+            url: "/AddEvent/Populate?ID=" + eventId,
 
             success: function (addevent) {
                 debugger;
 
                 // Populate the form with the received employee details
-                $('#Id').val(addevent.Id);
-                $('#Category').val(addevent.Category);
-                $('#Location').val(addevent.Location);
-                $('#Capacity').val(addevent.Capacity);
-                $('#Amount').val(addevent.Amount);
-                $('#Description').val(addevent.Description);
-                $('#Status').val(addevent.Status);
-                $('#Address').val(addevent.Address);
-                $('#Contact').val(addevent.Contact);
+                $('#v_Id').val(addevent.Id);
+                $('#v_Category').val(addevent.Category);
+                $('#v_Location').val(addevent.Location);
+                $('#v_Capacity').val(addevent.Capacity);
+                $('#v_Amount').val(addevent.Amount);
+                $('#v_Description').val(addevent.Description);
+                $('#v_Status').val(addevent.Status);
+                $('#v_Address').val(addevent.Address);
+                $('#v_Contact').val(addevent.Contact);
 
                 var imagePreview = "/addeventimages/" + addevent.ImagePath;
                 $('#imagePreviewView').attr('src', imagePreview).show();
@@ -589,6 +588,64 @@
         });
     }
 
+    function deleteEventData(eventId) {
+
+        debugger;
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                $.ajax({
+                    type: "GET",
+                    url: "/AddEvent/Delete/" + eventId,
+                    success: function (result) {
+
+                        datatable.destroy();
+                        getEmployeeList();
+
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+
+                    },
+                    error: function (errormessage) {
+
+                        Swal.fire({
+                            title: "Error Delete employee!",
+                            text: "close",
+                            icon: "Error"
+                        });
+
+                    }
+                });
+
+            }
+        });
+    }
+
+    function clearForm()
+    {
+        $('#Category').val("");
+        $('#Location').val("");
+        $('#Capacity').val("");
+        $('#Amount').val("");
+        $('#Description').val("");
+        $('#Status').val("");
+        $('#Address').val("");
+        $('#Contact').val("");
+    }
+
 
     $(function () {
 
@@ -596,10 +653,6 @@
             // Specify validation rules
             rules: {
 
-                Id: {
-                    required: true,
-                    maxlength: 30
-                },
                 Category: {
                     required: true,
                     maxlength: 30
@@ -630,15 +683,11 @@
                 },
                 Contact: {
                     required: true,
-                    maxlength: 10 
+                    maxlength: 10
                 }
             },
             // Specify validation error messages
             messages: {
-                Id: {
-                    required: "Please provide a Id!",
-                    maxlength: "Your Id must be at max 3 characters long"
-                },
                 Category: {
                     required: "Please provide a Category!",
                     maxlength: "Your Category must be at max 30 characters long"
@@ -675,16 +724,12 @@
 
             errorClass: "error",
             errorElement: "div",
-  
+
             submitHandler: function (form) {
                 form.submit();
             }
         });
 
-
-        $("form[name='add'] input[name='Id']").on("blur", function () {
-            $("form[name='add']").validate().element($(this));
-        });
 
         $("form[name='add'] input[name='Category']").on("blur", function () {
             $("form[name='add']").validate().element($(this));

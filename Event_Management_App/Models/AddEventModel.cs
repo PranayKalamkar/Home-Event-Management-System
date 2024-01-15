@@ -2,7 +2,7 @@
 {
     public class AddEventModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Category { get; set; }
         public string Location { get; set; }
         public string Capacity { get; set; }

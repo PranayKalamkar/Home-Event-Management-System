@@ -8,12 +8,12 @@ namespace Event_Management_App.DataManager.IDAL
 
         public AddEventModel AddEvent(AddEventModel addeventmodel);
 
-        public AddEventModel PopulateEventData(string ID);
+        public AddEventModel PopulateEventData(int ID);
 
         public AddEventModel UpdateEventData(AddEventModel addeventmodel);
 
-        public string GetDBImagebyID(string ID);
+        public string GetDBImagebyID(int ID);
 
-        public void DeleteEventData(string ID);
+        public void DeleteEventData(int ID);
     }
 }

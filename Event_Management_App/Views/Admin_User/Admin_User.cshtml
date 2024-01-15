@@ -1,0 +1,280 @@
+﻿@model IEnumerable<Event_Management_App.Models.Admin_UserModel>
+
+@{
+    ViewData["title"] = "Add User";
+    Layout = "_AdminLayout";
+}
+
+<div class="col-xl-12" style=" display: flex; justify-content: space-between;">
+
+    <h2>@ViewData["title"]</h2>
+
+    <p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUser">
+            AddUser
+        </button>
+    </p>
+</div>
+
+<!-- Modal for Add Data -->
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUserLabel">Add Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form action="#" name="add">
+
+                    <div class="mb-3">
+                        <label for="Username" class="form-label">Username : </label>
+                        <input id="Username" type="text" name="Username" class="form-control" autocomplete="off" maxlength="50" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email : </label>
+                        <input id="Email" type="email" name="Email" class="form-control" autocomplete="off" maxlength="50" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="SPassword" class="form-label">Password : </label>
+                        <input id="SPassword" type="text" name="SPassword" class="form-control" autocomplete="off" maxlength="30" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ConfirmSPassword" class="form-label">Confirm Password : </label>
+                        <input id="ConfirmSPassword" type="text" name="ConfirmSPassword" class="form-control" autocomplete="off" maxlength="30" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Role" class="form-label">Role : </label>
+                        <input id="Role" type="text" name="Role" class="form-control" autocomplete="off" maxlength="30" required />
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" onclick="addUser()" action="#" class="btn btn-success">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Update Data -->
+<div class="modal fade" id="updateUser" tabindex="-1" aria-labelledby="updateUserModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateUserModalLabel">Update User Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form>
+
+                    <input hidden id="u_Id" name="Id" />
+
+                    <div class="mb-3">
+                        <label for="Username" class="form-label">Username : </label>
+                        <input id="u_Username" type="text" name="Username" class="form-control" autocomplete="off" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email : </label>
+                        <input id="u_Email" type="email" name="Email" class="form-control" autocomplete="off" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="SPassword" class="form-label">Password : </label>
+                        <input id="u_SPassword" type="text" name="SPassword" class="form-control" autocomplete="off" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ConfirmPassword" class="form-label">Confirm Password : </label>
+                        <input id="u_ConfirmPassword" type="text" name="ConfirmPassword" class="form-control" autocomplete="off" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Role" class="form-label">Role : </label>
+                        <input id="u_Role" type="text" name="Role" class="form-control" autocomplete="off" required />
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="updateUser()" class="btn btn-success">Save changes</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal for View Data -->
+<div class="modal fade" id="viewUser" tabindex="-1" aria-labelledby="viewUserModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewUserModalLabel">Employee View</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form>
+
+                    <input id="v_Id" name="Id" hidden />
+
+                    <div class="mb-3">
+                        <label for="Username" class="form-label">Username : </label>
+                        <input id="v_Username" type="text" name="Username" class="form-control" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email : </label>
+                        <input id="v_Email" type="text" name="Email" class="form-control" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="SPassword" class="form-label">Password : </label>
+                        <input id="v_SPassword" type="text" name="SPassword" class="form-control" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ConfirmPassword" class="form-label">Confirm Password : </label>
+                        <input id="v_ConfirmPassword" type="text" name="ConfirmPassword" class="form-control" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Role" class="form-label">Role : </label>
+                        <input id="v_Role" type="text" name="Role" class="form-control" readonly />
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-striped" id="myTable" style="width=100% !important">
+    <thead class="table-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Username)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.SPassword)</th>
+            <th>@Html.DisplayNameFor(model => model.ConfirmSPassword)</th>
+            <th>@Html.DisplayNameFor(model => model.Role)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+
+<script>
+
+    $(document).ready(function () {
+
+        getAdmin_UserList();
+    });
+
+    var datatable;
+
+    function getAddEventList() {
+        $.ajax({
+
+            type: "Get",
+            url: "/Admin_User/ListAdmin_User",
+            success: function (data) {
+
+                debugger;
+                datatable = $('#myTable').DataTable({
+                    data: data,
+                    columns: [
+                        { data: 'Id' },
+                        { data: 'Username' },
+                        { data: 'Email' },
+                        { data: 'Spassword' },
+                        { data: 'ConfirmPassword' },
+                        { data: 'Role' },
+                        {
+                            data: null,
+                            render: function (data, type, row) {
+
+                                return '<div class="btn-group" role="group" aria-label="Basic mixed styles example"><button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fa-solid fa-pen"></i></button><button type="button" onclick="deleteEventData(' + row.Id + ')" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal"><i class="fa-solid fa-eye"></i></button></div>';
+
+                            }
+                        },
+
+                    ]
+                });
+
+            },
+            error: function (textStatus, errorThrown) {
+                Success = false;
+            }
+
+        });
+    }
+
+    addUser() {
+
+        debugger;
+
+        var eventObj = {
+            Username: $('#Username').val(),
+            Email: $('#Email').val(),
+            SPassword: $('#SPassword').val(),
+            ConfirmPassword: $('#ConfirmPassword').val(),
+            Role: $('#Role').val(),
+        }
+
+        var formData = new FormData();
+        formData.append("model", JSON.stringify(eventObj));
+
+        $.ajax({
+            url: "/Admain_User/Create",
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            type: "POST",
+            success: function (data) {
+                debugger;
+
+                $('#addUser').modal('hide');
+
+                // clearForm();
+
+                Swal.fire({
+                    title: "Good job!",
+                    text: "User saved successfully!",
+                    icon: "success",
+                    button: "Ok",
+                });
+
+                datatable.destroy();
+                getAdmin_UserList();
+
+            },
+            error: function (errorThrown) {
+                console.log("Error saving event:", errorThrown);
+                Swal.fire("Oops", "An error occurred while saving your data, Please try again later.", "error");
+            }
+        });
+    }
+
+  
+
+</script>

@@ -28,12 +28,12 @@ namespace Event_Management_App.BussinessManager.BAL
             return _IAddEventDAL.AddEvent(addeventmodel);
         }
 
-        public AddEventModel PopulateEventData(string ID)
+        public AddEventModel PopulateEventData(int ID)
         {
             return _IAddEventDAL.PopulateEventData(ID);
         }
 
-        public AddEventModel UpdateEventData(AddEventModel addeventmodel, string ID, IFormFile file)
+        public AddEventModel UpdateEventData(AddEventModel addeventmodel, int ID, IFormFile file)
         {
             addeventmodel.Id = ID;
 
@@ -54,7 +54,7 @@ namespace Event_Management_App.BussinessManager.BAL
 
         }
 
-        public void DeleteEventData(string ID)
+        public void DeleteEventData(int ID)
         {
             string existingImage = _IAddEventDAL.GetDBImagebyID(ID);
 

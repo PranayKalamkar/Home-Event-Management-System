@@ -25,7 +25,7 @@ namespace Event_Management_App.DataManager.DAL
             {
                 AddEventModel addeventmodel = new AddEventModel();
 
-                addeventmodel.Id = item["Id"].ConvertDBNullToString();
+                addeventmodel.Id = item["Id"].ConvertDBNullToInt();
                 addeventmodel.Category = item["Category"].ConvertDBNullToString();
                 addeventmodel.Location = item["Location"].ConvertDBNullToString();
                 addeventmodel.Capacity = item["Capacity"].ConvertDBNullToString();
@@ -45,7 +45,6 @@ namespace Event_Management_App.DataManager.DAL
         {
             _dBManager.InitDbCommand("AddEventInsert", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("@Id",addeventmodel.Id);
             _dBManager.AddCMDParam("@Category",addeventmodel.Category);
             _dBManager.AddCMDParam("@Location",addeventmodel.Location);
             _dBManager.AddCMDParam("@Capacity",addeventmodel.Capacity);
@@ -62,7 +61,7 @@ namespace Event_Management_App.DataManager.DAL
             return addeventmodel;
         }
 
-        public string GetDBImagebyID(string ID)
+        public string GetDBImagebyID(int ID)
         {
             string existingImage = null;
 
@@ -80,7 +79,7 @@ namespace Event_Management_App.DataManager.DAL
             return existingImage;
         }
 
-        public AddEventModel PopulateEventData(string ID)
+        public AddEventModel PopulateEventData(int ID)
         {
             _dBManager.InitDbCommand("GetAddEventbyId", CommandType.StoredProcedure);
 
@@ -94,7 +93,7 @@ namespace Event_Management_App.DataManager.DAL
             {
                 addeventmodel = new AddEventModel();
 
-                addeventmodel.Id = item["Id"].ConvertDBNullToString();
+                addeventmodel.Id = item["Id"].ConvertDBNullToInt();
                 addeventmodel.Category = item["Category"].ConvertDBNullToString();
                 addeventmodel.Location = item["Location"].ConvertDBNullToString();
                 addeventmodel.Capacity = item["Capacity"].ConvertDBNullToString();
@@ -112,7 +111,7 @@ namespace Event_Management_App.DataManager.DAL
         {
             _dBManager.InitDbCommand("UpdateaddEventById", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("Id", addeventmodel.Id);
+            _dBManager.AddCMDParam("u_Id", addeventmodel.Id);
             _dBManager.AddCMDParam("Category", addeventmodel.Category);
             _dBManager.AddCMDParam("Location", addeventmodel.Location);
             _dBManager.AddCMDParam("Capacity", addeventmodel.Capacity);
@@ -128,11 +127,11 @@ namespace Event_Management_App.DataManager.DAL
             return addeventmodel;
         }
 
-        public void DeleteEventData(string ID)
+        public void DeleteEventData(int ID)
         {
             _dBManager.InitDbCommand("DeleteAddEventById", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("@Id", ID);
+            _dBManager.AddCMDParam("@deleteId", ID);
 
             _dBManager.ExecuteNonQuery();
         }
