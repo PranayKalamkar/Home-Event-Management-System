@@ -27,7 +27,7 @@
 
             <div class="modal-body">
 
-                <form action="#" name="add">
+                <form id="create" action="#" name="add">
 
                     <div class="mb-3">
                         <label for="Username" class="form-label">Username : </label>
@@ -41,17 +41,12 @@
 
                     <div class="mb-3">
                         <label for="SPassword" class="form-label">Password : </label>
-                        <input id="SPassword" type="text" name="SPassword" class="form-control" autocomplete="off" maxlength="30" required />
+                        <input id="SPassword" type="password" name="SPassword" class="form-control" autocomplete="off" maxlength="30" required />
                     </div>
 
                     <div class="mb-3">
                         <label for="ConfirmSPassword" class="form-label">Confirm Password : </label>
-                        <input id="ConfirmSPassword" type="text" name="ConfirmSPassword" class="form-control" autocomplete="off" maxlength="30" required />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="Role" class="form-label">Role : </label>
-                        <input id="Role" type="text" name="Role" class="form-control" autocomplete="off" maxlength="30" required />
+                        <input id="ConfirmSPassword" type="password" name="ConfirmSPassword" class="form-control" autocomplete="off" maxlength="30" required />
                     </div>
 
                 </form>
@@ -174,28 +169,32 @@
             <th>@Html.DisplayNameFor(model => model.Id)</th>
             <th>@Html.DisplayNameFor(model => model.Username)</th>
             <th>@Html.DisplayNameFor(model => model.Email)</th>
-            <th>@Html.DisplayNameFor(model => model.SPassword)</th>
-            <th>@Html.DisplayNameFor(model => model.ConfirmSPassword)</th>
-            <th>@Html.DisplayNameFor(model => model.Role)</th>
             <th>Actions</th>
         </tr>
     </thead>
 </table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
 
 <script>
 
     $(document).ready(function () {
 
         getAdmin_UserList();
+
     });
 
     var datatable;
 
-    function getAddEventList() {
+    function getAdmin_UserList() {
         $.ajax({
 
             type: "Get",
-            url: "/Admin_User/ListAdmin_User",
+            url: "/Admin_User/GetAdmin_User",
             success: function (data) {
 
                 debugger;
@@ -205,14 +204,11 @@
                         { data: 'Id' },
                         { data: 'Username' },
                         { data: 'Email' },
-                        { data: 'Spassword' },
-                        { data: 'ConfirmPassword' },
-                        { data: 'Role' },
                         {
                             data: null,
                             render: function (data, type, row) {
 
-                                return '<div class="btn-group" role="group" aria-label="Basic mixed styles example"><button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fa-solid fa-pen"></i></button><button type="button" onclick="deleteEventData(' + row.Id + ')" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal"><i class="fa-solid fa-eye"></i></button></div>';
+                                return '<button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEvent" style="margin-right: 10px;">Edit</button><button type="button" onclick="deleteEventData(' + row.Id + ')" class="btn btn-danger" style="margin-right: 10px;" >Delete</button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">Disable</button>';
 
                             }
                         },
@@ -228,53 +224,60 @@
         });
     }
 
-    addUser() {
+    function addUser() {
 
-        debugger;
+        if ($("#create").valid()) {
 
-        var eventObj = {
-            Username: $('#Username').val(),
-            Email: $('#Email').val(),
-            SPassword: $('#SPassword').val(),
-            ConfirmPassword: $('#ConfirmPassword').val(),
-            Role: $('#Role').val(),
-        }
+            debugger;
 
-        var formData = new FormData();
-        formData.append("model", JSON.stringify(eventObj));
-
-        $.ajax({
-            url: "/Admain_User/Create",
-            data: formData,
-            processData: false,
-            contentType: false,
-            cache: false,
-            type: "POST",
-            success: function (data) {
-                debugger;
-
-                $('#addUser').modal('hide');
-
-                // clearForm();
-
-                Swal.fire({
-                    title: "Good job!",
-                    text: "User saved successfully!",
-                    icon: "success",
-                    button: "Ok",
-                });
-
-                datatable.destroy();
-                getAdmin_UserList();
-
-            },
-            error: function (errorThrown) {
-                console.log("Error saving event:", errorThrown);
-                Swal.fire("Oops", "An error occurred while saving your data, Please try again later.", "error");
+            var eventObj = {
+                Username: $('#Username').val(),
+                Email: $('#Email').val(),
+                SPassword: $('#SPassword').val(),
+                ConfirmSPassword: $('#ConfirmSPassword').val(),
             }
-        });
+
+            var formData = new FormData();
+            formData.append("model", JSON.stringify(eventObj));
+
+            $.ajax({
+                url: "/Admin_User/AddAdmin_UserPost",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                type: "POST",
+                success: function (data) {
+                    debugger;
+
+                    $('#addUser').modal('hide');
+
+                    // clearForm();
+
+                    if (data.status === "success") {
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "User saved successfully!",
+                            icon: "success",
+                            button: "Ok",
+                        });
+                    }
+                    else if (data.status === "warning") {
+                        alert(data.message);
+                    }
+
+                    datatable.destroy();
+                    getAdmin_UserList();
+
+                },
+                error: function (errorThrown) {
+                    console.log("Error saving User:", errorThrown);
+                    Swal.fire("Oops", "An error occurred while saving your data, Please try again later.", "error");
+                }
+            });
+        }
     }
 
-  
+
 
 </script>

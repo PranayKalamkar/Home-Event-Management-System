@@ -19,7 +19,7 @@ namespace Event_Management_App.DataManager.DAL
         {
             List<Admin_UserModel> userList = new List<Admin_UserModel>();
 
-            _dBManager.InitDbCommand("GetAllUser", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("GetAllAdmin_User", CommandType.StoredProcedure);
 
             DataSet ds = _dBManager.ExecuteDataSet();
 
@@ -30,8 +30,6 @@ namespace Event_Management_App.DataManager.DAL
                 model.Id = item["Id"].ConvertDBNullToInt();
                 model.Username = item["Username"].ConvertDBNullToString();
                 model.Email = item["Email"].ConvertDBNullToString();
-                model.SPassword = item["SPassword"].ConvertDBNullToString();
-                model.Role = item["Role"].ConvertDBNullToString();
 
                 userList.Add(model);
 
@@ -45,7 +43,7 @@ namespace Event_Management_App.DataManager.DAL
         {
             sign.SPassword = sign.SPassword + _dBManager.getSalt();
 
-            _dBManager.InitDbCommand("InsertUser", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("InsertAdmin_User", CommandType.StoredProcedure);
 
             _dBManager.AddCMDParam("@Username", sign.Username);
             _dBManager.AddCMDParam("@Email", sign.Email);
@@ -87,8 +85,7 @@ namespace Event_Management_App.DataManager.DAL
 
                 adminusermodel.Id = item["Id"].ConvertDBNullToInt();
                 adminusermodel.Username = item["Username"].ConvertDBNullToString();
-                adminusermodel.SPassword = item["SPassword"].ConvertDBNullToString();
-                adminusermodel.Role= item["Role"].ConvertDBNullToString();
+                adminusermodel.Email = item["Email"].ConvertDBNullToString();
             }
             return adminusermodel;
         }
@@ -100,9 +97,6 @@ namespace Event_Management_App.DataManager.DAL
             _dBManager.AddCMDParam("Id", adminusermodel.Id);
             _dBManager.AddCMDParam("Username", adminusermodel.Username);
             _dBManager.AddCMDParam("Email", adminusermodel.Email);
-            _dBManager.AddCMDParam("SPassword", adminusermodel.SPassword);
-            _dBManager.AddCMDParam("ConfirmSPassword", adminusermodel.ConfirmSPassword);
-            _dBManager.AddCMDParam("Role", adminusermodel.Role);
 
             _dBManager.ExecuteNonQuery();
 

@@ -1,0 +1,51 @@
+﻿using Event_Management_App.BussinessManager.IBAL;
+using Event_Management_App.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+
+namespace Event_Management_App.Controllers
+{
+    public class Admin_UserController : Controller
+    {
+        readonly IAdmin_UserBAL _IAdmin_UserBAL;
+
+        public Admin_UserController(IAdmin_UserBAL admin_userBAL)
+        {
+            _IAdmin_UserBAL = admin_userBAL;
+        }
+
+        public IActionResult Admin_User()
+        {
+            return View();
+        }
+
+        public IActionResult GetAdmin_User()
+        {
+            return Json(_IAdmin_UserBAL.GetAdmin_UserList());
+        }
+
+        public IActionResult AddAdmin_User(string model)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddAdmin_UserPost(string model)
+        {
+            Admin_UserModel admin_user = JsonSerializer.Deserialize<Admin_UserModel>(model)!;
+
+            if(ModelState.IsValid) 
+            {
+                var result = _IAdmin_UserBAL.AddAdmin_User(admin_user);
+
+                if(result == "Exist")
+                {
+                    Json(new { status = "warning", message = "Email Id Already Exists!" });
+                }
+
+            }
+
+            return Json(new { status = "success", message = "User add successfully!" });
+        }
+    }
+}

@@ -15,6 +15,7 @@ namespace Event_Management_App.Extension
             //services.AddScoped<IEmployeeBAL, EmployeeBAL>;
             services.AddScoped<IEventBAL, EventBAL>();
             services.AddScoped<IAddEventBAL, AddEventBAL>();
+            services.AddScoped<IAdmin_UserBAL, Admin_UserBAL>();
 
             return services;
         }

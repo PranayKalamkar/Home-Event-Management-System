@@ -6,6 +6,12 @@ namespace Event_Management_App.DataManager.IDAL
     {
         public List<Admin_UserModel> GetAdmin_UserList();
 
+        public Admin_UserModel AddAdmin_User(Admin_UserModel sign);
 
+        public bool CheckEmailExist(string emailId);
+
+        public Admin_UserModel PopulateAdmin_UserData(int ID);
+
+        public Admin_UserModel UpdateAdmin_UsertData(Admin_UserModel adminusermodel);
     }
 }
