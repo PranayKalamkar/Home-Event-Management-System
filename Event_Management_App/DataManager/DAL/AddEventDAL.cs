@@ -107,11 +107,11 @@ namespace Event_Management_App.DataManager.DAL
             return addeventmodel;
         }
 
-        public AddEventModel UpdateEventData(AddEventModel addeventmodel)
+        public AddEventModel UpdateEventData(AddEventModel addeventmodel, int ID)
         {
             _dBManager.InitDbCommand("UpdateaddEventById", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("u_Id", addeventmodel.Id);
+            _dBManager.AddCMDParam("u_Id", ID);
             _dBManager.AddCMDParam("Category", addeventmodel.Category);
             _dBManager.AddCMDParam("Location", addeventmodel.Location);
             _dBManager.AddCMDParam("Capacity", addeventmodel.Capacity);

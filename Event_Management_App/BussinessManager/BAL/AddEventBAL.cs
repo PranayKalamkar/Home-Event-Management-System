@@ -35,7 +35,6 @@ namespace Event_Management_App.BussinessManager.BAL
 
         public AddEventModel UpdateEventData(AddEventModel addeventmodel, int ID, IFormFile file)
         {
-            addeventmodel.Id = ID;
 
             addeventmodel.ImageFile = file;
 
@@ -50,7 +49,7 @@ namespace Event_Management_App.BussinessManager.BAL
                 addeventmodel.ImagePath = existingImage;
             }
 
-            return _IAddEventDAL.UpdateEventData(addeventmodel);
+            return _IAddEventDAL.UpdateEventData(addeventmodel, ID);
 
         }
 

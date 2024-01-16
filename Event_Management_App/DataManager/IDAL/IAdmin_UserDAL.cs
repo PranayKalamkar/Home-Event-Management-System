@@ -12,6 +12,8 @@ namespace Event_Management_App.DataManager.IDAL
 
         public Admin_UserModel PopulateAdmin_UserData(int ID);
 
-        public Admin_UserModel UpdateAdmin_UsertData(Admin_UserModel adminusermodel);
+        public Admin_UserModel UpdateAdmin_UserData(Admin_UserModel adminusermodel, int ID);
+
+        public void DeleteAdmin_UserData(int ID);
     }
 }

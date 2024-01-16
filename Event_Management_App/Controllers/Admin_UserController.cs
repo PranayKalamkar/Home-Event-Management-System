@@ -40,12 +40,44 @@ namespace Event_Management_App.Controllers
 
                 if(result == "Exist")
                 {
-                    Json(new { status = "warning", message = "Email Id Already Exists!" });
+                    return Json(new { status = "warning", message = "Email Id Already Exists!" });
                 }
 
             }
 
             return Json(new { status = "success", message = "User add successfully!" });
+        }
+
+        [HttpGet]
+        public IActionResult PopulateAdmin_User(int ID)
+        {
+            return Json(_IAdmin_UserBAL.PopulateAdmin_UserData(ID));
+        }
+
+        [HttpPost]
+        public IActionResult UpdateAdmin_User(string model, int ID)
+        {
+            Admin_UserModel admin_user = JsonSerializer.Deserialize<Admin_UserModel>(model)!;
+
+            if (ModelState.IsValid)
+            {
+                var result = _IAdmin_UserBAL.UpdateAdmin_UserData(admin_user, ID);
+
+                if (result == "Exist")
+                {
+                    return Json(new { status = "warning", message = "Email Id Already Exists!" });
+                }
+
+            }
+
+            return Json(new { status = "success", message = "User Update successfully!" });
+        }
+
+        public IActionResult DeleteAdmin_User(int ID)
+        {
+            _IAdmin_UserBAL.DeleteAdmin_UserData(ID);
+
+            return Json("Admin_User");
         }
     }
 }

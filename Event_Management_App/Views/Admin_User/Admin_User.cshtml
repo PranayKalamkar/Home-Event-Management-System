@@ -63,7 +63,7 @@
 
 <!-- Modal for Update Data -->
 <div class="modal fade" id="updateUser" tabindex="-1" aria-labelledby="updateUserModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="updateUserModalLabel">Update User Details</h5>
@@ -72,7 +72,7 @@
 
             <div class="modal-body">
 
-                <form>
+                <form id="update">
 
                     <input hidden id="u_Id" name="Id" />
 
@@ -84,21 +84,6 @@
                     <div class="mb-3">
                         <label for="Email" class="form-label">Email : </label>
                         <input id="u_Email" type="email" name="Email" class="form-control" autocomplete="off" required />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="SPassword" class="form-label">Password : </label>
-                        <input id="u_SPassword" type="text" name="SPassword" class="form-control" autocomplete="off" required />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="ConfirmPassword" class="form-label">Confirm Password : </label>
-                        <input id="u_ConfirmPassword" type="text" name="ConfirmPassword" class="form-control" autocomplete="off" required />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="Role" class="form-label">Role : </label>
-                        <input id="u_Role" type="text" name="Role" class="form-control" autocomplete="off" required />
                     </div>
 
                 </form>
@@ -163,7 +148,7 @@
 </div>
 
 
-<table class="table table-striped" id="myTable" style="width=100% !important">
+@* <table class="table table-striped" id="myTable" style="width=100% !important">
     <thead class="table-dark">
         <tr>
             <th>@Html.DisplayNameFor(model => model.Id)</th>
@@ -172,7 +157,22 @@
             <th>Actions</th>
         </tr>
     </thead>
-</table>
+</table> *@
+
+<div class="card w-100 shadow-sm">
+    <div class="card-body">
+        <table class="table table-bordered" id="myTable" style="width:100% !important">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.Username)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
 
 @section Scripts {
     @{
@@ -208,7 +208,7 @@
                             data: null,
                             render: function (data, type, row) {
 
-                                return '<button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEvent" style="margin-right: 10px;">Edit</button><button type="button" onclick="deleteEventData(' + row.Id + ')" class="btn btn-danger" style="margin-right: 10px;" >Delete</button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">Disable</button>';
+                                return '<button type="button" onclick="populateadmin_userData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateUser" style="margin-right: 10px;">Edit</button><button type="button" onclick="deleteadmin_userData(' + row.Id + ')" class="btn btn-danger" style="margin-right: 10px;" >Delete</button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">Disable</button>';
 
                             }
                         },
@@ -278,6 +278,136 @@
         }
     }
 
+    function populateadmin_userData(ID) {
+        debugger;
 
+        $.ajax({
+
+            type: "GET",
+            url: "/Admin_User/PopulateAdmin_User/" + ID,
+
+            success: function (admin_user) {
+                debugger;
+
+                // Populate the form with the received employee details
+                $('#u_Id').val(admin_user.Id);
+                $('#u_Username').val(admin_user.Username);
+                $('#u_Email').val(admin_user.Email);
+
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+    function updateUser() {
+
+        if ($("#update").valid()) {
+
+            debugger;
+
+            var admin_userID = {
+                id: $('#u_Id').val(),
+            }
+
+            debugger;
+
+            var admin_userData = {
+                Username: $('#u_Username').val(),
+                Email: $('#u_Email').val(),
+            };
+
+            debugger;
+
+            var formData = new FormData();
+            formData.append("ID", admin_userID.id);
+            formData.append("model", JSON.stringify(admin_userData));
+
+            debugger;
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin_User/UpdateAdmin_User",
+                data: formData,
+                contentType: false,
+                processData: false,
+                cache: false,
+
+                success: function (data) {
+
+                    $('#updateUser').modal('hide');
+
+
+                    if (data.status === "success") {
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "User updated successfully!",
+                            icon: "success",
+                            button: "Ok",
+                        });
+                    }
+                    else if (data.status === "warning") {
+                        alert(data.message);
+                    }
+
+                    datatable.destroy();
+                    getAdmin_UserList();
+                },
+                error: function (errormessage) {
+                    Swal.fire({
+                        title: "Error updating event!",
+                        text: "close",
+                        icon: "Error"
+                    });
+                }
+            });
+        }
+    }
+
+    function deleteadmin_userData(ID) {
+        debugger;
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Admin_User/DeleteAdmin_User/" + ID,
+                    success: function (result) {
+
+                        datatable.destroy();
+                        getAdmin_UserList();
+
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+
+                    },
+                    error: function (errormessage) {
+
+                        Swal.fire({
+                            title: "Error Delete employee!",
+                            text: "close",
+                            icon: "Error"
+                        });
+
+                    }
+                });
+
+            }
+        });
+    }
 
 </script>

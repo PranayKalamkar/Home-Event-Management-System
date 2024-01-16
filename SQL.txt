@@ -169,3 +169,55 @@ BEGIN
 		ImagePath = ImagePath
     WHERE Id = Id;
 END
+
+Delimiter //
+CREATE PROCEDURE `GetAllAdmin_User`()
+begin
+	select * from SignUp;
+end //
+Delimiter ;
+
+Delimiter //
+CREATE PROCEDURE InsertAdmin_User(
+	IN UserName varchar(100),
+	IN Email varchar(100),
+	IN SPassword varchar(100),
+    IN AccessRole varchar(100)
+)
+BEGIN
+	INSERT INTO SignUp(Username, Email, SPassword, AccessRole)
+	VALUES(UserName,Email,md5(SPassword), AccessRole); 
+END //
+Delimiter ;
+
+Delimiter //
+CREATE PROCEDURE GetAdmin_UserbyId(in id int)
+BEGIN
+	select * from SignUp where Id = id;
+END //
+Delimiter ;
+
+Delimiter //
+CREATE PROCEDURE Updateadmin_userById(
+    IN u_Id int,
+    IN Username varchar(50),
+    IN Email varchar(50)
+)
+BEGIN
+    UPDATE addevent
+    SET
+		Username = Username,
+		Email = Email
+    WHERE Id = u_Id;
+END //
+Delimiter ;
+
+Delimiter //
+CREATE PROCEDURE `Deleteadmin_userById`(
+    IN deleteId int
+)
+BEGIN
+    DELETE FROM signup
+    WHERE Id = deleteId;
+END //
+delimiter ;

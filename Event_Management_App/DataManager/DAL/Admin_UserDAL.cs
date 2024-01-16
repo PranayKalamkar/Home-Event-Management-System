@@ -71,11 +71,11 @@ namespace Event_Management_App.DataManager.DAL
 
         public Admin_UserModel PopulateAdmin_UserData(int ID)
         {
-            _dBManager.InitDbCommand("", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("GetAdmin_UserbyId", CommandType.StoredProcedure);
 
             Admin_UserModel adminusermodel = null;
 
-            _dBManager.AddCMDParam("@id", ID);
+            _dBManager.AddCMDParam("@p_id", ID);
 
             DataSet ds = _dBManager.ExecuteDataSet();
 
@@ -90,11 +90,11 @@ namespace Event_Management_App.DataManager.DAL
             return adminusermodel;
         }
 
-        public Admin_UserModel UpdateAdmin_UsertData(Admin_UserModel adminusermodel)
+        public Admin_UserModel UpdateAdmin_UserData(Admin_UserModel adminusermodel, int ID)
         {
-            _dBManager.InitDbCommand("", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("Updateadmin_userById", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("Id", adminusermodel.Id);
+            _dBManager.AddCMDParam("u_Id", ID);
             _dBManager.AddCMDParam("Username", adminusermodel.Username);
             _dBManager.AddCMDParam("Email", adminusermodel.Email);
 
@@ -103,6 +103,14 @@ namespace Event_Management_App.DataManager.DAL
             return adminusermodel;
         }
 
-      
+        public void DeleteAdmin_UserData(int ID)
+        {
+            _dBManager.InitDbCommand("Deleteadmin_userById", CommandType.StoredProcedure);
+
+            _dBManager.AddCMDParam("@deleteId", ID);
+
+            _dBManager.ExecuteNonQuery();
+        }
+
     }
 }

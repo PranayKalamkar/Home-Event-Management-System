@@ -34,5 +34,30 @@ namespace Event_Management_App.BussinessManager.BAL
 
             return "Success";
         }
+
+        public Admin_UserModel PopulateAdmin_UserData(int ID)
+        {
+            return _IAdmin_UserDAL.PopulateAdmin_UserData(ID);
+        }
+
+        public string UpdateAdmin_UserData(Admin_UserModel adminusermodel, int ID)
+        {
+
+            bool emailExist = _IAdmin_UserDAL.CheckEmailExist(adminusermodel.Email);
+
+            if (emailExist)
+            {
+                return "Exist";
+            }
+
+            _IAdmin_UserDAL.UpdateAdmin_UserData(adminusermodel,ID);
+
+            return "Success";
+        }
+
+        public void DeleteAdmin_UserData(int ID)
+        {
+            _IAdmin_UserDAL.DeleteAdmin_UserData(ID);
+        }
     }
 }
