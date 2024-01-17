@@ -21,7 +21,7 @@ namespace Event_Management_App.BussinessManager.BAL
 
         public string AddAdmin_User(Admin_UserModel sign)
         {
-            sign.Role = "User";
+            sign.Role = 2;
 
             bool emailExist = _IAdmin_UserDAL.CheckEmailExist(sign.Email);
 

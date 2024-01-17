@@ -26,6 +26,6 @@ namespace Event_Management_App.Models
         public string? ConfirmSPassword { get; set; }
 
         [Required]
-        public string? Role { get; set; }
+        public int Role { get; set; }
     }
 }

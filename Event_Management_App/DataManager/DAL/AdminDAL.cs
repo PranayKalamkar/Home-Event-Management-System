@@ -5,27 +5,26 @@ using System.Data;
 
 namespace Event_Management_App.DataManager.DAL
 {
-    public class Admin_UserDAL : IAdmin_UserDAL
+    public class AdminDAL : IAdminDAL
     {
-
         readonly IDBManager _dBManager;
 
-        public Admin_UserDAL(IDBManager dbManager)
+        public AdminDAL(IDBManager dbManager)
         {
             _dBManager = dbManager;
         }
 
-        public List<Admin_UserModel> GetAdmin_UserList()
+        public List<AdminModel> GetAdminList()
         {
-            List<Admin_UserModel> userList = new List<Admin_UserModel>();
+            List<AdminModel> userList = new List<AdminModel>();
 
-            _dBManager.InitDbCommand("GetAllAdmin_User", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("GetAllAdmin", CommandType.StoredProcedure);
 
             DataSet ds = _dBManager.ExecuteDataSet();
 
             foreach (DataRow item in ds.Tables[0].Rows)
             {
-                Admin_UserModel model = new Admin_UserModel();
+                AdminModel model = new AdminModel();
 
                 model.Id = item["Id"].ConvertDBNullToInt();
                 model.Username = item["Username"].ConvertDBNullToString();
@@ -39,11 +38,11 @@ namespace Event_Management_App.DataManager.DAL
 
         }
 
-        public Admin_UserModel AddAdmin_User(Admin_UserModel sign)
+        public AdminModel AddAdmin(AdminModel sign)
         {
             sign.SPassword = sign.SPassword + _dBManager.getSalt();
 
-            _dBManager.InitDbCommand("InsertAdmin_User", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("InsertAdmin", CommandType.StoredProcedure);
 
             _dBManager.AddCMDParam("@Username", sign.Username);
             _dBManager.AddCMDParam("@Email", sign.Email);
@@ -69,11 +68,11 @@ namespace Event_Management_App.DataManager.DAL
             return emailExist;
         }
 
-        public Admin_UserModel PopulateAdmin_UserData(int ID)
+        public AdminModel PopulateAdminData(int ID)
         {
-            _dBManager.InitDbCommand("GetAdmin_UserbyId", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("GetAdminbyId", CommandType.StoredProcedure);
 
-            Admin_UserModel adminusermodel = null;
+            AdminModel adminmodel = null;
 
             _dBManager.AddCMDParam("@p_id", ID);
 
@@ -81,36 +80,35 @@ namespace Event_Management_App.DataManager.DAL
 
             foreach (DataRow item in ds.Tables[0].Rows)
             {
-                adminusermodel = new Admin_UserModel();
+                adminmodel = new AdminModel();
 
-                adminusermodel.Id = item["Id"].ConvertDBNullToInt();
-                adminusermodel.Username = item["Username"].ConvertDBNullToString();
-                adminusermodel.Email = item["Email"].ConvertDBNullToString();
+                adminmodel.Id = item["Id"].ConvertDBNullToInt();
+                adminmodel.Username = item["Username"].ConvertDBNullToString();
+                adminmodel.Email = item["Email"].ConvertDBNullToString();
             }
-            return adminusermodel;
+            return adminmodel;
         }
 
-        public Admin_UserModel UpdateAdmin_UserData(Admin_UserModel adminusermodel, int ID)
+        public AdminModel UpdateAdminData(AdminModel adminmodel, int ID)
         {
-            _dBManager.InitDbCommand("Updateadmin_userById", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("UpdateadminById", CommandType.StoredProcedure);
 
             _dBManager.AddCMDParam("u_Id", ID);
-            _dBManager.AddCMDParam("Username", adminusermodel.Username);
-            _dBManager.AddCMDParam("Email", adminusermodel.Email);
+            _dBManager.AddCMDParam("Username", adminmodel.Username);
+            _dBManager.AddCMDParam("Email", adminmodel.Email);
 
             _dBManager.ExecuteNonQuery();
 
-            return adminusermodel;
+            return adminmodel;
         }
 
-        public void DeleteAdmin_UserData(int ID)
+        public void DeleteAdminData(int ID)
         {
-            _dBManager.InitDbCommand("Deleteadmin_userById", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("DeleteadminById", CommandType.StoredProcedure);
 
             _dBManager.AddCMDParam("@deleteId", ID);
 
             _dBManager.ExecuteNonQuery();
         }
-
     }
 }

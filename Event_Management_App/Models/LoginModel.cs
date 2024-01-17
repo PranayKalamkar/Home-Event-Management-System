@@ -2,7 +2,7 @@
 {
     public class LoginModel
     {
-        public string GetRole { get; set; }
+        public int GetRole { get; set; }
         public string ExistingPassword { get; set; }
         public string GetPassword { get; set; }
         public bool EmailExist { get; set; }
