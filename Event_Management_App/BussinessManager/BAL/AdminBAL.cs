@@ -23,7 +23,7 @@ namespace Event_Management_App.BussinessManager.BAL
         {
             sign.Role = 1;
 
-            bool emailExist = _IAdminDAL.CheckEmailExist(sign.Email);
+            bool emailExist = _IAdminDAL.CheckEmailExist(sign.Email, sign.Id);
 
             if (emailExist)
             {
@@ -43,7 +43,7 @@ namespace Event_Management_App.BussinessManager.BAL
         public string UpdateAdminData(AdminModel adminmodel, int ID)
         {
 
-            bool emailExist = _IAdminDAL.CheckEmailExist(adminmodel.Email);
+            bool emailExist = _IAdminDAL.CheckEmailExist(adminmodel.Email, ID);
 
             if (emailExist)
             {

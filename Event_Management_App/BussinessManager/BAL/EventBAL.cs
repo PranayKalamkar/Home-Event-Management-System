@@ -24,7 +24,7 @@ namespace Event_Management_App.BussinessManager.BAL
         {
             // sign.SPassword = PasswordHash.ComputeMD5(sign.SPassword);
 
-            bool emailExist = _IEventDAL.CheckEmailExist(sign.Email);
+            bool emailExist = _IEventDAL.CheckEmailExist(sign.Email, sign.Id);
 
             if (emailExist)
             {
@@ -36,11 +36,11 @@ namespace Event_Management_App.BussinessManager.BAL
 
         }
 
-        public LoginModel LoginUser(string email, string pass)
+        public LoginModel LoginUser(string email, string pass, int Id)
         {
             LoginModel login = new LoginModel();
 
-            login.EmailExist = _IEventDAL.CheckEmailExist(email);
+            login.EmailExist = _IEventDAL.CheckEmailExist(email,Id);
 
             login.GetPassword = _IEventDAL.GetPassword(pass);
 

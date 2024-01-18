@@ -9,6 +9,6 @@ namespace Event_Management_App.DataManager.IDAL
         public string GetPassword(string pass);
         public int GetRole(string email);
         public string LoginUser(string email);
-        public bool CheckEmailExist(string emailId);
+        public bool CheckEmailExist(string emailId, int ID);
     }
 }

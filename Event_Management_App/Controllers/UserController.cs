@@ -58,14 +58,14 @@ namespace Event_Management_App.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginPost(string Email, string SPassword)
+        public IActionResult LoginPost(string Email, string SPassword, int Id )
         {
             //SignUpModel sign = JsonSerializer.Deserialize<SignUpModel>(model)!;
             LoginModel login = new LoginModel();
 
             if (ModelState.IsValid)
             {
-                login = _IEventBAL.LoginUser(Email, SPassword);
+                login = _IEventBAL.LoginUser(Email, SPassword, Id);
 
                 //Console.WriteLine(result);
                 

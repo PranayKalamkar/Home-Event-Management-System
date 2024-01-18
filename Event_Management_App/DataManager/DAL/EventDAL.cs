@@ -110,11 +110,12 @@ namespace Event_Management_App.DataManager.DAL
             return existingPassword;
         }
 
-        public bool CheckEmailExist(string emailId)
+        public bool CheckEmailExist(string emailId, int ID)
         {
             _dBManager.InitDbCommand("CheckEmailExist", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("@newEmail", emailId);
+            _dBManager.AddCMDParam("@p_EmailId", emailId);
+            _dBManager.AddCMDParam("@p_Id", ID);
 
             var result = _dBManager.ExecuteScalar();
 

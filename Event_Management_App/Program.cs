@@ -49,7 +49,7 @@ namespace Event_Management_App
             //pattern: "{controller=AddEvent}/{action=AddEvent}/{id?}");
             //pattern: "{controller=Login}/{action=Login}/{id?}");
             //pattern: "{controller=User}/{action=SignUp}/{id?}");
-            pattern: "{controller=AdminDashboard}/{action=Dashboard}/{id?}");
+        pattern: "{controller=AdminDashboard}/{action=Dashboard}/{id?}");
 
             app.Run();
         }

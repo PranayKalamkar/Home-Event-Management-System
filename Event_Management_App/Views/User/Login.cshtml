@@ -94,12 +94,12 @@
                     if (data.status === "warning") {
                         alert(data.message);
                     }
-                    else if (data.status === "success" && data.role === "Admin") {
+                    else if (data.status === "success" && data.role === 1) {
                         alert(data.message);
                         // window.location.href = '/User/Dashboard';
                         window.location.href = '/AdminDashboard/Dashboard';
                     }
-                    else if (data.status === "success" && data.role === "User") {
+                    else if (data.status === "success" && data.role === 2) {
                         alert(data.message);
                         // window.location.href = '/User/Dashboard';
                         window.location.href = '/UserPage/UserView';

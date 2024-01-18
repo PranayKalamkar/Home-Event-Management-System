@@ -298,9 +298,9 @@
                             </div>
                         </div>
                         @* <div class="col-md-6">
-                            <div class="mb-3" style="display: flex; flex-direction: column;">
-                                <img id="imagePreviewView" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
-                            </div>
+                        <div class="mb-3" style="display: flex; flex-direction: column;">
+                        <img id="imagePreviewView" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
+                        </div>
                         </div> *@
                     </div>
 
@@ -312,24 +312,25 @@
     </div>
 </div>
 
-
-<table class="table table-striped" id="myTable" style="width=100% !important">
-    <thead class="table-dark">
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Id)</th>
-            <th>@Html.DisplayNameFor(model => model.Category)</th>
-            <th>@Html.DisplayNameFor(model => model.Location)</th>
-            <th>@Html.DisplayNameFor(model => model.Capacity)</th>
-            <th>@Html.DisplayNameFor(model => model.Amount)</th>
-            <th>@Html.DisplayNameFor(model => model.Description)</th>
-            <th>@Html.DisplayNameFor(model => model.Status)</th>
-            <th>@Html.DisplayNameFor(model => model.Address)</th>
-            <th>@Html.DisplayNameFor(model => model.Contact)</th>
-            <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-</table>
+<div class="table-responsive">
+    <table class="table table-striped" id="myTable" style="width:100% !important">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Id)</th>
+                <th>@Html.DisplayNameFor(model => model.Category)</th>
+                <th>@Html.DisplayNameFor(model => model.Location)</th>
+                <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+                <th>@Html.DisplayNameFor(model => model.Amount)</th>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>@Html.DisplayNameFor(model => model.Status)</th>
+                <th>@Html.DisplayNameFor(model => model.Address)</th>
+                <th>@Html.DisplayNameFor(model => model.Contact)</th>
+                <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
 
 <script>
 
@@ -634,8 +635,7 @@
         });
     }
 
-    function clearForm()
-    {
+    function clearForm() {
         $('#Category').val("");
         $('#Location').val("");
         $('#Capacity').val("");

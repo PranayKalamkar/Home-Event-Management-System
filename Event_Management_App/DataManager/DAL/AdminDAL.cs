@@ -55,11 +55,13 @@ namespace Event_Management_App.DataManager.DAL
             return sign;
         }
 
-        public bool CheckEmailExist(string emailId)
+        public bool CheckEmailExist(string emailId, int Id)
         {
             _dBManager.InitDbCommand("CheckEmailExist", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("@newEmail", emailId);
+            _dBManager.AddCMDParam("@p_EmailId", emailId);
+            _dBManager.AddCMDParam("@p_Id", Id);
+
 
             var result = _dBManager.ExecuteScalar();
 

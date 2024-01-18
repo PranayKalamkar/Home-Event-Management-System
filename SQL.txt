@@ -221,3 +221,20 @@ BEGIN
     WHERE Id = deleteId;
 END //
 delimiter ;
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CheckEmailExist`(IN p_EmailId VARCHAR(60), IN p_Id INT)
+BEGIN
+    DECLARE emailExists BOOLEAN;
+    
+    IF p_Id IS NULL THEN
+        SELECT EXISTS(
+		    SELECT 1 FROM SignUp WHERE Email = p_EmailId
+	    ) INTO emailExists;
+    ELSE
+        SELECT EXISTS(
+		    SELECT 1 FROM SignUp WHERE Email = p_EmailId AND Id != p_Id
+	    ) INTO emailExists;
+    END IF;
+    
+    SELECT emailExists AS IsExists;
+END
