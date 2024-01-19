@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Event_Management_App.Models.Admin_UserModel>
 
 @{
-    ViewData["title"] = "Add Admin";
+    ViewData["title"] = "Admin";
     Layout = "_AdminLayout";
 }
 
 <div class="col-xl-12" style=" display: flex; justify-content: space-between;">
 
-    <h2>@ViewData["title"]</h2>
+    <h1>@ViewData["title"]</h1>
 
     <p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAdmin">
@@ -197,7 +197,7 @@
                             data: null,
                             render: function (data, type, row) {
 
-                                return '<button type="button" onclick="populateadminData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateAdmin" style="margin-right: 10px;">Edit</button><button type="button" onclick="deleteadminData(' + row.Id + ')" class="btn btn-danger" style="margin-right: 10px;" >Delete</button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">Disable</button>';
+                                return '<button type="button" onclick="populateadminData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateAdmin" style="margin-right: 10px;">Edit</button><button type="button" onclick="deleteadminData(' + row.Id + ')" class="btn btn-danger" style="margin-right: 10px;" >Delete</button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info d-none" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">Disable</button>';
 
                             }
                         },

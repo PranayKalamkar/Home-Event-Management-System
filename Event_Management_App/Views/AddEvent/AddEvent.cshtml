@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Event_Management_App.Models.AddEventModel>
 
 @{
-    ViewData["title"] = "Add Event";
+    ViewData["title"] = "Event Categories";
     Layout = "_AdminLayout";
 }
 
 <div class="col-xl-12" style=" display: flex; justify-content: space-between;">
 
-    <h2>@ViewData["title"]</h2>
+    <h1>@ViewData["title"]</h1>
 
     <p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEvent">
@@ -312,24 +312,27 @@
     </div>
 </div>
 
+
 <div class="table-responsive">
-    <table class="table table-striped" id="myTable" style="width:100% !important">
-        <thead class="table-dark">
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.Id)</th>
-                <th>@Html.DisplayNameFor(model => model.Category)</th>
-                <th>@Html.DisplayNameFor(model => model.Location)</th>
-                <th>@Html.DisplayNameFor(model => model.Capacity)</th>
-                <th>@Html.DisplayNameFor(model => model.Amount)</th>
-                <th>@Html.DisplayNameFor(model => model.Description)</th>
-                <th>@Html.DisplayNameFor(model => model.Status)</th>
-                <th>@Html.DisplayNameFor(model => model.Address)</th>
-                <th>@Html.DisplayNameFor(model => model.Contact)</th>
-                <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-    </table>
+    <div class="card-body">
+        <table class="table table-bordered" id="myTable" style="width:100% !important">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.Category)</th>
+                    <th>@Html.DisplayNameFor(model => model.Location)</th>
+                    <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+                    <th>@Html.DisplayNameFor(model => model.Amount)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.Status)</th>
+                    <th>@Html.DisplayNameFor(model => model.Address)</th>
+                    <th>@Html.DisplayNameFor(model => model.Contact)</th>
+                    <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </div>
 
 <script>

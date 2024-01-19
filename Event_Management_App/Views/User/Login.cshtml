@@ -13,16 +13,6 @@
 
                 <form id="loginform">
 
-                    @* <div class="input-group">
-                    <input type="email" id="email" name="Email" autocomplete="off" required>
-                    <label for="email">Email:</label>
-                    </div>
-
-                    <div class="input-group">
-                    <input type="password" id="password" name="SPassword" autocomplete="off" required>
-                    <label for="password">Password:</label>
-                    </div> *@
-
                     <div class="input-group">
                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Email..", autocomplete = "off" } })
                         <label asp-for="Email">Email:</label>
