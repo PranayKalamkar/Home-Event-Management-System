@@ -15239,3 +15239,38 @@ button.close:focus {
         width: 100%;
     }
 }
+
+.sidepanel-toggler {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+    .sidepanel-toggler svg {
+        fill: currentColor;
+    }
+
+@media (max-width: 991.98px) {
+    .sidepanel-toggler {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 100;
+    }
+}
+
+.sidepanel-toggler.active {
+    /* Define animation styles here */
+    animation: toggle 0.2s ease-in-out;
+}
+
+@keyframes toggle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
