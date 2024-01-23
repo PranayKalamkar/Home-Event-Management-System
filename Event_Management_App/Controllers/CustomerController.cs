@@ -2,9 +2,9 @@
 
 namespace Event_Management_App.Controllers
 {
-    public class UserPageController : Controller
+    public class CustomerController : Controller
     {
-        public IActionResult UserPage()
+        public IActionResult Customer()
         {
             return View();
         }

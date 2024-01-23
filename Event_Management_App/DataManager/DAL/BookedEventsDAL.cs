@@ -1,4 +1,5 @@
-﻿using Event_Management_App.DataManager.IDAL;
+﻿using Event_Management_App.CommonCode;
+using Event_Management_App.DataManager.IDAL;
 using Event_Management_App.Models;
 using System.Data;
 
@@ -17,76 +18,59 @@ namespace Event_Management_App.DataManager.DAL
         {
             List<BookedEventsModel> bookedList = new List<BookedEventsModel>();
 
-            //_dBManager
+            _dBManager.InitDbCommand("GetAllBookedEvents", CommandType.StoredProcedure);
+
+            DataSet ds = _dBManager.ExecuteDataSet();
+            foreach (DataRow item in ds.Tables[0].Rows)
+            {
+
+                BookedEventsModel bookedEvents = new BookedEventsModel();
+
+                try
+                {
+                    bookedEvents.Id = item["Id"].ConvertDBNullToInt();
+                    bookedEvents.SignUpModel.Username =item["Username"].ConvertDBNullToString(;
+                    bookedEvents.SignUpModel.Email = item["Email"].ConvertDBNullToString();
+                    bookedEvents.AddEventModel.Category = item["Category"].ConvertDBNullToString();
+                    bookedEvents.AddEventModel.Location = item["Location"].ConvertDBNullToString();
+                    bookedEvents.AddEventModel.Amount = item["Amount"].ConvertDBNullToString();
+                    bookedEvents.AddEventModel.Contact = item["Contact"].ConvertDBNullToString();
+                    bookedEvents.AddEventModel.ImagePath = item["ImagePath"].ConvertDBNullToString();
+                    bookedEvents.Deposit = item["Deposit"].ConvertDBNullToString();
+                    bookedEvents.Balance = item["Balance"].ConvertDBNullToString();
+                    bookedEvents.Date = item["Date"].ConvertDBNullToString();
+                    bookedEvents.Time = item["Time"].ConvertDBNullToString();
+                    bookedEvents.Status = item["Status"].ConvertDBNullToString();
+
+                    bookedList.Add(bookedEvents);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
 
             return bookedList;
         }
 
-        //public List<BookedEventsModel> AddEventList()
-        //{
-        //    List<AddEventModel> eventList = new List<AddEventModel>();
+        public string GetDBImagebyID(int ID)
+        {
+            string existingImage = null;
 
-        //    _dBManager.InitDbCommand("GetAllEvent", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("GetDBImagebyID", CommandType.StoredProcedure);
 
-        //    DataSet ds = _dBManager.ExecuteDataSet();
-        //    foreach (DataRow item in ds.Tables[0].Rows)
-        //    {
-        //        AddEventModel addeventmodel = new AddEventModel();
+            _dBManager.AddCMDParam("@ID", ID);
 
-        //        addeventmodel.Id = item["Id"].ConvertDBNullToInt();
-        //        addeventmodel.Category = item["Category"].ConvertDBNullToString();
-        //        addeventmodel.Location = item["Location"].ConvertDBNullToString();
-        //        addeventmodel.Capacity = item["Capacity"].ConvertDBNullToString();
-        //        addeventmodel.Amount = item["Amount"].ConvertDBNullToString();
-        //        addeventmodel.Description = item["Description"].ConvertDBNullToString();
-        //        addeventmodel.Status = item["Status"].ConvertDBNullToString();
-        //        addeventmodel.Address = item["Address"].ConvertDBNullToString();
-        //        addeventmodel.Contact = item["Contact"].ConvertDBNullToString();
-        //        addeventmodel.ImagePath = item["ImagePath"].ConvertDBNullToString();
+            DataSet ds = _dBManager.ExecuteDataSet();
 
-        //        eventList.Add(addeventmodel);
-        //    }
-        //    return eventList;
-        //}
+            foreach (DataRow item in ds.Tables[0].Rows)
+            {
+                existingImage = item["ImagePath"].ConvertJSONNullToString();
+            }
 
-        //public AddEventModel AddEvent(AddEventModel addeventmodel)
-        //{
-        //    _dBManager.InitDbCommand("AddEventInsert", CommandType.StoredProcedure);
+            return existingImage;
+        }
 
-        //    _dBManager.AddCMDParam("@Category", addeventmodel.Category);
-        //    _dBManager.AddCMDParam("@Location", addeventmodel.Location);
-        //    _dBManager.AddCMDParam("@Capacity", addeventmodel.Capacity);
-        //    _dBManager.AddCMDParam("@Amount", addeventmodel.Amount);
-        //    _dBManager.AddCMDParam("@Description", addeventmodel.Description);
-        //    _dBManager.AddCMDParam("@Status", addeventmodel.Status);
-        //    _dBManager.AddCMDParam("@Address", addeventmodel.Address);
-        //    _dBManager.AddCMDParam("@Contact", addeventmodel.Contact);
-        //    _dBManager.AddCMDParam("@ImagePath", addeventmodel.ImagePath);
-
-
-        //    _dBManager.ExecuteNonQuery();
-
-        //    return addeventmodel;
-        //}
-
-        //public string GetDBImagebyID(int ID)
-        //{
-        //    string existingImage = null;
-
-        //    _dBManager.InitDbCommand("GetDBImagebyID", CommandType.StoredProcedure);
-
-        //    _dBManager.AddCMDParam("@ID", ID);
-
-        //    DataSet ds = _dBManager.ExecuteDataSet();
-
-        //    foreach (DataRow item in ds.Tables[0].Rows)
-        //    {
-        //        existingImage = item["ImagePath"].ConvertJSONNullToString();
-        //    }
-
-        //    return existingImage;
-        //}
-
-       
     }
 }

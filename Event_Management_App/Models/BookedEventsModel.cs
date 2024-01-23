@@ -1,10 +1,24 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Event_Management_App.Models
 {
+    [Table("bookevent")]
     public class BookedEventsModel
     {
+
+        public BookedEventsModel()
+        {
+            SignUpModel sign = new SignUpModel();
+            AddEventModel add = new AddEventModel();
+        }
+
+
         public int Id { get; set; }
+
+        public SignUpModel? SignUpModel { get; set; }
+
+        public AddEventModel? AddEventModel { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -29,8 +43,12 @@ namespace Event_Management_App.Models
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Status must contain only letters.")]
         public string? Status { get; set; }
 
+        [Required]
+        [ForeignKey("addevent")]
         public int Addevent_id { get; set; }
 
+        [Required]
+        [ForeignKey("signup")]
         public int Signup_id { get; set; }
     }
 }

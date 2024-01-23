@@ -217,7 +217,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="viewExampleModalLabel">Employee View</h5>
+                <h5 class="modal-title" id="viewExampleModalLabel">Event View</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -313,6 +313,7 @@
 </div>
 
 
+
 <div class="table-responsive">
     <div class="card-body">
         <table class="table table-bordered" id="myTable" style="width:100% !important">
@@ -376,6 +377,8 @@
                             render: function (data, type, row) {
 
                                 return '<div class="btn-group" role="group" aria-label="Basic mixed styles example"><button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEvent"><i class="fa-solid fa-pen"></i></button><button type="button" onclick="deleteEventData(' + row.Id + ')" class="btn btn-danger" ><i class="fa-solid fa-trash"></i></button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal"><i class="fa-solid fa-eye"></i></button></div>';
+                                // return '<div class="btn-group" role="group" aria-label="Basic mixed styles example"><button type="button" onclick="populateEventData(' + row.Id + ')" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updateEvent" style="margin-right: 10px;">Edit</button><button type="button" onclick="deleteEventData(' + row.Id + ')" class="btn btn-danger" style="margin-right: 10px;" >Delete</button><button type="button" onclick="viewEventData(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">Book Event</button></div>';
+
 
                             }
                         },
