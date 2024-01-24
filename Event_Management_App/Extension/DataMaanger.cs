@@ -18,6 +18,7 @@ namespace Event_Management_App.Extension
             services.AddScoped<IAdmin_UserBAL, Admin_UserBAL>();
             services.AddScoped<IAdminBAL, AdminBAL>();
             services.AddScoped<IBookedEventsBAL, BookedEventsBAL>();
+            services.AddScoped<ICustomerBookingBAL, CustomerBookingBAL>();
 
             return services;
         }

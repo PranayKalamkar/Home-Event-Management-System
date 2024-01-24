@@ -29,18 +29,18 @@ namespace Event_Management_App.DataManager.DAL
                 try
                 {
                     bookedEvents.Id = item["Id"].ConvertDBNullToInt();
-                    bookedEvents.SignUpModel.Username =item["Username"].ConvertDBNullToString(;
-                    bookedEvents.SignUpModel.Email = item["Email"].ConvertDBNullToString();
-                    bookedEvents.AddEventModel.Category = item["Category"].ConvertDBNullToString();
-                    bookedEvents.AddEventModel.Location = item["Location"].ConvertDBNullToString();
-                    bookedEvents.AddEventModel.Amount = item["Amount"].ConvertDBNullToString();
-                    bookedEvents.AddEventModel.Contact = item["Contact"].ConvertDBNullToString();
-                    bookedEvents.AddEventModel.ImagePath = item["ImagePath"].ConvertDBNullToString();
-                    bookedEvents.Deposit = item["Deposit"].ConvertDBNullToString();
-                    bookedEvents.Balance = item["Balance"].ConvertDBNullToString();
-                    bookedEvents.Date = item["Date"].ConvertDBNullToString();
-                    bookedEvents.Time = item["Time"].ConvertDBNullToString();
-                    bookedEvents.Status = item["Status"].ConvertDBNullToString();
+                    //bookedEvents.SignUpModel.Username =item["Username"].ConvertDBNullToString();
+                    //bookedEvents.SignUpModel.Email = item["Email"].ConvertDBNullToString();
+                    //bookedEvents.AddEventModel.Category = item["Category"].ConvertDBNullToString();
+                    //bookedEvents.AddEventModel.Location = item["Location"].ConvertDBNullToString();
+                    //bookedEvents.AddEventModel.Amount = item["Amount"].ConvertDBNullToString();
+                    //bookedEvents.AddEventModel.Contact = item["Contact"].ConvertDBNullToString();
+                    //bookedEvents.AddEventModel.ImagePath = item["ImagePath"].ConvertDBNullToString();
+                    //bookedEvents.Deposit = item["Deposit"].ConvertDBNullToString();
+                    //bookedEvents.Balance = item["Balance"].ConvertDBNullToString();
+                    //bookedEvents.Date = item["Date"].ConvertDBNullToString();
+                    //bookedEvents.Time = item["Time"].ConvertDBNullToString();
+                    //bookedEvents.Status = item["Status"].ConvertDBNullToString();
 
                     bookedList.Add(bookedEvents);
                 }
