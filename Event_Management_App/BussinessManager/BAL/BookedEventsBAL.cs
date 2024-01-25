@@ -14,7 +14,7 @@ namespace Event_Management_App.BussinessManager.BAL
             _IBookedEventDAL = new BookedEventsDAL(dBManager);
         }
 
-        public List<BookedEventsModel> GetBookedEvents()
+        public List<GetAllBookedDetails> GetBookedEvents()
         {
             return _IBookedEventDAL.GetBookedEvents();
         }

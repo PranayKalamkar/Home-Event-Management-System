@@ -6,14 +6,10 @@ namespace Event_Management_App.Controllers
 {
     public class BookedEventsController : Controller
     {
-        IConfiguration _configuration;
-        string connectionString;
         IBookedEventsBAL _IBookedEventsBAL;
 
-        public BookedEventsController(IConfiguration configuration, IBookedEventsBAL bookedeventsBAL)
+        public BookedEventsController(IBookedEventsBAL bookedeventsBAL)
         {
-            _configuration = configuration;
-            connectionString = configuration.GetConnectionString("DefaultConnection");
             _IBookedEventsBAL = bookedeventsBAL;
         }
 

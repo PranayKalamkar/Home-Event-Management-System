@@ -43,12 +43,9 @@ namespace Event_Management_App.Controllers
 
                 if(result == "Exist")
                 {
-                    //return Json("Email Already Exist!");
                     return Json(new { status = "warning", message = "Email Id Already Exists!" });
                 }
             }
-
-            //return Json("Login");
             return Json(new { status = "success", message = "User register successfully!" });
         }
 
@@ -60,15 +57,12 @@ namespace Event_Management_App.Controllers
         [HttpPost]
         public IActionResult LoginPost(string Email, string SPassword, int Id )
         {
-            //SignUpModel sign = JsonSerializer.Deserialize<SignUpModel>(model)!;
             LoginModel login = new LoginModel();
 
             if (ModelState.IsValid)
             {
                 login = _IEventBAL.LoginUser(Email, SPassword, Id);
-
-                //Console.WriteLine(result);
-                
+             
                 if (!login.EmailExist)
                 {
                     return Json(new { status = "warning", message = "Email does Not Exist!" });
@@ -77,22 +71,7 @@ namespace Event_Management_App.Controllers
                 {
                     return Json(new { status = "warning", message = "Invalid Password!" });
                 }
-                //else if(login.GetRole != "Admin")
-                //{
-                //    return Json(new { status = "warning", message = "Check Your Credential" });
-                //}
-
             }
-            //else if(login.GetRole == "Admin")
-            //{
-            //    return RedirectToAction("Dashboard", "AdminDashboard");
-            //}
-            //else
-            //{
-            //    return RedirectToAction("UserView","Userpage");
-            //}
-
-
             return Json(new { role = login.GetRole, status = "success", message = "Login successfully!" });
         }
     }

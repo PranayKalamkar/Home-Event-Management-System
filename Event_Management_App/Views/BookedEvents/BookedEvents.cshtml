@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Event_Management_App.Models.BookedEventsModel>
+﻿@model IEnumerable<Event_Management_App.Models.GetAllBookedDetails>
 
 @{
     ViewData["title"] = "Booked Event";
@@ -23,7 +23,7 @@
         <table class="table table-bordered" id="myTable" style="width:100% !important">
             <thead>
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.BookedEventsModel.Id)</th>
                     <th>@Html.DisplayNameFor(model => model.SignUpModel.Username)</th>
                     <th>@Html.DisplayNameFor(model => model.SignUpModel.Email)</th>
                     <th>@Html.DisplayNameFor(model => model.AddEventModel.Category)</th>
@@ -31,11 +31,11 @@
                     <th>@Html.DisplayNameFor(model => model.AddEventModel.Amount)</th>
                     <th>@Html.DisplayNameFor(model => model.AddEventModel.Contact)</th>
                     <th>@Html.DisplayNameFor(model => model.AddEventModel.ImageFile)</th>
-                    <th>@Html.DisplayNameFor(model => model.Deposit)</th>
-                    <th>@Html.DisplayNameFor(model => model.Balance)</th>
-                    <th>@Html.DisplayNameFor(model => model.Date)</th>
-                    <th>@Html.DisplayNameFor(model => model.Time)</th>
-                    <th>@Html.DisplayNameFor(model => model.Status)</th>
+                    <th>@Html.DisplayNameFor(model => model.BookedEventsModel.Deposit)</th>
+                    <th>@Html.DisplayNameFor(model => model.BookedEventsModel.Balance)</th>
+                    <th>@Html.DisplayNameFor(model => model.BookedEventsModel.Date)</th>
+                    <th>@Html.DisplayNameFor(model => model.BookedEventsModel.Time)</th>
+                    <th>@Html.DisplayNameFor(model => model.BookedEventsModel.Status)</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -63,25 +63,26 @@
                 datatable = $('#myTable').DataTable({
                     data: data,
                     columns: [
-                        { data: 'Id' },
-                        { data: 'Username' },
-                        { data: 'Email' },
-                        { data: 'Category' },
-                        { data: 'Location' },
-                        { data: 'Amount' },
-                        { data: 'Contact' },
-                        { data: 'Deposit' },
-                        { data: 'Balance' },
-                        { data: 'Date' },
-                        { data: 'Time' },
-                        { data: 'Status' },
+                        { data: 'BookedEventsModel.Id' },
+                        { data: 'SignUpModel.Username' },
+                        { data: 'SignUpModel.Email' },
+                        { data: 'AddEventModel.Category' },
+                        { data: 'AddEventModel.Location' },
+                        { data: 'AddEventModel.Amount' },
+                        { data: 'AddEventModel.Contact' },
                         {
-                            data: 'ImagePath', // Assume the data has a property named imageUrl that contains the image path
+                            data: 'AddEventModel.ImagePath', // Assume the data has a property named imageUrl that contains the image path
                             render: function (data, type, row) {
                                 // Return an img tag with the image source and some attributes
                                 return '<img src="/addeventimages/' + data + '" class="rounded-image" width="50" height="50" alt="Image" />';
                             }
                         },
+                        { data: 'BookedEventsModel.Deposit' },
+                        { data: 'BookedEventsModel.Balance' },
+                        { data: 'BookedEventsModel.Date' },
+                        { data: 'BookedEventsModel.Time' },
+                        { data: 'BookedEventsModel.Status' },
+                        
                         {
                             data: null,
                             render: function (data, type, row) {

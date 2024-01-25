@@ -7,18 +7,13 @@ namespace Event_Management_App.Models
     public class BookedEventsModel
     {
 
-        public BookedEventsModel()
-        {
-            SignUpModel sign = new SignUpModel();
-            AddEventModel add = new AddEventModel();
-        }
-
+        //public BookedEventsModel()
+        //{
+        //    SignUpModel sign = new SignUpModel();
+        //    AddEventModel add = new AddEventModel();
+        //}
 
         public int Id { get; set; }
-
-        public SignUpModel? SignUpModel { get; set; }
-
-        public AddEventModel? AddEventModel { get; set; }
 
         [Required]
         [StringLength(50)]

@@ -4,7 +4,7 @@ namespace Event_Management_App.DataManager.IDAL
 {
     public interface IBookedEventsDAL
     {
-        public List<BookedEventsModel> GetBookedEvents();
+        public List<GetAllBookedDetails> GetBookedEvents();
 
         public string GetDBImagebyID(int ID);
     }
