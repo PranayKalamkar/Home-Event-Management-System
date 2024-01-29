@@ -48,6 +48,8 @@ namespace Event_Management_App.BussinessManager.BAL
 
             login.GetRole = _IEventDAL.GetRole(email);
 
+            login.GetId = _IEventDAL.GetId(email);
+
             return login;
 
         }

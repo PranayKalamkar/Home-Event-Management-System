@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Event_Management_App.Models.AddEventModel>
+﻿@model IEnumerable<Event_Management_App.Models.GetAllBookedDetails>
 
 @{
     ViewData["Title"] = "Book Event";
@@ -22,7 +22,7 @@
                 var html = '';
                 data.forEach(function (item) {
                     html += '<div class="card" style="width: 18rem; margin: 30px;">';
-                    html += '<img src="/addeventimages/' + data + '" class="rounded-image" width="50" height="50" alt="Image" />';
+                    html += '<img src="/addeventimages/' + item.ImagePath + '" class="card-img-top" alt="Image" />';
                     html += '<div class="card-body">';
                     html += '<h5 class="card-title"' + item.Category + '<h5/>';
                     html += '<p class="fw-bold">Location: <span class="fw-normal">' + item.Location + '</span></p>';

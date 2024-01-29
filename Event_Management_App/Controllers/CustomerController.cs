@@ -6,6 +6,8 @@ namespace Event_Management_App.Controllers
     {
         public IActionResult Customer()
         {
+            Console.WriteLine(HttpContext.Session.GetInt32("Id"));
+
             return View();
         }
     }

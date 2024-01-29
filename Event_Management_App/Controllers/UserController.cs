@@ -72,6 +72,13 @@ namespace Event_Management_App.Controllers
                     return Json(new { status = "warning", message = "Invalid Password!" });
                 }
             }
+
+            HttpContext.Session.SetInt32("Id", login.GetId);
+
+            HttpContext.Session.SetString("Email", Email);
+
+            HttpContext.Session.SetString("Password", SPassword);
+
             return Json(new { role = login.GetRole, status = "success", message = "Login successfully!" });
         }
     }

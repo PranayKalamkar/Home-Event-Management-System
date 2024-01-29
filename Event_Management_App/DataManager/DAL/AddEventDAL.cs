@@ -85,7 +85,7 @@ namespace Event_Management_App.DataManager.DAL
 
             AddEventModel addeventmodel = null;
 
-            _dBManager.AddCMDParam("@id", ID);
+            _dBManager.AddCMDParam("@p_id", ID);
 
             DataSet ds = _dBManager.ExecuteDataSet();
 

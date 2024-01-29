@@ -12,7 +12,7 @@ namespace Event_Management_App
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddControllers().AddJsonOptions(options => 
+            builder.Services.AddControllers().AddJsonOptions(options =>
                 options.JsonSerializerOptions.PropertyNamingPolicy = null);
 
             builder.Services.AddControllers(options =>
@@ -24,6 +24,18 @@ namespace Event_Management_App
 
             builder.Services.AddSession();
 
+            //builder.Services.AddSession(options =>
+            //{
+            //    options.IdleTimeout = TimeSpan.FromMinutes(1);
+            //});
+
+            //builder.Services.AddMvc();
+
+            //builder.Services.AddSession(options =>
+            //{
+            //    options.IdleTimeout = TimeSpan.FromMinutes(5);
+            //});
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -34,22 +46,34 @@ namespace Event_Management_App
                 app.UseHsts();
             }
 
+            //if (app.Environment.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+
+            //app.UseSession();
+
+            //app.UseMvcWithDefaultRoute();
+
+            app.UseSession();
+
+
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
             //pattern: "{controller=Home}/{action=Index}/{id?}");
             //pattern: "{controller=AddEvent}/{action=AddEvent}/{id?}");
-            //pattern: "{controller=User}/{action=Login}/{id?}");
+            pattern: "{controller=User}/{action=Login}/{id?}");
             //pattern: "{controller=User}/{action=SignUp}/{id?}");
-            pattern: "{controller=AdminDashboard}/{action=Dashboard}/{id?}");
+            //pattern: "{controller=AdminDashboard}/{action=Dashboard}/{id?}");
             //pattern: "{controller=UserPage}/{action=UserPage}/{id?}");
 
             app.Run();

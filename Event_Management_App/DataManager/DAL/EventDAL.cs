@@ -90,6 +90,19 @@ namespace Event_Management_App.DataManager.DAL
             return role;
         }
 
+        public int GetId(string email)
+        {
+            _dBManager.InitDbCommand("GetId", CommandType.StoredProcedure);
+
+            _dBManager.AddCMDParam("@IEmail", email);
+
+            var result = _dBManager.ExecuteScalar();
+
+            int id = Convert.ToInt32(result);
+
+            return id;
+        }
+
         public string LoginUser(string email)
         {
             string existingPassword = null;
