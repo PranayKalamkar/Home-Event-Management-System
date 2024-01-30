@@ -25,7 +25,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/images/background-1.jpg");
+    background-image: url("/images/background-2.jpg");
     /*background: linear-gradient(120deg, #2193b0, #6dd5ed);*/
     background-size: cover;
     background-repeat: no-repeat;

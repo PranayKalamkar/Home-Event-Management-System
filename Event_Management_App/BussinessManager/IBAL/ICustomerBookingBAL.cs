@@ -4,6 +4,10 @@ namespace Event_Management_App.BussinessManager.IBAL
 {
     public interface ICustomerBookingBAL
     {
-        public List<AddEventModel> AddEventList();
+        public List<GetAllBookedDetails> GetBookedEvents();
+
+        public GetAllBookedDetails PopulateEventData(int ID);
+
+        public GetAllBookedDetails UpdateEventData(GetAllBookedDetails bookmodel, int ID);
     }
 }

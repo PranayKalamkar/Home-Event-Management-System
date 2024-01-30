@@ -42,7 +42,7 @@ namespace Event_Management_App.Controllers
 
             _IAddEventBAL.AddEvent(addevntmodel, file);
 
-            return Json("AddEvent");
+            return Json("ListEvent");
         }
 
         public IActionResult Populate(int Id)
@@ -57,14 +57,14 @@ namespace Event_Management_App.Controllers
 
             _IAddEventBAL.UpdateEventData(addeventmodel, ID, file);
 
-            return Json("Index");
+            return Json("ListEvent");
         }
 
         public IActionResult Delete(int ID)
         {
             _IAddEventBAL.DeleteEventData(ID);
 
-            return Json("Index");
+            return Json("ListEvent");
         }
     }
 }

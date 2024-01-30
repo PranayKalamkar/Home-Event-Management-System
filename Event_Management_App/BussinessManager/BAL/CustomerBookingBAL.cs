@@ -14,9 +14,19 @@ namespace Event_Management_App.BussinessManager.BAL
             _ICustomerBookingDAL = new CustomerBookingDAL(dBManager);
         }
 
-        public List<AddEventModel> AddEventList()
+        public List<GetAllBookedDetails> GetBookedEvents()
         {
-            return _ICustomerBookingDAL.AddEventList();
+            return _ICustomerBookingDAL.GetBookedEvents();
+        }
+
+        public GetAllBookedDetails PopulateEventData(int ID)
+        {
+            return _ICustomerBookingDAL.PopulateEventData(ID);
+        }
+
+        public GetAllBookedDetails UpdateEventData(GetAllBookedDetails bookmodel, int ID)
+        {
+            return _ICustomerBookingDAL.UpdateEventData(bookmodel, ID);
         }
     }
 }

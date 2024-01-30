@@ -5,57 +5,132 @@
     Layout = "_BookingLayout";
 }
 
+<!-- Modal for Update Data -->
+<div class="modal fade" id="bookEvent" tabindex="-1" aria-labelledby="bookEventModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookEventModalLabel">Booking Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-<div id="eventData">
-    @* event cards *@
+            <div class="modal-body">
+
+                <form id="update">
+
+                    <input hidden id="Id" name="Id" />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Category" class="form-label">Category : </label>
+                                <input id="Category" type="text" name="Category" class="form-control" autocomplete="off" readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Location" class="form-label">Location : </label>
+                                <input id="Location" type="text" name="Location" class="form-control" autocomplete="off" readonly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Capacity" class="form-label">Capacity : </label>
+                                <input id="Capacity" type="text" name="Capacity" class="form-control" autocomplete="off" readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Amount" class="form-label">Amount : </label>
+                                <input id="Amount" type="text" name="Amount" class="form-control" autocomplete="off" readonly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Contact" class="form-label">Contact : </label>
+                                <input id="Contact" type="text" name="Contact" class="form-control" autocomplete="off" readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Address" class="form-label">Address : </label>
+                                <input id="Address" type="text" name="Address" class="form-control" autocomplete="off" readonly />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Description" class="form-label">Description : </label>
+                                <input id="Description" type="text" name="Description" class="form-control" autocomplete="off" readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Deposit" class="form-label">Deposit : </label>
+                                <input id="Deposit" type="text" name="Deposit" class="form-control" autocomplete="off" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Date" class="form-label">Date : </label>
+                                <input id="Date" type="date" name="Date" class="form-control" autocomplete="off" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="Time" class="form-label">Time : </label>
+                                <input id="Time" type="time" name="Time" class="form-control" autocomplete="off" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="ImageFile" class="form-label">ImageFile : </label>
+                                <input id="ImageFile" type="text" name="ImageFile" class="form-control" onchange="previewImage(this)" autocomplete="off" hidden />
+                                <div class="mb-3" style="display: flex; flex-direction: column;">
+                                    <img id="imagePreviewView" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="updateBook()" class="btn btn-success">Save changes</button>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<script>
 
-    function getEvents() {
 
-        $.ajax({
-
-            type: "POST",
-            url: "/CustomerBooking/CustomerEventList",
-            success: function (data) {
-                var html = '';
-                data.forEach(function (item) {
-                    html += '<div class="card" style="width: 18rem; margin: 30px;">';
-                    html += '<img src="/addeventimages/' + item.ImagePath + '" class="card-img-top" alt="Image" />';
-                    html += '<div class="card-body">';
-                    html += '<h5 class="card-title"' + item.Category + '<h5/>';
-                    html += '<p class="fw-bold">Location: <span class="fw-normal">' + item.Location + '</span></p>';
-                    html += '<p class="fw-bold">Capacity: <span class="fw-normal">' + item.Capacity + '</span></p>';
-                    html += '<p class="fw-bold">Amount: <span class="fw-normal">' + item.Amount + '</span></p>';
-                    html += '<button type="button" class="btn btn-primary me-auto" onclick= "eventOpen(\'show\',' + item.Id + ')" data-bs-toggle="modal" data-bs-target="#eventModal">Show</button>';
-                    html += '</div>';
-                    html += '</div>';
-                });
-                $('#eventData').html(html);
-            }
-
-        });
-
-    }
-
-</script>
-
-@* <div class="table-responsive">
+<div class="table-responsive">
     <div class="card-body">
         <table class="table table-bordered" id="myTable" style="width:100% !important">
             <thead>
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.Id)</th>
-                    <th>@Html.DisplayNameFor(model => model.Category)</th>
-                    <th>@Html.DisplayNameFor(model => model.Location)</th>
-                    <th>@Html.DisplayNameFor(model => model.Capacity)</th>
-                    <th>@Html.DisplayNameFor(model => model.Amount)</th>
-                    <th>@Html.DisplayNameFor(model => model.Description)</th>
-                    <th>@Html.DisplayNameFor(model => model.Status)</th>
-                    <th>@Html.DisplayNameFor(model => model.Address)</th>
-                    <th>@Html.DisplayNameFor(model => model.Contact)</th>
-                    <th>@Html.DisplayNameFor(model => model.ImageFile)</th>
+                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Category)</th>
+                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Location)</th>
+                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Capacity)</th>
+                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Amount)</th>
+                    <th>@Html.DisplayNameFor(model => model.AddEventModel.ImageFile)</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -68,12 +143,12 @@
 
     $(document).ready(function () {
 
-        getAddEventList();
+        bookEventList();
     });
 
     var datatable;
 
-    function getAddEventList() {
+    function bookEventList() {
         $.ajax({
 
             type: "Get",
@@ -84,17 +159,12 @@
                 datatable = $('#myTable').DataTable({
                     data: data,
                     columns: [
-                        { data: 'Id' },
-                        { data: 'Category' },
-                        { data: 'Location' },
-                        { data: 'Capacity' },
-                        { data: 'Amount' },
-                        { data: 'Description' },
-                        { data: 'Status' },
-                        { data: 'Address' },
-                        { data: 'Contact' },
+                        { data: 'AddEventModel.Category' },
+                        { data: 'AddEventModel.Location' },
+                        { data: 'AddEventModel.Capacity' },
+                        { data: 'AddEventModel.Amount' },
                         {
-                            data: 'ImagePath', // Assume the data has a property named imageUrl that contains the image path
+                            data: 'AddEventModel.ImagePath', // Assume the data has a property named imageUrl that contains the image path
                             render: function (data, type, row) {
                                 // Return an img tag with the image source and some attributes
                                 return '<img src="/addeventimages/' + data + '" class="rounded-image" width="50" height="50" alt="Image" />';
@@ -104,11 +174,10 @@
                             data: null,
                             render: function (data, type, row) {
 
-                                return '<button type="button" onclick="populateEvent(' + row.Id + ')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateEventModal">Update</button><button type="button" onclick="deleteEvent(' + row.Id + ')" class="btn btn-danger" >Dalete</button><button type="button" onclick="viewEvent(' + row.Id + ')" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#viewEventModal">View</button>';
+                                return '<button type="button" onclick="populateBookData(' + row.AddEventModel.Id + ')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEvent">Book Now</button>';
 
                             }
                         },
-
                     ]
                 });
 
@@ -120,6 +189,109 @@
         });
     }
 
+    function previewImage(input) {
+        var file = input.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imagePreviewUpdate').attr('src', e.target.result).show();
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            // Clear the image preview if no file is selected
+            $('#imagePreviewUpdate').attr('src', '').hide();
+        }
+    }
+
+    function populateBookData(ID) {
+        debugger;
+
+        $.ajax({
+
+            type: "GET",
+            url: "/CustomerBooking/Populate/" + ID,
+
+            success: function (event) {
+                debugger;
+
+                // Populate the form with the received employee details
+                $('#Id').val(event.AddEventModel.Id);
+                $('#Category').val(event.AddEventModel.Category);
+                $('#Location').val(event.AddEventModel.Location);
+                $('#Capacity').val(event.AddEventModel.Capacity);
+                $('#Amount').val(event.AddEventModel.Amount);
+                $('#Contact').val(event.AddEventModel.Contact);
+                $('#Address').val(event.AddEventModel.Address);
+                $('#Description').val(event.AddEventModel.Description);
+
+                var imagePreview = "/addeventimages/" + event.AddEventModel.ImagePath;
+                $('#imagePreviewUpdate').attr('src', imagePreview).show();
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
 
 
-</script> *@
+    function updateBook() {
+
+        if ($("#update").valid()) {
+
+            debugger;
+
+            var bookData = {
+                Id: $('#Id').val(),
+                Deposit: $('#Deposit').val(),
+                Date: $('#Date').val(),
+                Time: $('#Time').val(),
+            }
+
+            console.log(bookData);
+            debugger;
+
+            $.ajax({
+                type: "POST",
+                url: "/CustomerBooking/Update",
+                data: JSON.stringify(bookData),
+                contentType: 'application/json',
+                processData: false,
+                cache: false,
+
+                success: function (data) {
+
+                    $('#bookEvent').modal('hide');
+
+
+                    if (data.status === "success") {
+                        Swal.fire({
+                            title: "Good job!",
+                            text: "User updated successfully!",
+                            icon: "success",
+                            button: "Ok",
+                        });
+                    }
+                    else if (data.status === "warning") {
+                        alert(data.message);
+                    }
+
+                    datatable.destroy();
+                    bookEventList();
+
+                },
+                error: function (errormessage) {
+                    Swal.fire({
+                        title: "Error updating event!",
+                        text: "close",
+                        icon: "Error"
+                    });
+                }
+            });
+        }
+    }
+
+
+</script>
