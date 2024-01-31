@@ -24,9 +24,36 @@ namespace Event_Management_App.BussinessManager.BAL
             return _ICustomerBookingDAL.PopulateEventData(ID);
         }
 
-        public GetAllBookedDetails UpdateEventData(GetAllBookedDetails bookmodel, int ID)
+        public GetAllBookedDetails AddbookEventData(GetAllBookedDetails bookmodel, BookedEventsModel oData)
         {
-            return _ICustomerBookingDAL.UpdateEventData(bookmodel, ID);
+            //string amount = bookmodel.AddEventModel.Amount.ToString();
+
+            //string deposit = bookmodel.BookedEventsModel.Deposit.ToString();
+
+            //double balance = double.Parse(amount) - double.Parse(deposit);
+
+            //bookmodel.BookedEventsModel.Balance = balance.ToString();
+
+            string amount = bookmodel.AddEventModel?.Amount;
+
+            string deposit = bookmodel.BookedEventsModel?.Deposit;
+
+            double balance = double.Parse(amount) - double.Parse(deposit);
+
+            bookmodel.BookedEventsModel.Balance = balance.ToString();
+
+            bookmodel.BookedEventsModel.Status = "Booked";
+
+            //if (amount != null && deposit != null)
+            //{
+            //    double balance = double.Parse(amount) - double.Parse(deposit);
+
+            //    bookmodel.BookedEventsModel.Balance = balance.ToString();
+
+            //    bookmodel.BookedEventsModel.Status = "Booked";
+            //}
+
+            return _ICustomerBookingDAL.AddbookEventData(bookmodel, oData);
         }
     }
 }

@@ -19,7 +19,7 @@
                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                     </div>
                     <div class="input-group">
-                        @Html.PasswordFor(model => model.SPassword, new { @placeholder = "SPassword..", autocomplete = "off" })
+                        @Html.PasswordFor(model => model.SPassword, new { @placeholder = "Password..", autocomplete = "off" })
                         <label asp-for="SPassword">Password:</label>
                         @Html.ValidationMessageFor(model => model.SPassword, "", new { @class = "text-danger" })
                     </div>
@@ -32,7 +32,7 @@
                         <a href="#" class="forget-password">Forget Password?</a>
                     </div>
 
-                    <button type="button" onclick="Login()">Login</button>
+                    <button type="button" id="loginBtn" class="btn btn-success" onclick="Login()">Login</button>
 
                     <div class="login-option">
                         Don't have an account? <a asp-controller="User" asp-action="SignUp">Register</a>

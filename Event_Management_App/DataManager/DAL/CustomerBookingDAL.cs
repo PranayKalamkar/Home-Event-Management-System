@@ -80,14 +80,18 @@ namespace Event_Management_App.DataManager.DAL
             return bookmodel;
         }
 
-        public GetAllBookedDetails UpdateEventData(GetAllBookedDetails bookmodel, int ID)
+        public GetAllBookedDetails AddbookEventData(GetAllBookedDetails bookmodel, BookedEventsModel oData)
         {
-            _dBManager.InitDbCommand("UpdateaddEventById", CommandType.StoredProcedure);
+            _dBManager.InitDbCommand("InsertbookEvent", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("u_Id", ID);
-            _dBManager.AddCMDParam("Deposit", bookmodel.BookedEventsModel.Deposit);
-            _dBManager.AddCMDParam("Date", bookmodel.BookedEventsModel.Date);
-            _dBManager.AddCMDParam("Time", bookmodel.BookedEventsModel.Time);
+            _dBManager.AddCMDParam("@a_Deposit", bookmodel.BookedEventsModel.Deposit);
+            _dBManager.AddCMDParam("@a_Balance", bookmodel.BookedEventsModel.Balance);
+            _dBManager.AddCMDParam("@a_Date", bookmodel.BookedEventsModel.Date);
+            _dBManager.AddCMDParam("@a_Time", bookmodel.BookedEventsModel.Time);
+            _dBManager.AddCMDParam("@a_Status", bookmodel.BookedEventsModel.Status);
+            _dBManager.AddCMDParam("@a_addEvent", bookmodel.BookedEventsModel.Addevent_id);
+            _dBManager.AddCMDParam("@a_signup", oData.Signup_id);
+
 
             _dBManager.ExecuteNonQuery();
 

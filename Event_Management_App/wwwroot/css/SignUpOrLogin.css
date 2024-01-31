@@ -117,15 +117,20 @@ button {
         color: #000;
     }
 
-.login-option a:hover {
-    color: firebrick;
+.login-option {
+    margin-top: 15px;
+    text-align: center;
 }
 
-.login-option a {
-    text-decoration: none;
-    font-size: 15px;
-    color: #000;
-}
+    .login-option a:hover {
+        color: firebrick;
+    }
+
+    .login-option a {
+        text-decoration: none;
+        font-size: 15px;
+        color: #000;
+    }
 
 .register-option a:hover {
     color: firebrick;

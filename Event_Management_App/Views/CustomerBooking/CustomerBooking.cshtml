@@ -228,7 +228,7 @@
                 $('#Description').val(event.AddEventModel.Description);
 
                 var imagePreview = "/addeventimages/" + event.AddEventModel.ImagePath;
-                $('#imagePreviewUpdate').attr('src', imagePreview).show();
+                $('#imagePreviewView').attr('src', imagePreview).show();
             },
             error: function (errormessage) {
                 alert(errormessage.responseText);
@@ -238,59 +238,73 @@
 
 
     function updateBook() {
+        debugger;
 
-        if ($("#update").valid()) {
+        var bookData = {
 
-            debugger;
-
-            var bookData = {
+            AddEventModel: {
                 Id: $('#Id').val(),
+            },
+
+            BookedEventsModel: {
                 Deposit: $('#Deposit').val(),
                 Date: $('#Date').val(),
                 Time: $('#Time').val(),
             }
-
-            console.log(bookData);
-            debugger;
-
-            $.ajax({
-                type: "POST",
-                url: "/CustomerBooking/Update",
-                data: JSON.stringify(bookData),
-                contentType: 'application/json',
-                processData: false,
-                cache: false,
-
-                success: function (data) {
-
-                    $('#bookEvent').modal('hide');
+        }
 
 
-                    if (data.status === "success") {
-                        Swal.fire({
-                            title: "Good job!",
-                            text: "User updated successfully!",
-                            icon: "success",
-                            button: "Ok",
-                        });
-                    }
-                    else if (data.status === "warning") {
-                        alert(data.message);
-                    }
+        // var bookId = {
+        //     Id: $('#Id').val(),
+        // }
 
-                    datatable.destroy();
-                    bookEventList();
+        // var bookData = {
+        //     Deposit: $('#Deposit').val(),
+        //     Date: $('#Date').val(),
+        //     Time: $('#Time').val(),
+        // }
 
-                },
-                error: function (errormessage) {
+        console.log(bookData);
+        debugger;
+
+        $.ajax({
+            type: "POST",
+            url: "/CustomerBooking/Booked",
+            data: JSON.stringify(bookData),
+            contentType: 'application/json',
+            processData: false,
+            cache: false,
+
+            success: function (data) {
+
+                $('#bookEvent').modal('hide');
+
+
+                if (data.status === "success") {
                     Swal.fire({
-                        title: "Error updating event!",
-                        text: "close",
-                        icon: "Error"
+                        title: "Good job!",
+                        text: "Event saved successfully!",
+                        icon: "success",
+                        button: "Ok",
                     });
                 }
-            });
-        }
+                else if (data.status === "warning") {
+                    alert(data.message);
+                }
+
+                datatable.destroy();
+                bookEventList();
+                window.location.href = '/Customer/Customer';
+
+            },
+            error: function (errormessage) {
+                Swal.fire({
+                    title: "Error saving event!",
+                    text: "close",
+                    icon: "Error"
+                });
+            }
+        });
     }
 
 
