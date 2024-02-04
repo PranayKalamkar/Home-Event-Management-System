@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css">
 
 </head>
 <body class="">
@@ -24,12 +25,20 @@
     </main>
     </div> *@
 
-    <div class="container-fluid px-0">
-        <h1 class="text-center">Event Booking</h1>
-            <main role="main">
-                @RenderBody()
-            </main>
+    <div class="container my-5">
+        <h1 class="text-center display-4">Event Booking</h1>
+        <p class="text-center lead">Book your event with us today!</p>
+        <main role="main">
+            @RenderBody()
+        </main>
     </div>
+
+    @* <div class="container-fluid px-0">
+    <h1 class="text-center m-3 p-3">Event Booking</h1>
+    <main role="main">
+    @RenderBody()
+    </main>
+    </div> *@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -42,6 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.4/card.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     @* <script src="~/js/authentication.js"></script> *@
     @await RenderSectionAsync("Scripts", required: false)
 

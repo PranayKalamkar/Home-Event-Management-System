@@ -98,7 +98,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="ImageFile" class="form-label">ImageFile : </label>
+                                <label for="ImageFile" class="form-label">Venue Image : </label>
                                 <input id="ImageFile" type="text" name="ImageFile" class="form-control" onchange="previewImage(this)" autocomplete="off" hidden />
                                 <div class="mb-3" style="display: flex; flex-direction: column;">
                                     <img id="imagePreviewView" src="#" alt="Image Preview" style="max-width: 30%; max-height: 150px; margin-top: 10px; display: none;">
@@ -112,7 +112,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" onclick="updateBook()" class="btn btn-success">Save changes</button>
+                <button type="button" onclick="updateBook()" class="btn btn-success">Payment</button>
             </div>
 
         </div>
@@ -121,73 +121,50 @@
 
 
 
-<div class="table-responsive">
-    <div class="card-body">
-        <table class="table table-bordered" id="myTable" style="width:100% !important">
-            <thead>
-                <tr>
-                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Category)</th>
-                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Location)</th>
-                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Capacity)</th>
-                    <th>@Html.DisplayNameFor(model => model.AddEventModel.Amount)</th>
-                    <th>@Html.DisplayNameFor(model => model.AddEventModel.ImageFile)</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-        </table>
+<div class="container">
+    <div id="cardContainer" class="row">
+        <!-- Cards will be appended here -->
     </div>
 </div>
+
 
 
 <script>
 
     $(document).ready(function () {
-
         bookEventList();
     });
 
-    var datatable;
-
     function bookEventList() {
         $.ajax({
-
             type: "Get",
             url: "/CustomerBooking/CustomerListEvent",
             success: function (data) {
-
-                debugger;
-                datatable = $('#myTable').DataTable({
-                    data: data,
-                    columns: [
-                        { data: 'AddEventModel.Category' },
-                        { data: 'AddEventModel.Location' },
-                        { data: 'AddEventModel.Capacity' },
-                        { data: 'AddEventModel.Amount' },
-                        {
-                            data: 'AddEventModel.ImagePath', // Assume the data has a property named imageUrl that contains the image path
-                            render: function (data, type, row) {
-                                // Return an img tag with the image source and some attributes
-                                return '<img src="/addeventimages/' + data + '" class="rounded-image" width="50" height="50" alt="Image" />';
-                            }
-                        },
-                        {
-                            data: null,
-                            render: function (data, type, row) {
-
-                                return '<button type="button" onclick="populateBookData(' + row.AddEventModel.Id + ')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookEvent">Book Now</button>';
-
-                            }
-                        },
-                    ]
+                var cardContainer = $('#cardContainer');
+                data.forEach(function (item) {
+                    var card = `
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100 p-3">
+                                        <img src="/addeventimages/${item.AddEventModel.ImagePath}" class="card-img-top" alt="Image">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${item.AddEventModel.Category}</h5>
+                                            <p class="card-text">Location: ${item.AddEventModel.Location}</p>
+                                            <p class="card-text">Capacity: ${item.AddEventModel.Capacity}</p>
+                                            <p class="card-text">Amount: ${item.AddEventModel.Amount}</p>
+                                            <button class="btn btn-info" onclick="populateBookData(${item.AddEventModel.Id})" data-bs-toggle="modal" data-bs-target="#bookEvent">Book Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                    cardContainer.append(card);
                 });
-
             },
             error: function (textStatus, errorThrown) {
-                Success = false;
+                console.log('Error: ' + textStatus);
             }
-
         });
     }
+
 
     function previewImage(input) {
         var file = input.files[0];
@@ -290,7 +267,10 @@
 
                 alert("Event Booked Successfully!");
 
-                datatable.destroy();
+                // Remove all cards from the container
+                $('#cardContainer').empty();
+
+                // datatable.destroy();
                 bookEventList();
                 window.location.href = '/Customer/Customer';
 
