@@ -244,12 +244,14 @@
 
             AddEventModel: {
                 Id: $('#Id').val(),
+                Amount: $('#Amount').val(),
             },
 
             BookedEventsModel: {
                 Deposit: $('#Deposit').val(),
                 Date: $('#Date').val(),
                 Time: $('#Time').val(),
+                Addevent_id: $('#Id').val(),
             }
         }
 
@@ -279,18 +281,14 @@
 
                 $('#bookEvent').modal('hide');
 
+                Swal.fire({
+                    title: "Good job!",
+                    text: "Event saved successfully!",
+                    icon: "success",
+                    button: "Ok",
+                });
 
-                if (data.status === "success") {
-                    Swal.fire({
-                        title: "Good job!",
-                        text: "Event saved successfully!",
-                        icon: "success",
-                        button: "Ok",
-                    });
-                }
-                else if (data.status === "warning") {
-                    alert(data.message);
-                }
+                alert("Event Booked Successfully!");
 
                 datatable.destroy();
                 bookEventList();

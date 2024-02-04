@@ -26,13 +26,13 @@
                     </div>
 
                     <div class="input-group">
-                        @Html.PasswordFor(model => model.SPassword, new { @placeholder = "SPassword..", autocomplete = "off" })
+                        @Html.PasswordFor(model => model.SPassword, new { @placeholder = "Password..", autocomplete = "off" })
                         <label asp-for="SPassword">Password:</label>
                         @Html.ValidationMessageFor(model => model.SPassword, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="input-group">
-                        @Html.PasswordFor(model => model.ConfirmSPassword, new { @placeholder = "ConfirmSPassword..", autocomplete = "off" })
+                        @Html.PasswordFor(model => model.ConfirmSPassword, new { @placeholder = "Confirm Password..", autocomplete = "off" })
                         <label asp-for="SPassword">Confirm Password:</label>
                         @Html.ValidationMessageFor(model => model.ConfirmSPassword, "", new { @class = "text-danger" })
                     </div>
