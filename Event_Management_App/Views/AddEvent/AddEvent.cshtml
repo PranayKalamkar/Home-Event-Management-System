@@ -5,9 +5,9 @@
     Layout = "_AdminLayout";
 }
 
-<div class="col-xl-12" style=" display: flex; justify-content: space-between;">
+<div class="col-xl-12 bx-grid-small" style=" display: flex; justify-content: space-between;">
 
-    <h1>@ViewData["title"]</h1>
+    <h3 class="font-weight-bold">@ViewData["title"]</h3>
 
     <p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEvent">
@@ -334,21 +334,21 @@
                 var cardContainer = $('#cardContainer');
                 data.forEach(function (item) {
                     var card = `
-                                    <div class="col-md-4 mb-4">
-                                                    <div class="card h-100 mb-4">
-                                                        <img src="/addeventimages/${item.ImagePath}" class="card-img-top" alt="Image">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">${item.Category}</h5>
-                                                            <p class="card-text">Location: ${item.Location}</p>
-                                                            <p class="card-text">Amount: ${item.Amount}</p>
-                                                            <p class="card-text">Descirption: ${item.Description}</p>
-                                                                <a class="btn btn-info" onclick="viewEventData(${item.Id})" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">View</a>
-                                                                <a class="btn btn-warning" onclick="populateEventData(${item.Id})" data-bs-toggle="modal" data-bs-target="#updateEvent">Edit</a>
-                                                                <a class="btn btn-danger" onclick="deleteEventData(${item.Id})">Delete</a>
+                                        <div class="col-md-4 mb-4">
+                                                        <div class="card h-100 mb-4">
+                                                            <img src="/addeventimages/${item.ImagePath}" class="card-img-top" alt="Image">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">${item.Category}</h5>
+                                                                <p class="card-text">Location: ${item.Location}</p>
+                                                                <p class="card-text">Amount: ${item.Amount}</p>
+                                                                <p class="card-text">Descirption: ${item.Description}</p>
+                                                                    <a class="btn btn-info" onclick="viewEventData(${item.Id})" data-bs-toggle="modal" data-bs-target="#viewAddEventModal">View</a>
+                                                                    <a class="btn btn-warning" onclick="populateEventData(${item.Id})" data-bs-toggle="modal" data-bs-target="#updateEvent">Edit</a>
+                                                                    <a class="btn btn-danger" onclick="deleteEventData(${item.Id})">Delete</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    </div>
-                                                `;
+                                                        </div>
+                                                    `;
                     cardContainer.append(card);
                 });
             },
@@ -503,27 +503,39 @@
 
             success: function (data) {
 
-                if (data === "Index") {
-                    Swal.fire({
-                        title: "Event updated successfully!",
-                        text: "close",
-                        icon: "success"
-                    });
+                Swal.fire({
+                    title: "Event updated successfully!",
+                    text: "close",
+                    icon: "success"
+                });
 
-                    $('#updateEvent').modal('hide');
-                    // Remove all cards from the container
-                    $('#cardContainer').empty();
-                    // datatable.destroy();
-                    getAddEventList();
+                $('#updateEvent').modal('hide');
+                // Remove all cards from the container
+                $('#cardContainer').empty();
+                // datatable.destroy();
+                getAddEventList();
 
-                } else {
-                    Swal.fire({
-                        title: "Error updating event!",
-                        text: "close",
-                        icon: "Error"
-                    });
+                // if (data === "Index") {
+                //     Swal.fire({
+                //         title: "Event updated successfully!",
+                //         text: "close",
+                //         icon: "success"
+                //     });
 
-                }
+                //     $('#updateEvent').modal('hide');
+                //     // Remove all cards from the container
+                //     $('#cardContainer').empty();
+                //     // datatable.destroy();
+                //     getAddEventList();
+
+                // } else {
+                //     Swal.fire({
+                //         title: "Error updating event!",
+                //         text: "close",
+                //         icon: "Error"
+                //     });
+
+                // }
             },
             error: function (errormessage) {
                 Swal.fire({

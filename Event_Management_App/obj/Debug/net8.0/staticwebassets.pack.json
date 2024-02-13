@@ -1,0 +1,617 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Event_Management_App.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Event_Management_App.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\0a718f14-ba3c-46de-adbf-61bd11eff386_birthday.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\0a718f14-ba3c-46de-adbf-61bd11eff386_birthday.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\0be4b5bc-6d34-4a2a-b370-44bd372a7697_office.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\0be4b5bc-6d34-4a2a-b370-44bd372a7697_office.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\18c39c53-1c9a-4037-9e75-949cf5d7a576_office1.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\18c39c53-1c9a-4037-9e75-949cf5d7a576_office1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\1dbdc7d6-f2a6-48b3-8933-e729c0cca81e_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\1dbdc7d6-f2a6-48b3-8933-e729c0cca81e_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\212b0b10-91ea-4b96-a441-95b91ecc6342_wedding1.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\212b0b10-91ea-4b96-a441-95b91ecc6342_wedding1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\298a1c9e-eac6-4914-bb9d-0b2fd34b8dfb_office.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\298a1c9e-eac6-4914-bb9d-0b2fd34b8dfb_office.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\29a2606d-ea69-43f5-98be-cf2ed7805447_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\29a2606d-ea69-43f5-98be-cf2ed7805447_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\40311f3c-724c-4701-ae99-b284155960dd_event.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\40311f3c-724c-4701-ae99-b284155960dd_event.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\440768b4-784f-49aa-866c-31e16e54c5d6_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\440768b4-784f-49aa-866c-31e16e54c5d6_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\4e18a628-558e-4c33-9071-f431ca016eec_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\4e18a628-558e-4c33-9071-f431ca016eec_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\5f6d06c1-8075-4f3d-830a-9d8af3100cf2_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\5f6d06c1-8075-4f3d-830a-9d8af3100cf2_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\6a5dbd04-facc-4887-a288-52c0a90d988a_sports.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\6a5dbd04-facc-4887-a288-52c0a90d988a_sports.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\6f3772b7-7e2e-400c-8f21-741b7ba8e3c1_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\6f3772b7-7e2e-400c-8f21-741b7ba8e3c1_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\6fc3fe5c-8295-44dd-be79-9fbbd26abe5a_event.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\6fc3fe5c-8295-44dd-be79-9fbbd26abe5a_event.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\7488eb62-32ef-4107-8976-c7df2bae11dd_event.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\7488eb62-32ef-4107-8976-c7df2bae11dd_event.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\75f9a936-88c1-4244-890a-fbd5c933690e_party.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\75f9a936-88c1-4244-890a-fbd5c933690e_party.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\8abaa1de-57d3-4737-8be7-bd4e6afdefe1_wedding.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\8abaa1de-57d3-4737-8be7-bd4e6afdefe1_wedding.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\8daadde9-cf4f-471d-b286-2b48422629a5_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\8daadde9-cf4f-471d-b286-2b48422629a5_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\8dacf3ce-a1ef-49a9-ba6f-6cee3507fca3_party.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\8dacf3ce-a1ef-49a9-ba6f-6cee3507fca3_party.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\8f626e87-52ce-4b57-adf5-7be84d09a1a4_social.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\8f626e87-52ce-4b57-adf5-7be84d09a1a4_social.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\b059bdf3-dd15-4317-bcbc-653367b1ac4b_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\b059bdf3-dd15-4317-bcbc-653367b1ac4b_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\b76675d8-233f-44bb-826c-12bab43847fb_event.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\b76675d8-233f-44bb-826c-12bab43847fb_event.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\c73087a1-b400-4474-b655-bdf4fdda99a8_festival1.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\c73087a1-b400-4474-b655-bdf4fdda99a8_festival1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\c99fcdad-d4f6-4ed8-8a56-b03512fb2b9b_event.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\c99fcdad-d4f6-4ed8-8a56-b03512fb2b9b_event.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\ceb63810-8add-41ed-bf72-17faeec06b0f_mountain.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\ceb63810-8add-41ed-bf72-17faeec06b0f_mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\addeventimages\\faffd4c7-e594-43de-839c-827db080476f_social.jpg",
+      "PackagePath": "staticwebassets\\addeventimages\\faffd4c7-e594-43de-839c-827db080476f_social.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\css\\AdminLayout.css",
+      "PackagePath": "staticwebassets\\css\\AdminLayout.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\css\\BookingLayout.css",
+      "PackagePath": "staticwebassets\\css\\BookingLayout.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\css\\DashboardStyles.css",
+      "PackagePath": "staticwebassets\\css\\DashboardStyles.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\css\\SignUpOrLogin.css",
+      "PackagePath": "staticwebassets\\css\\SignUpOrLogin.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\css\\UILayout.css",
+      "PackagePath": "staticwebassets\\css\\UILayout.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\css\\UserLayout.css",
+      "PackagePath": "staticwebassets\\css\\UserLayout.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\about.jpg",
+      "PackagePath": "staticwebassets\\images\\about.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\ani.jpg",
+      "PackagePath": "staticwebassets\\images\\ani.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\asana.png",
+      "PackagePath": "staticwebassets\\images\\asana.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\background-1.jpg",
+      "PackagePath": "staticwebassets\\images\\background-1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\background-2.jpg",
+      "PackagePath": "staticwebassets\\images\\background-2.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\background.jpg",
+      "PackagePath": "staticwebassets\\images\\background.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\behance.png",
+      "PackagePath": "staticwebassets\\images\\behance.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\birthday1.jpg",
+      "PackagePath": "staticwebassets\\images\\birthday1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\cartoon.jpg",
+      "PackagePath": "staticwebassets\\images\\cartoon.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\dish1.jpg",
+      "PackagePath": "staticwebassets\\images\\dish1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\dish2.jpg",
+      "PackagePath": "staticwebassets\\images\\dish2.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\dish3.jpg",
+      "PackagePath": "staticwebassets\\images\\dish3.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\dish4.jpg",
+      "PackagePath": "staticwebassets\\images\\dish4.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\dish5.jpg",
+      "PackagePath": "staticwebassets\\images\\dish5.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\dish6.jpg",
+      "PackagePath": "staticwebassets\\images\\dish6.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\dribbble.png",
+      "PackagePath": "staticwebassets\\images\\dribbble.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\facebook.png",
+      "PackagePath": "staticwebassets\\images\\facebook.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery1.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery2.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery2.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery3.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery3.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery4.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery4.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery5.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery5.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery6.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery6.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery7.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery7.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery8.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery8.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\gallery9.jpg",
+      "PackagePath": "staticwebassets\\images\\gallery9.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\github.png",
+      "PackagePath": "staticwebassets\\images\\github.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\google.png",
+      "PackagePath": "staticwebassets\\images\\google.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\home1.jpg",
+      "PackagePath": "staticwebassets\\images\\home1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\home2.jpg",
+      "PackagePath": "staticwebassets\\images\\home2.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\home3.jpg",
+      "PackagePath": "staticwebassets\\images\\home3.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\home4.jpg",
+      "PackagePath": "staticwebassets\\images\\home4.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\home5.jpg",
+      "PackagePath": "staticwebassets\\images\\home5.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\home6.jpg",
+      "PackagePath": "staticwebassets\\images\\home6.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\img1.jpg",
+      "PackagePath": "staticwebassets\\images\\img1.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\img2.jpg",
+      "PackagePath": "staticwebassets\\images\\img2.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\img3.jpg",
+      "PackagePath": "staticwebassets\\images\\img3.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\img4.jpg",
+      "PackagePath": "staticwebassets\\images\\img4.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\infinity.jpg",
+      "PackagePath": "staticwebassets\\images\\infinity.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\instagram.png",
+      "PackagePath": "staticwebassets\\images\\instagram.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\jack.jpg",
+      "PackagePath": "staticwebassets\\images\\jack.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\jason.jpg",
+      "PackagePath": "staticwebassets\\images\\jason.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\kanasu.jpg",
+      "PackagePath": "staticwebassets\\images\\kanasu.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\mailchimp.png",
+      "PackagePath": "staticwebassets\\images\\mailchimp.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\micky.jpg",
+      "PackagePath": "staticwebassets\\images\\micky.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\mountain.jpg",
+      "PackagePath": "staticwebassets\\images\\mountain.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\page-background.jpg",
+      "PackagePath": "staticwebassets\\images\\page-background.jpg"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\profile.png",
+      "PackagePath": "staticwebassets\\images\\profile.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\slack.png",
+      "PackagePath": "staticwebassets\\images\\slack.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\images\\twitter.png",
+      "PackagePath": "staticwebassets\\images\\twitter.png"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\js\\Dashboard.js",
+      "PackagePath": "staticwebassets\\js\\Dashboard.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\js\\admin.js",
+      "PackagePath": "staticwebassets\\js\\admin.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\js\\booking.js",
+      "PackagePath": "staticwebassets\\js\\booking.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\js\\charts.js",
+      "PackagePath": "staticwebassets\\js\\charts.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\js\\ui.js",
+      "PackagePath": "staticwebassets\\js\\ui.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\js\\user.js",
+      "PackagePath": "staticwebassets\\js\\user.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Project Home\\Event-Management-System\\Event_Management_App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Event_Management_App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Event_Management_App.props",
+      "PackagePath": "build\\Event_Management_App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Event_Management_App.props",
+      "PackagePath": "buildMultiTargeting\\Event_Management_App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Event_Management_App.props",
+      "PackagePath": "buildTransitive\\Event_Management_App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

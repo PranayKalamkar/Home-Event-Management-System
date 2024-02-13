@@ -1,0 +1,114 @@
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\appsettings.Development.json
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\appsettings.json
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.staticwebassets.runtime.json
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.exe
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.deps.json
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.runtimeconfig.json
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.pdb
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Google.Protobuf.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\MySql.Data.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\ZstdSharp.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\DotNet\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.csproj.AssemblyReference.cache
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.GeneratedMSBuildEditorConfig.editorconfig
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.AssemblyInfoInputs.cache
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.AssemblyInfo.cs
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.csproj.CoreCompileInputs.cache
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.MvcApplicationPartsAssemblyInfo.cache
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.RazorAssemblyInfo.cache
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.RazorAssemblyInfo.cs
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.sourcelink.json
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets.build.json
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets.development.json
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.Event_Management_App.Microsoft.AspNetCore.StaticWebAssets.props
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.build.Event_Management_App.props
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Event_Management_App.props
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Event_Management_App.props
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets.pack.json
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\scopedcss\bundle\Event_Management_App.styles.css
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\scopedcss\projectbundle\Event_Management_App.bundle.scp.css
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.csproj.CopyComplete
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.dll
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\refint\Event_Management_App.dll
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.pdb
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.genruntimeconfig.cache
+D:\DotNet\Event-Management-System\Event_Management_App\obj\Debug\net8.0\ref\Event_Management_App.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\appsettings.Development.json
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\appsettings.json
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.staticwebassets.runtime.json
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.exe
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.deps.json
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.runtimeconfig.json
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Event_Management_App.pdb
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Google.Protobuf.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\MySql.Data.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\ZstdSharp.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Project Home\Event-Management-System\Event_Management_App\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.csproj.AssemblyReference.cache
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.AssemblyInfoInputs.cache
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.AssemblyInfo.cs
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.csproj.CoreCompileInputs.cache
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.MvcApplicationPartsAssemblyInfo.cache
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.RazorAssemblyInfo.cache
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.RazorAssemblyInfo.cs
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.sourcelink.json
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets.development.json
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.Event_Management_App.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.build.Event_Management_App.props
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Event_Management_App.props
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Event_Management_App.props
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\scopedcss\bundle\Event_Management_App.styles.css
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\scopedcss\projectbundle\Event_Management_App.bundle.scp.css
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.csproj.CopyComplete
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.dll
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\refint\Event_Management_App.dll
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.pdb
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\Event_Management_App.genruntimeconfig.cache
+D:\Project Home\Event-Management-System\Event_Management_App\obj\Debug\net8.0\ref\Event_Management_App.dll

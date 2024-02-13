@@ -1,972 +1,1129 @@
-﻿/**
- * Config
- * -------------------------------------------------------------------------------------
- * ! IMPORTANT: Make sure you clear the browser local storage In order to see the config changes in the template.
- * ! To clear local storage: (https://www.leadshook.com/help/how-to-clear-local-storage-in-google-chrome-browser/).
- */
-
-'use strict';
-
-// JS global variables
-let config = {
-  colors: {
-    primary: '#696cff',
-    secondary: '#8592a3',
-    success: '#71dd37',
-    info: '#03c3ec',
-    warning: '#ffab00',
-    danger: '#ff3e1d',
-    dark: '#233446',
-    black: '#000',
-    white: '#fff',
-    body: '#f4f5fb',
-    headingColor: '#566a7f',
-    axisColor: '#a1acb8',
-    borderColor: '#eceef1'
-  }
-};
-/**
- * Dashboard Analytics
- */
-
-(function () {
-    let cardColor, headingColor, axisColor, shadeColor, borderColor;
-
-    cardColor = config.colors.white;
-    headingColor = config.colors.headingColor;
-    axisColor = config.colors.axisColor;
-    borderColor = config.colors.borderColor;
-
-    // Total Revenue Report Chart - Bar Chart
-    // --------------------------------------------------------------------
-    const totalRevenueChartEl = document.querySelector('#totalRevenueChart'),
-        totalRevenueChartOptions = {
-            series: [
-                {
-                    name: '2021',
-                    data: [18, 7, 15, 29, 18, 12, 9]
-                },
-                {
-                    name: '2020',
-                    data: [-13, -18, -9, -14, -5, -17, -15]
-                }
-            ],
-            chart: {
-                height: 300,
-                stacked: true,
-                type: 'bar',
-                toolbar: { show: false }
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '33%',
-                    borderRadius: 12,
-                    startingShape: 'rounded',
-                    endingShape: 'rounded'
-                }
-            },
-            colors: [config.colors.primary, config.colors.info],
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                curve: 'smooth',
-                width: 6,
-                lineCap: 'round',
-                colors: [cardColor]
-            },
-            legend: {
-                show: true,
-                horizontalAlign: 'left',
-                position: 'top',
-                markers: {
-                    height: 8,
-                    width: 8,
-                    radius: 12,
-                    offsetX: -3
-                },
-                labels: {
-                    colors: axisColor
-                },
-                itemMargin: {
-                    horizontal: 10
-                }
-            },
-            grid: {
-                borderColor: borderColor,
-                padding: {
-                    top: 0,
-                    bottom: -8,
-                    left: 20,
-                    right: 20
-                }
-            },
-            xaxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-                labels: {
-                    style: {
-                        fontSize: '13px',
-                        colors: axisColor
-                    }
-                },
-                axisTicks: {
-                    show: false
-                },
-                axisBorder: {
-                    show: false
-                }
-            },
-            yaxis: {
-                labels: {
-                    style: {
-                        fontSize: '13px',
-                        colors: axisColor
-                    }
-                }
-            },
-            responsive: [
-                {
-                    breakpoint: 1700,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '32%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 1580,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '35%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 1440,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '42%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 1300,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '48%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 1200,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '40%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 1040,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 11,
-                                columnWidth: '48%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 991,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '30%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 840,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '35%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '28%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 640,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '32%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 576,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '37%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '45%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 420,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '52%'
-                            }
-                        }
-                    }
-                },
-                {
-                    breakpoint: 380,
-                    options: {
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 10,
-                                columnWidth: '60%'
-                            }
-                        }
-                    }
-                }
-            ],
-            states: {
-                hover: {
-                    filter: {
-                        type: 'none'
-                    }
-                },
-                active: {
-                    filter: {
-                        type: 'none'
-                    }
-                }
-            }
-        };
-    if (typeof totalRevenueChartEl !== undefined && totalRevenueChartEl !== null) {
-        const totalRevenueChart = new ApexCharts(totalRevenueChartEl, totalRevenueChartOptions);
-        totalRevenueChart.render();
-    }
-
-    // Growth Chart - Radial Bar Chart
-    // --------------------------------------------------------------------
-    const growthChartEl = document.querySelector('#growthChart'),
-        growthChartOptions = {
-            series: [78],
-            labels: ['Growth'],
-            chart: {
-                height: 240,
-                type: 'radialBar'
-            },
-            plotOptions: {
-                radialBar: {
-                    size: 150,
-                    offsetY: 10,
-                    startAngle: -150,
-                    endAngle: 150,
-                    hollow: {
-                        size: '55%'
-                    },
-                    track: {
-                        background: cardColor,
-                        strokeWidth: '100%'
-                    },
-                    dataLabels: {
-                        name: {
-                            offsetY: 15,
-                            color: headingColor,
-                            fontSize: '15px',
-                            fontWeight: '600',
-                            fontFamily: 'Public Sans'
-                        },
-                        value: {
-                            offsetY: -25,
-                            color: headingColor,
-                            fontSize: '22px',
-                            fontWeight: '500',
-                            fontFamily: 'Public Sans'
-                        }
-                    }
-                }
-            },
-            colors: [config.colors.primary],
-            fill: {
-                type: 'gradient',
-                gradient: {
-                    shade: 'dark',
-                    shadeIntensity: 0.5,
-                    gradientToColors: [config.colors.primary],
-                    inverseColors: true,
-                    opacityFrom: 1,
-                    opacityTo: 0.6,
-                    stops: [30, 70, 100]
-                }
-            },
-            stroke: {
-                dashArray: 5
-            },
-            grid: {
-                padding: {
-                    top: -35,
-                    bottom: -10
-                }
-            },
-            states: {
-                hover: {
-                    filter: {
-                        type: 'none'
-                    }
-                },
-                active: {
-                    filter: {
-                        type: 'none'
-                    }
-                }
-            }
-        };
-    if (typeof growthChartEl !== undefined && growthChartEl !== null) {
-        const growthChart = new ApexCharts(growthChartEl, growthChartOptions);
-        growthChart.render();
-    }
-
-    // Profit Report Line Chart
-    // --------------------------------------------------------------------
-    const profileReportChartEl = document.querySelector('#profileReportChart'),
-        profileReportChartConfig = {
-            chart: {
-                height: 80,
-                // width: 175,
-                type: 'line',
-                toolbar: {
-                    show: false
-                },
-                dropShadow: {
-                    enabled: true,
-                    top: 10,
-                    left: 5,
-                    blur: 3,
-                    color: config.colors.warning,
-                    opacity: 0.15
-                },
-                sparkline: {
-                    enabled: true
-                }
-            },
-            grid: {
-                show: false,
-                padding: {
-                    right: 8
-                }
-            },
-            colors: [config.colors.warning],
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                width: 5,
-                curve: 'smooth'
-            },
-            series: [
-                {
-                    data: [110, 270, 145, 245, 205, 285]
-                }
-            ],
-            xaxis: {
-                show: false,
-                lines: {
-                    show: false
-                },
-                labels: {
-                    show: false
-                },
-                axisBorder: {
-                    show: false
-                }
-            },
-            yaxis: {
-                show: false
-            }
-        };
-    if (typeof profileReportChartEl !== undefined && profileReportChartEl !== null) {
-        const profileReportChart = new ApexCharts(profileReportChartEl, profileReportChartConfig);
-        profileReportChart.render();
-    }
-
-    // Order Statistics Chart
-    // --------------------------------------------------------------------
-    const chartOrderStatistics = document.querySelector('#orderStatisticsChart'),
-        orderChartConfig = {
-            chart: {
-                height: 165,
-                width: 130,
-                type: 'donut'
-            },
-            labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-            series: [85, 15, 50, 50],
-            colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
-            stroke: {
-                width: 5,
-                colors: cardColor
-            },
-            dataLabels: {
-                enabled: false,
-                formatter: function (val, opt) {
-                    return parseInt(val) + '%';
-                }
-            },
-            legend: {
-                show: false
-            },
-            grid: {
-                padding: {
-                    top: 0,
-                    bottom: 0,
-                    right: 15
-                }
-            },
-            plotOptions: {
-                pie: {
-                    donut: {
-                        size: '75%',
-                        labels: {
-                            show: true,
-                            value: {
-                                fontSize: '1.5rem',
-                                fontFamily: 'Public Sans',
-                                color: headingColor,
-                                offsetY: -15,
-                                formatter: function (val) {
-                                    return parseInt(val) + '%';
-                                }
-                            },
-                            name: {
-                                offsetY: 20,
-                                fontFamily: 'Public Sans'
-                            },
-                            total: {
-                                show: true,
-                                fontSize: '0.8125rem',
-                                color: axisColor,
-                                label: 'Weekly',
-                                formatter: function (w) {
-                                    return '38%';
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        };
-    if (typeof chartOrderStatistics !== undefined && chartOrderStatistics !== null) {
-        const statisticsChart = new ApexCharts(chartOrderStatistics, orderChartConfig);
-        statisticsChart.render();
-    }
-
-    // Income Chart - Area chart
-    // --------------------------------------------------------------------
-    const incomeChartEl = document.querySelector('#incomeChart'),
-        incomeChartConfig = {
-            series: [
-                {
-                    data: [24, 21, 30, 22, 42, 26, 35, 29]
-                }
-            ],
-            chart: {
-                height: 215,
-                parentHeightOffset: 0,
-                parentWidthOffset: 0,
-                toolbar: {
-                    show: false
-                },
-                type: 'area'
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                width: 2,
-                curve: 'smooth'
-            },
-            legend: {
-                show: false
-            },
-            markers: {
-                size: 6,
-                colors: 'transparent',
-                strokeColors: 'transparent',
-                strokeWidth: 4,
-                discrete: [
+﻿(function ($) {
+    'use strict';
+    $(function () {
+        if ($("#order-chart").length) {
+            var areaData = {
+                labels: ["10", "", "", "20", "", "", "30", "", "", "40", "", "", "50", "", "", "60", "", "", "70"],
+                datasets: [
                     {
-                        fillColor: config.colors.white,
-                        seriesIndex: 0,
-                        dataPointIndex: 7,
-                        strokeColor: config.colors.primary,
-                        strokeWidth: 2,
-                        size: 6,
-                        radius: 8
-                    }
-                ],
-                hover: {
-                    size: 7
-                }
-            },
-            colors: [config.colors.primary],
-            fill: {
-                type: 'gradient',
-                gradient: {
-                    shade: shadeColor,
-                    shadeIntensity: 0.6,
-                    opacityFrom: 0.5,
-                    opacityTo: 0.25,
-                    stops: [0, 95, 100]
-                }
-            },
-            grid: {
-                borderColor: borderColor,
-                strokeDashArray: 3,
-                padding: {
-                    top: -20,
-                    bottom: -8,
-                    left: -10,
-                    right: 8
-                }
-            },
-            xaxis: {
-                categories: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-                axisBorder: {
-                    show: false
-                },
-                axisTicks: {
-                    show: false
-                },
-                labels: {
-                    show: true,
-                    style: {
-                        fontSize: '13px',
-                        colors: axisColor
-                    }
-                }
-            },
-            yaxis: {
-                labels: {
-                    show: false
-                },
-                min: 10,
-                max: 50,
-                tickAmount: 4
-            }
-        };
-    if (typeof incomeChartEl !== undefined && incomeChartEl !== null) {
-        const incomeChart = new ApexCharts(incomeChartEl, incomeChartConfig);
-        incomeChart.render();
-    }
-
-    // Expenses Mini Chart - Radial Chart
-    // --------------------------------------------------------------------
-    const weeklyExpensesEl = document.querySelector('#expensesOfWeek'),
-        weeklyExpensesConfig = {
-            series: [65],
-            chart: {
-                width: 60,
-                height: 60,
-                type: 'radialBar'
-            },
-            plotOptions: {
-                radialBar: {
-                    startAngle: 0,
-                    endAngle: 360,
-                    strokeWidth: '8',
-                    hollow: {
-                        margin: 2,
-                        size: '45%'
+                        data: [200, 480, 700, 600, 620, 350, 380, 350, 850, "600", "650", "350", "590", "350", "620", "500", "990", "780", "650"],
+                        borderColor: [
+                            '#4747A1'
+                        ],
+                        borderWidth: 2,
+                        fill: false,
+                        label: "Orders"
                     },
-                    track: {
-                        strokeWidth: '50%',
-                        background: borderColor
-                    },
-                    dataLabels: {
-                        show: true,
-                        name: {
-                            show: false
+                    {
+                        data: [400, 450, 410, 500, 480, 600, 450, 550, 460, "560", "450", "700", "450", "640", "550", "650", "400", "850", "800"],
+                        borderColor: [
+                            '#F09397'
+                        ],
+                        borderWidth: 2,
+                        fill: false,
+                        label: "Downloads"
+                    }
+                ]
+            };
+            var areaOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    filler: {
+                        propagate: false
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            fontColor: "#6C7383"
                         },
-                        value: {
-                            formatter: function (val) {
-                                return '$' + parseInt(val);
+                        gridLines: {
+                            display: false,
+                            drawBorder: false,
+                            color: 'transparent',
+                            zeroLineColor: '#eeeeee'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            display: true,
+                            autoSkip: false,
+                            maxRotation: 0,
+                            stepSize: 200,
+                            min: 200,
+                            max: 1200,
+                            padding: 18,
+                            fontColor: "#6C7383"
+                        },
+                        gridLines: {
+                            display: true,
+                            color: "#f2f2f2",
+                            drawBorder: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                elements: {
+                    line: {
+                        tension: .35
+                    },
+                    point: {
+                        radius: 0
+                    }
+                }
+            }
+            var revenueChartCanvas = $("#order-chart").get(0).getContext("2d");
+            var revenueChart = new Chart(revenueChartCanvas, {
+                type: 'line',
+                data: areaData,
+                options: areaOptions
+            });
+        }
+        if ($("#order-chart-dark").length) {
+            var areaData = {
+                labels: ["10", "", "", "20", "", "", "30", "", "", "40", "", "", "50", "", "", "60", "", "", "70"],
+                datasets: [
+                    {
+                        data: [200, 480, 700, 600, 620, 350, 380, 350, 850, "600", "650", "350", "590", "350", "620", "500", "990", "780", "650"],
+                        borderColor: [
+                            '#4747A1'
+                        ],
+                        borderWidth: 2,
+                        fill: false,
+                        label: "Orders"
+                    },
+                    {
+                        data: [400, 450, 410, 500, 480, 600, 450, 550, 460, "560", "450", "700", "450", "640", "550", "650", "400", "850", "800"],
+                        borderColor: [
+                            '#F09397'
+                        ],
+                        borderWidth: 2,
+                        fill: false,
+                        label: "Downloads"
+                    }
+                ]
+            };
+            var areaOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    filler: {
+                        propagate: false
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            fontColor: "#fff"
+                        },
+                        gridLines: {
+                            display: false,
+                            drawBorder: false,
+                            color: 'transparent',
+                            zeroLineColor: '#575757'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            display: true,
+                            autoSkip: false,
+                            maxRotation: 0,
+                            stepSize: 200,
+                            min: 200,
+                            max: 1200,
+                            padding: 18,
+                            fontColor: "#fff"
+                        },
+                        gridLines: {
+                            display: true,
+                            color: "#575757",
+                            drawBorder: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                elements: {
+                    line: {
+                        tension: .35
+                    },
+                    point: {
+                        radius: 0
+                    }
+                }
+            }
+            var revenueChartCanvas = $("#order-chart-dark").get(0).getContext("2d");
+            var revenueChart = new Chart(revenueChartCanvas, {
+                type: 'line',
+                data: areaData,
+                options: areaOptions
+            });
+        }
+        if ($("#sales-chart").length) {
+            var SalesChartCanvas = $("#sales-chart").get(0).getContext("2d");
+            var SalesChart = new Chart(SalesChartCanvas, {
+                type: 'bar',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+                    datasets: [{
+                        label: 'Offline Sales',
+                        data: [480, 230, 470, 210, 330],
+                        backgroundColor: '#98BDFF'
+                    },
+                    {
+                        label: 'Online Sales',
+                        data: [400, 340, 550, 480, 170],
+                        backgroundColor: '#4B49AC'
+                    }
+                    ]
+                },
+                options: {
+                    cornerRadius: 5,
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    layout: {
+                        padding: {
+                            left: 0,
+                            right: 0,
+                            top: 20,
+                            bottom: 0
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                drawBorder: false,
+                                color: "#F2F2F2"
                             },
-                            offsetY: 5,
-                            color: '#697a8d',
-                            fontSize: '13px',
-                            show: true
+                            ticks: {
+                                display: true,
+                                min: 0,
+                                max: 560,
+                                callback: function (value, index, values) {
+                                    return value + '$';
+                                },
+                                autoSkip: true,
+                                maxTicksLimit: 10,
+                                fontColor: "#6C7383"
+                            }
+                        }],
+                        xAxes: [{
+                            stacked: false,
+                            ticks: {
+                                beginAtZero: true,
+                                fontColor: "#6C7383"
+                            },
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                                display: false
+                            },
+                            barPercentage: 1
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    },
+                    elements: {
+                        point: {
+                            radius: 0
                         }
                     }
-                }
-            },
-            fill: {
-                type: 'solid',
-                colors: config.colors.primary
-            },
-            stroke: {
-                lineCap: 'round'
-            },
-            grid: {
-                padding: {
-                    top: -10,
-                    bottom: -15,
-                    left: -10,
-                    right: -10
-                }
-            },
-            states: {
-                hover: {
-                    filter: {
-                        type: 'none'
+                },
+            });
+            document.getElementById('sales-legend').innerHTML = SalesChart.generateLegend();
+        }
+        if ($("#sales-chart-dark").length) {
+            var SalesChartCanvas = $("#sales-chart-dark").get(0).getContext("2d");
+            var SalesChart = new Chart(SalesChartCanvas, {
+                type: 'bar',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+                    datasets: [{
+                        label: 'Offline Sales',
+                        data: [480, 230, 470, 210, 330],
+                        backgroundColor: '#98BDFF'
+                    },
+                    {
+                        label: 'Online Sales',
+                        data: [400, 340, 550, 480, 170],
+                        backgroundColor: '#4B49AC'
+                    }
+                    ]
+                },
+                options: {
+                    cornerRadius: 5,
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    layout: {
+                        padding: {
+                            left: 0,
+                            right: 0,
+                            top: 20,
+                            bottom: 0
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                drawBorder: false,
+                                color: "#575757"
+                            },
+                            ticks: {
+                                display: true,
+                                min: 0,
+                                max: 500,
+                                callback: function (value, index, values) {
+                                    return value + '$';
+                                },
+                                autoSkip: true,
+                                maxTicksLimit: 10,
+                                fontColor: "#F0F0F0"
+                            }
+                        }],
+                        xAxes: [{
+                            stacked: false,
+                            ticks: {
+                                beginAtZero: true,
+                                fontColor: "#F0F0F0"
+                            },
+                            gridLines: {
+                                color: "#575757",
+                                display: false
+                            },
+                            barPercentage: 1
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    },
+                    elements: {
+                        point: {
+                            radius: 0
+                        }
                     }
                 },
-                active: {
-                    filter: {
-                        type: 'none'
+            });
+            document.getElementById('sales-legend').innerHTML = SalesChart.generateLegend();
+        }
+        if ($("#north-america-chart").length) {
+            var areaData = {
+                labels: ["Jan", "Feb", "Mar"],
+                datasets: [{
+                    data: [100, 50, 50],
+                    backgroundColor: [
+                        "#4B49AC", "#FFC100", "#248AFD",
+                    ],
+                    borderColor: "rgba(0,0,0,0)"
+                }
+                ]
+            };
+            var areaOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                segmentShowStroke: false,
+                cutoutPercentage: 78,
+                elements: {
+                    arc: {
+                        borderWidth: 4
+                    }
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                legendCallback: function (chart) {
+                    var text = [];
+                    text.push('<div class="report-chart">');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[0] + '"></div><p class="mb-0">Offline sales</p></div>');
+                    text.push('<p class="mb-0">88333</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[1] + '"></div><p class="mb-0">Online sales</p></div>');
+                    text.push('<p class="mb-0">66093</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[2] + '"></div><p class="mb-0">Returns</p></div>');
+                    text.push('<p class="mb-0">39836</p>');
+                    text.push('</div>');
+                    text.push('</div>');
+                    return text.join("");
+                },
+            }
+            var northAmericaChartPlugins = {
+                beforeDraw: function (chart) {
+                    var width = chart.chart.width,
+                        height = chart.chart.height,
+                        ctx = chart.chart.ctx;
+
+                    ctx.restore();
+                    var fontSize = 3.125;
+                    ctx.font = "500 " + fontSize + "em sans-serif";
+                    ctx.textBaseline = "middle";
+                    ctx.fillStyle = "#13381B";
+
+                    var text = "90",
+                        textX = Math.round((width - ctx.measureText(text).width) / 2),
+                        textY = height / 2;
+
+                    ctx.fillText(text, textX, textY);
+                    ctx.save();
+                }
+            }
+            var northAmericaChartCanvas = $("#north-america-chart").get(0).getContext("2d");
+            var northAmericaChart = new Chart(northAmericaChartCanvas, {
+                type: 'doughnut',
+                data: areaData,
+                options: areaOptions,
+                plugins: northAmericaChartPlugins
+            });
+            document.getElementById('north-america-legend').innerHTML = northAmericaChart.generateLegend();
+        }
+        if ($("#north-america-chart-dark").length) {
+            var areaData = {
+                labels: ["Jan", "Feb", "Mar"],
+                datasets: [{
+                    data: [100, 50, 50],
+                    backgroundColor: [
+                        "#4B49AC", "#FFC100", "#248AFD",
+                    ],
+                    borderColor: "rgba(0,0,0,0)"
+                }
+                ]
+            };
+            var areaOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                segmentShowStroke: false,
+                cutoutPercentage: 78,
+                elements: {
+                    arc: {
+                        borderWidth: 4
+                    }
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                legendCallback: function (chart) {
+                    var text = [];
+                    text.push('<div class="report-chart">');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[0] + '"></div><p class="mb-0">Offline sales</p></div>');
+                    text.push('<p class="mb-0">88333</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[1] + '"></div><p class="mb-0">Online sales</p></div>');
+                    text.push('<p class="mb-0">66093</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[2] + '"></div><p class="mb-0">Returns</p></div>');
+                    text.push('<p class="mb-0">39836</p>');
+                    text.push('</div>');
+                    text.push('</div>');
+                    return text.join("");
+                },
+            }
+            var northAmericaChartPlugins = {
+                beforeDraw: function (chart) {
+                    var width = chart.chart.width,
+                        height = chart.chart.height,
+                        ctx = chart.chart.ctx;
+
+                    ctx.restore();
+                    var fontSize = 3.125;
+                    ctx.font = "500 " + fontSize + "em sans-serif";
+                    ctx.textBaseline = "middle";
+                    ctx.fillStyle = "#fff";
+
+                    var text = "90",
+                        textX = Math.round((width - ctx.measureText(text).width) / 2),
+                        textY = height / 2;
+
+                    ctx.fillText(text, textX, textY);
+                    ctx.save();
+                }
+            }
+            var northAmericaChartCanvas = $("#north-america-chart-dark").get(0).getContext("2d");
+            var northAmericaChart = new Chart(northAmericaChartCanvas, {
+                type: 'doughnut',
+                data: areaData,
+                options: areaOptions,
+                plugins: northAmericaChartPlugins
+            });
+            document.getElementById('north-america-legend').innerHTML = northAmericaChart.generateLegend();
+        }
+
+        if ($("#south-america-chart").length) {
+            var areaData = {
+                labels: ["Jan", "Feb", "Mar"],
+                datasets: [{
+                    data: [60, 70, 70],
+                    backgroundColor: [
+                        "#4B49AC", "#FFC100", "#248AFD",
+                    ],
+                    borderColor: "rgba(0,0,0,0)"
+                }
+                ]
+            };
+            var areaOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                segmentShowStroke: false,
+                cutoutPercentage: 78,
+                elements: {
+                    arc: {
+                        borderWidth: 4
+                    }
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                legendCallback: function (chart) {
+                    var text = [];
+                    text.push('<div class="report-chart">');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[0] + '"></div><p class="mb-0">Offline sales</p></div>');
+                    text.push('<p class="mb-0">495343</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[1] + '"></div><p class="mb-0">Online sales</p></div>');
+                    text.push('<p class="mb-0">630983</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[2] + '"></div><p class="mb-0">Returns</p></div>');
+                    text.push('<p class="mb-0">290831</p>');
+                    text.push('</div>');
+                    text.push('</div>');
+                    return text.join("");
+                },
+            }
+            var southAmericaChartPlugins = {
+                beforeDraw: function (chart) {
+                    var width = chart.chart.width,
+                        height = chart.chart.height,
+                        ctx = chart.chart.ctx;
+
+                    ctx.restore();
+                    var fontSize = 3.125;
+                    ctx.font = "600 " + fontSize + "em sans-serif";
+                    ctx.textBaseline = "middle";
+                    ctx.fillStyle = "#000";
+
+                    var text = "76",
+                        textX = Math.round((width - ctx.measureText(text).width) / 2),
+                        textY = height / 2;
+
+                    ctx.fillText(text, textX, textY);
+                    ctx.save();
+                }
+            }
+            var southAmericaChartCanvas = $("#south-america-chart").get(0).getContext("2d");
+            var southAmericaChart = new Chart(southAmericaChartCanvas, {
+                type: 'doughnut',
+                data: areaData,
+                options: areaOptions,
+                plugins: southAmericaChartPlugins
+            });
+            document.getElementById('south-america-legend').innerHTML = southAmericaChart.generateLegend();
+        }
+        if ($("#south-america-chart-dark").length) {
+            var areaData = {
+                labels: ["Jan", "Feb", "Mar"],
+                datasets: [{
+                    data: [60, 70, 70],
+                    backgroundColor: [
+                        "#4B49AC", "#FFC100", "#248AFD",
+                    ],
+                    borderColor: "rgba(0,0,0,0)"
+                }
+                ]
+            };
+            var areaOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                segmentShowStroke: false,
+                cutoutPercentage: 78,
+                elements: {
+                    arc: {
+                        borderWidth: 4
+                    }
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                legendCallback: function (chart) {
+                    var text = [];
+                    text.push('<div class="report-chart">');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[0] + '"></div><p class="mb-0">Offline sales</p></div>');
+                    text.push('<p class="mb-0">495343</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[1] + '"></div><p class="mb-0">Online sales</p></div>');
+                    text.push('<p class="mb-0">630983</p>');
+                    text.push('</div>');
+                    text.push('<div class="d-flex justify-content-between mx-4 mx-xl-5 mt-3"><div class="d-flex align-items-center"><div class="mr-3" style="width:20px; height:20px; border-radius: 50%; background-color: ' + chart.data.datasets[0].backgroundColor[2] + '"></div><p class="mb-0">Returns</p></div>');
+                    text.push('<p class="mb-0">290831</p>');
+                    text.push('</div>');
+                    text.push('</div>');
+                    return text.join("");
+                },
+            }
+            var southAmericaChartPlugins = {
+                beforeDraw: function (chart) {
+                    var width = chart.chart.width,
+                        height = chart.chart.height,
+                        ctx = chart.chart.ctx;
+
+                    ctx.restore();
+                    var fontSize = 3.125;
+                    ctx.font = "600 " + fontSize + "em sans-serif";
+                    ctx.textBaseline = "middle";
+                    ctx.fillStyle = "#fff";
+
+                    var text = "76",
+                        textX = Math.round((width - ctx.measureText(text).width) / 2),
+                        textY = height / 2;
+
+                    ctx.fillText(text, textX, textY);
+                    ctx.save();
+                }
+            }
+            var southAmericaChartCanvas = $("#south-america-chart-dark").get(0).getContext("2d");
+            var southAmericaChart = new Chart(southAmericaChartCanvas, {
+                type: 'doughnut',
+                data: areaData,
+                options: areaOptions,
+                plugins: southAmericaChartPlugins
+            });
+            document.getElementById('south-america-legend').innerHTML = southAmericaChart.generateLegend();
+        }
+
+        function format(d) {
+            // `d` is the original data object for the row
+            return '<table cellpadding="5" cellspacing="0" border="0" style="width:100%;">' +
+                '<tr class="expanded-row">' +
+                '<td colspan="8" class="row-bg"><div><div class="d-flex justify-content-between"><div class="cell-hilighted"><div class="d-flex mb-2"><div class="mr-2 min-width-cell"><p>Policy start date</p><h6>25/04/2020</h6></div><div class="min-width-cell"><p>Policy end date</p><h6>24/04/2021</h6></div></div><div class="d-flex"><div class="mr-2 min-width-cell"><p>Sum insured</p><h5>$26,000</h5></div><div class="min-width-cell"><p>Premium</p><h5>$1200</h5></div></div></div><div class="expanded-table-normal-cell"><div class="mr-2 mb-4"><p>Quote no.</p><h6>Incs234</h6></div><div class="mr-2"><p>Vehicle Reg. No.</p><h6>KL-65-A-7004</h6></div></div><div class="expanded-table-normal-cell"><div class="mr-2 mb-4"><p>Policy number</p><h6>Incsq123456</h6></div><div class="mr-2"><p>Policy number</p><h6>Incsq123456</h6></div></div><div class="expanded-table-normal-cell"><div class="mr-2 mb-3 d-flex"><div class="highlighted-alpha"> A</div><div><p>Agent / Broker</p><h6>Abcd Enterprices</h6></div></div><div class="mr-2 d-flex"> <img src="../../images/faces/face5.jpg" alt="profile"/><div><p>Policy holder Name & ID Number</p><h6>Phillip Harris / 1234567</h6></div></div></div><div class="expanded-table-normal-cell"><div class="mr-2 mb-4"><p>Branch</p><h6>Koramangala, Bangalore</h6></div></div><div class="expanded-table-normal-cell"><div class="mr-2 mb-4"><p>Channel</p><h6>Online</h6></div></div></div></div></td>'
+            '</tr>' +
+                '</table>';
+        }
+        var table = $('#example').DataTable({
+            "ajax": "js/data.txt",
+            "columns": [
+                { "data": "Quote" },
+                { "data": "Product" },
+                { "data": "Business" },
+                { "data": "Policy" },
+                { "data": "Premium" },
+                { "data": "Status" },
+                { "data": "Updated" },
+                {
+                    "className": 'details-control',
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": ''
+                }
+            ],
+            "order": [[1, 'asc']],
+            "paging": false,
+            "ordering": true,
+            "info": false,
+            "filter": false,
+            columnDefs: [{
+                orderable: false,
+                className: 'select-checkbox',
+                targets: 0
+            }],
+            select: {
+                style: 'os',
+                selector: 'td:first-child'
+            }
+        });
+        $('#example tbody').on('click', 'td.details-control', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row(tr);
+
+            if (row.child.isShown()) {
+                // This row is already open - close it
+                row.child.hide();
+                tr.removeClass('shown');
+            }
+            else {
+                // Open this row
+                row.child(format(row.data())).show();
+                tr.addClass('shown');
+            }
+        });
+
+    });
+})(jQuery);
+
+(function ($) {
+    'use strict';
+    $(function () {
+        $('[data-toggle="offcanvas"]').on("click", function () {
+            $('.sidebar-offcanvas').toggleClass('active')
+        });
+    });
+})(jQuery);
+
+(function ($) {
+    'use strict';
+    //Open submenu on hover in compact sidebar mode and horizontal menu mode
+    $(document).on('mouseenter mouseleave', '.sidebar .nav-item', function (ev) {
+        var body = $('body');
+        var sidebarIconOnly = body.hasClass("sidebar-icon-only");
+        var sidebarFixed = body.hasClass("sidebar-fixed");
+        if (!('ontouchstart' in document.documentElement)) {
+            if (sidebarIconOnly) {
+                if (sidebarFixed) {
+                    if (ev.type === 'mouseenter') {
+                        body.removeClass('sidebar-icon-only');
+                    }
+                } else {
+                    var $menuItem = $(this);
+                    if (ev.type === 'mouseenter') {
+                        $menuItem.addClass('hover-open')
+                    } else {
+                        $menuItem.removeClass('hover-open')
                     }
                 }
             }
-        };
-    if (typeof weeklyExpensesEl !== undefined && weeklyExpensesEl !== null) {
-        const weeklyExpenses = new ApexCharts(weeklyExpensesEl, weeklyExpensesConfig);
-        weeklyExpenses.render();
-    }
-})();
-/**
- * Perfect Scrollbar
- */
+        }
+    });
+})(jQuery);
 
-document.addEventListener('DOMContentLoaded', function () {
-    (function () {
-        const verticalExample = document.getElementById('vertical-example'),
-            horizontalExample = document.getElementById('horizontal-example'),
-            horizVertExample = document.getElementById('both-scrollbars-example');
+(function ($) {
+    'use strict';
+    $(function () {
+        var body = $('body');
+        var contentWrapper = $('.content-wrapper');
+        var scroller = $('.container-scroller');
+        var footer = $('.footer');
+        var sidebar = $('.sidebar');
 
-        // Vertical Example
-        // --------------------------------------------------------------------
-        if (verticalExample) {
-            new PerfectScrollbar(verticalExample, {
-                wheelPropagation: false
-            });
+        //Add active class to nav-link based on url dynamically
+        //Active class can be hard coded directly in html file also as required
+
+        function addActiveClass(element) {
+            if (current === "") {
+                //for root url
+                if (element.attr('href').indexOf("index.html") !== -1) {
+                    element.parents('.nav-item').last().addClass('active');
+                    if (element.parents('.sub-menu').length) {
+                        element.closest('.collapse').addClass('show');
+                        element.addClass('active');
+                    }
+                }
+            } else {
+                //for other url
+                if (element.attr('href').indexOf(current) !== -1) {
+                    element.parents('.nav-item').last().addClass('active');
+                    if (element.parents('.sub-menu').length) {
+                        element.closest('.collapse').addClass('show');
+                        element.addClass('active');
+                    }
+                    if (element.parents('.submenu-item').length) {
+                        element.addClass('active');
+                    }
+                }
+            }
         }
 
-        // Horizontal Example
-        // --------------------------------------------------------------------
-        if (horizontalExample) {
-            new PerfectScrollbar(horizontalExample, {
-                wheelPropagation: false,
-                suppressScrollY: true
-            });
-        }
+        var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
+        $('.nav li a', sidebar).each(function () {
+            var $this = $(this);
+            addActiveClass($this);
+        })
 
-        // Both vertical and Horizontal Example
-        // --------------------------------------------------------------------
-        if (horizVertExample) {
-            new PerfectScrollbar(horizVertExample, {
-                wheelPropagation: false
-            });
-        }
-    })();
-});
+        $('.horizontal-menu .nav li a').each(function () {
+            var $this = $(this);
+            addActiveClass($this);
+        })
 
-/**
- * Form Basic Inputs
- */
+        //Close other submenu in sidebar on opening any
 
-(function () {
-    // Indeterminate checkbox
-    const checkbox = document.getElementById('defaultCheck2');
-    checkbox.indeterminate = true;
-})();
-/**
- * Main
- */
-
-
-let menu, animate;
-
-(function () {
-    // Initialize menu
-    //-----------------
-
-    let layoutMenuEl = document.querySelectorAll('#layout-menu');
-    layoutMenuEl.forEach(function (element) {
-        menu = new Menu(element, {
-            orientation: 'vertical',
-            closeChildren: false
+        sidebar.on('show.bs.collapse', '.collapse', function () {
+            sidebar.find('.collapse.show').collapse('hide');
         });
-        // Change parameter to true if you want scroll animation
-        window.Helpers.scrollToActive((animate = false));
-        window.Helpers.mainMenu = menu;
+
+
+        //Change sidebar and content-wrapper height
+        applyStyles();
+
+        function applyStyles() {
+            //Applying perfect scrollbar
+            if (!body.hasClass("rtl")) {
+                if ($('.settings-panel .tab-content .tab-pane.scroll-wrapper').length) {
+                    const settingsPanelScroll = new PerfectScrollbar('.settings-panel .tab-content .tab-pane.scroll-wrapper');
+                }
+                if ($('.chats').length) {
+                    const chatsScroll = new PerfectScrollbar('.chats');
+                }
+                if (body.hasClass("sidebar-fixed")) {
+                    if ($('#sidebar').length) {
+                        var fixedSidebarScroll = new PerfectScrollbar('#sidebar .nav');
+                    }
+                }
+            }
+        }
+
+        $('[data-toggle="minimize"]').on("click", function () {
+            if ((body.hasClass('sidebar-toggle-display')) || (body.hasClass('sidebar-absolute'))) {
+                body.toggleClass('sidebar-hidden');
+            } else {
+                body.toggleClass('sidebar-icon-only');
+            }
+        });
+
+        //checkbox and radios
+        $(".form-check label,.form-radio label").append('<i class="input-helper"></i>');
+
+        //Horizontal menu in mobile
+        $('[data-toggle="horizontal-menu-toggle"]').on("click", function () {
+            $(".horizontal-menu .bottom-navbar").toggleClass("header-toggled");
+        });
+        // Horizontal menu navigation in mobile menu on click
+        var navItemClicked = $('.horizontal-menu .page-navigation >.nav-item');
+        navItemClicked.on("click", function (event) {
+            if (window.matchMedia('(max-width: 991px)').matches) {
+                if (!($(this).hasClass('show-submenu'))) {
+                    navItemClicked.removeClass('show-submenu');
+                }
+                $(this).toggleClass('show-submenu');
+            }
+        })
+
+        $(window).scroll(function () {
+            if (window.matchMedia('(min-width: 992px)').matches) {
+                var header = $('.horizontal-menu');
+                if ($(window).scrollTop() >= 70) {
+                    $(header).addClass('fixed-on-scroll');
+                } else {
+                    $(header).removeClass('fixed-on-scroll');
+                }
+            }
+        });
     });
 
-    // Initialize menu togglers and bind click on each
-    let menuToggler = document.querySelectorAll('.layout-menu-toggle');
-    menuToggler.forEach(item => {
-        item.addEventListener('click', event => {
+    // focus input when clicking on search icon
+    $('#navbar-search-icon').click(function () {
+        $("#navbar-search-input").focus();
+    });
+
+})(jQuery);
+
+(function ($) {
+    'use strict';
+    $(function () {
+        $(".nav-settings").on("click", function () {
+            $("#right-sidebar").toggleClass("open");
+        });
+        $(".settings-close").on("click", function () {
+            $("#right-sidebar,#theme-settings").removeClass("open");
+        });
+
+        $("#settings-trigger").on("click", function () {
+            $("#theme-settings").toggleClass("open");
+        });
+
+
+        //background constants
+        var navbar_classes = "navbar-danger navbar-success navbar-warning navbar-dark navbar-light navbar-primary navbar-info navbar-pink";
+        var sidebar_classes = "sidebar-light sidebar-dark";
+        var $body = $("body");
+
+        //sidebar backgrounds
+        $("#sidebar-light-theme").on("click", function () {
+            $body.removeClass(sidebar_classes);
+            $body.addClass("sidebar-light");
+            $(".sidebar-bg-options").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $("#sidebar-dark-theme").on("click", function () {
+            $body.removeClass(sidebar_classes);
+            $body.addClass("sidebar-dark");
+            $(".sidebar-bg-options").removeClass("selected");
+            $(this).addClass("selected");
+        });
+
+
+        //Navbar Backgrounds
+        $(".tiles.primary").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".navbar").addClass("navbar-primary");
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $(".tiles.success").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".navbar").addClass("navbar-success");
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $(".tiles.warning").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".navbar").addClass("navbar-warning");
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $(".tiles.danger").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".navbar").addClass("navbar-danger");
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $(".tiles.light").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".navbar").addClass("navbar-light");
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $(".tiles.info").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".navbar").addClass("navbar-info");
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $(".tiles.dark").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".navbar").addClass("navbar-dark");
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        $(".tiles.default").on("click", function () {
+            $(".navbar").removeClass(navbar_classes);
+            $(".tiles").removeClass("selected");
+            $(this).addClass("selected");
+        });
+    });
+})(jQuery);
+
+(function ($) {
+    'use strict';
+    $(function () {
+        var todoListItem = $('.todo-list');
+        var todoListInput = $('.todo-list-input');
+        $('.todo-list-add-btn').on("click", function (event) {
             event.preventDefault();
-            window.Helpers.toggleCollapsed();
-        });
-    });
 
-    // Display menu toggle (layout-menu-toggle) on hover with delay
-    let delay = function (elem, callback) {
-        let timeout = null;
-        elem.onmouseenter = function () {
-            // Set timeout to be a timer which will invoke callback after 300ms (not for small screen)
-            if (!Helpers.isSmallScreen()) {
-                timeout = setTimeout(callback, 300);
+            var item = $(this).prevAll('.todo-list-input').val();
+
+            if (item) {
+                todoListItem.append("<li><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'/>" + item + "<i class='input-helper'></i></label></div><i class='remove ti-close'></i></li>");
+                todoListInput.val("");
+            }
+
+        });
+
+        todoListItem.on('change', '.checkbox', function () {
+            if ($(this).attr('checked')) {
+                $(this).removeAttr('checked');
             } else {
-                timeout = setTimeout(callback, 0);
+                $(this).attr('checked', 'checked');
             }
-        };
 
-        elem.onmouseleave = function () {
-            // Clear any timers set to timeout
-            document.querySelector('.layout-menu-toggle').classList.remove('d-block');
-            clearTimeout(timeout);
-        };
-    };
-    if (document.getElementById('layout-menu')) {
-        delay(document.getElementById('layout-menu'), function () {
-            // not for small screen
-            if (!Helpers.isSmallScreen()) {
-                document.querySelector('.layout-menu-toggle').classList.add('d-block');
-            }
+            $(this).closest("li").toggleClass('completed');
+
         });
+
+        todoListItem.on('click', '.remove', function () {
+            $(this).parent().remove();
+        });
+
+    });
+})(jQuery);
+
+/*
+*   Rounded Rectangle Extension for Bar Charts and Horizontal Bar Charts
+*   Tested with Charts.js 2.7.0
+*/
+Chart.elements.Rectangle.prototype.draw = function () {
+
+    var ctx = this._chart.ctx;
+    var vm = this._view;
+    var left, right, top, bottom, signX, signY, borderSkipped, radius;
+    var borderWidth = vm.borderWidth;
+
+    // If radius is less than 0 or is large enough to cause drawing errors a max
+    //      radius is imposed. If cornerRadius is not defined set it to 0.
+    var cornerRadius = this._chart.config.options.cornerRadius;
+    if (cornerRadius < 0) { cornerRadius = 0; }
+    if (typeof cornerRadius == 'undefined') { cornerRadius = 0; }
+
+    if (!vm.horizontal) {
+        // bar
+        left = vm.x - vm.width / 2;
+        right = vm.x + vm.width / 2;
+        top = vm.y;
+        bottom = vm.base;
+        signX = 1;
+        signY = bottom > top ? 1 : -1;
+        borderSkipped = vm.borderSkipped || 'bottom';
+    } else {
+        // horizontal bar
+        left = vm.base;
+        right = vm.x;
+        top = vm.y - vm.height / 2;
+        bottom = vm.y + vm.height / 2;
+        signX = right > left ? 1 : -1;
+        signY = 1;
+        borderSkipped = vm.borderSkipped || 'left';
     }
 
-    // Display in main menu when menu scrolls
-    let menuInnerContainer = document.getElementsByClassName('menu-inner'),
-        menuInnerShadow = document.getElementsByClassName('menu-inner-shadow')[0];
-    if (menuInnerContainer.length > 0 && menuInnerShadow) {
-        menuInnerContainer[0].addEventListener('ps-scroll-y', function () {
-            if (this.querySelector('.ps__thumb-y').offsetTop) {
-                menuInnerShadow.style.display = 'block';
-            } else {
-                menuInnerShadow.style.display = 'none';
-            }
-        });
+    // Canvas doesn't allow us to stroke inside the width so we can
+    // adjust the sizes to fit if we're setting a stroke on the line
+    if (borderWidth) {
+        // borderWidth shold be less than bar width and bar height.
+        var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
+        borderWidth = borderWidth > barSize ? barSize : borderWidth;
+        var halfStroke = borderWidth / 2;
+        // Adjust borderWidth when bar top position is near vm.base(zero).
+        var borderLeft = left + (borderSkipped !== 'left' ? halfStroke * signX : 0);
+        var borderRight = right + (borderSkipped !== 'right' ? -halfStroke * signX : 0);
+        var borderTop = top + (borderSkipped !== 'top' ? halfStroke * signY : 0);
+        var borderBottom = bottom + (borderSkipped !== 'bottom' ? -halfStroke * signY : 0);
+        // not become a vertical line?
+        if (borderLeft !== borderRight) {
+            top = borderTop;
+            bottom = borderBottom;
+        }
+        // not become a horizontal line?
+        if (borderTop !== borderBottom) {
+            left = borderLeft;
+            right = borderRight;
+        }
     }
 
-    // Init helpers & misc
-    // --------------------
+    ctx.beginPath();
+    ctx.fillStyle = vm.backgroundColor;
+    ctx.strokeStyle = vm.borderColor;
+    ctx.lineWidth = borderWidth;
 
-    // Init BS Tooltip
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
+    // Corner points, from bottom-left to bottom-right clockwise
+    // | 1 2 |
+    // | 0 3 |
+    var corners = [
+        [left, bottom],
+        [left, top],
+        [right, top],
+        [right, bottom]
+    ];
 
-    // Accordion active class
-    const accordionActiveFunction = function (e) {
-        if (e.type == 'show.bs.collapse' || e.type == 'show.bs.collapse') {
-            e.target.closest('.accordion-item').classList.add('active');
+    // Find first (starting) corner with fallback to 'bottom'
+    var borders = ['bottom', 'left', 'top', 'right'];
+    var startCorner = borders.indexOf(borderSkipped, 0);
+    if (startCorner === -1) {
+        startCorner = 0;
+    }
+
+    function cornerAt(index) {
+        return corners[(startCorner + index) % 4];
+    }
+
+    // Draw rectangle from 'startCorner'
+    var corner = cornerAt(0);
+    ctx.moveTo(corner[0], corner[1]);
+
+    for (var i = 1; i < 4; i++) {
+        corner = cornerAt(i);
+        nextCornerId = i + 1;
+        if (nextCornerId == 4) {
+            nextCornerId = 0
+        }
+
+        nextCorner = cornerAt(nextCornerId);
+
+        width = corners[2][0] - corners[1][0];
+        height = corners[0][1] - corners[1][1];
+        x = corners[1][0];
+        y = corners[1][1];
+
+        var radius = cornerRadius;
+        // Fix radius being too large
+        if (radius > Math.abs(height) / 2) {
+            radius = Math.floor(Math.abs(height) / 2);
+        }
+        if (radius > Math.abs(width) / 2) {
+            radius = Math.floor(Math.abs(width) / 2);
+        }
+
+        if (height < 0) {
+            // Negative values in a standard bar chart
+            x_tl = x; x_tr = x + width;
+            y_tl = y + height; y_tr = y + height;
+
+            x_bl = x; x_br = x + width;
+            y_bl = y; y_br = y;
+
+            // Draw
+            ctx.moveTo(x_bl + radius, y_bl);
+            ctx.lineTo(x_br - radius, y_br);
+            ctx.quadraticCurveTo(x_br, y_br, x_br, y_br - radius);
+            ctx.lineTo(x_tr, y_tr + radius);
+            ctx.quadraticCurveTo(x_tr, y_tr, x_tr - radius, y_tr);
+            ctx.lineTo(x_tl + radius, y_tl);
+            ctx.quadraticCurveTo(x_tl, y_tl, x_tl, y_tl + radius);
+            ctx.lineTo(x_bl, y_bl - radius);
+            ctx.quadraticCurveTo(x_bl, y_bl, x_bl + radius, y_bl);
+
+        } else if (width < 0) {
+            // Negative values in a horizontal bar chart
+            x_tl = x + width; x_tr = x;
+            y_tl = y; y_tr = y;
+
+            x_bl = x + width; x_br = x;
+            y_bl = y + height; y_br = y + height;
+
+            // Draw
+            ctx.moveTo(x_bl + radius, y_bl);
+            ctx.lineTo(x_br - radius, y_br);
+            ctx.quadraticCurveTo(x_br, y_br, x_br, y_br - radius);
+            ctx.lineTo(x_tr, y_tr + radius);
+            ctx.quadraticCurveTo(x_tr, y_tr, x_tr - radius, y_tr);
+            ctx.lineTo(x_tl + radius, y_tl);
+            ctx.quadraticCurveTo(x_tl, y_tl, x_tl, y_tl + radius);
+            ctx.lineTo(x_bl, y_bl - radius);
+            ctx.quadraticCurveTo(x_bl, y_bl, x_bl + radius, y_bl);
+
         } else {
-            e.target.closest('.accordion-item').classList.remove('active');
-        }
-    };
-
-    const accordionTriggerList = [].slice.call(document.querySelectorAll('.accordion'));
-    const accordionList = accordionTriggerList.map(function (accordionTriggerEl) {
-        accordionTriggerEl.addEventListener('show.bs.collapse', accordionActiveFunction);
-        accordionTriggerEl.addEventListener('hide.bs.collapse', accordionActiveFunction);
-    });
-
-    // Auto update layout based on screen size
-    window.Helpers.setAutoUpdate(true);
-
-    // Toggle Password Visibility
-    window.Helpers.initPasswordToggle();
-
-    // Speech To Text
-    window.Helpers.initSpeechToText();
-
-    // Manage menu expanded/collapsed with templateCustomizer & local storage
-    //------------------------------------------------------------------
-
-    // If current layout is horizontal OR current window screen is small (overlay menu) than return from here
-    if (window.Helpers.isSmallScreen()) {
-        return;
-    }
-
-    // If current layout is vertical and current window screen is > small
-
-    // Auto update menu collapsed/expanded based on the themeConfig
-    window.Helpers.setCollapsed(true, false);
-})();
-/**
- * Account Settings - Account
- */
-
-
-document.addEventListener('DOMContentLoaded', function (e) {
-    (function () {
-        const deactivateAcc = document.querySelector('#formAccountDeactivation');
-
-        // Update/reset user image of account page
-        let accountUserImage = document.getElementById('uploadedAvatar');
-        const fileInput = document.querySelector('.account-file-input'),
-            resetFileInput = document.querySelector('.account-image-reset');
-
-        if (accountUserImage) {
-            const resetImage = accountUserImage.src;
-            fileInput.onchange = () => {
-                if (fileInput.files[0]) {
-                    accountUserImage.src = window.URL.createObjectURL(fileInput.files[0]);
-                }
-            };
-            resetFileInput.onclick = () => {
-                fileInput.value = '';
-                accountUserImage.src = resetImage;
-            };
-        }
-    })();
-});
-/**
- * UI Modals
- */
-
-
-(function () {
-    // On hiding modal, remove iframe video/audio to stop playing
-    const youTubeModal = document.querySelector('#youTubeModal'),
-        youTubeModalVideo = youTubeModal.querySelector('iframe');
-    youTubeModal.addEventListener('hidden.bs.modal', function () {
-        youTubeModalVideo.setAttribute('src', '');
-    });
-
-    // Function to get and auto play youTube video
-    const autoPlayYouTubeModal = function () {
-        const modalTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="modal"]'));
-        modalTriggerList.map(function (modalTriggerEl) {
-            modalTriggerEl.onclick = function () {
-                const theModal = this.getAttribute('data-bs-target'),
-                    videoSRC = this.getAttribute('data-theVideo'),
-                    videoSRCauto = `${videoSRC}?autoplay=1`,
-                    modalVideo = document.querySelector(`${theModal} iframe`);
-                if (modalVideo) {
-                    modalVideo.setAttribute('src', videoSRCauto);
-                }
-            };
-        });
-    };
-
-    // Calling function on load
-    autoPlayYouTubeModal();
-})();
-// /**
-//  * UI Tooltips & Popovers
-//  */
-
-
-(function () {
-    const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-    const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        // added { html: true, sanitize: false } option to render button in content area of popover
-        return new bootstrap.Popover(popoverTriggerEl, { html: true, sanitize: false });
-    });
-})();
-
-// /**
-//  * UI Tooltips & Popovers
-//  */
-
-
-(function () {
-    const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-    const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        // added { html: true, sanitize: false } option to render button in content area of popover
-        return new bootstrap.Popover(popoverTriggerEl, { html: true, sanitize: false });
-    });
-})();
-/**
- * UI Toasts
- */
-
-(function () {
-    // Bootstrap toasts example
-    // --------------------------------------------------------------------
-    const toastPlacementExample = document.querySelector('.toast-placement-ex'),
-        toastPlacementBtn = document.querySelector('#showToastPlacement');
-    let selectedType, selectedPlacement, toastPlacement;
-
-    // Dispose toast when open another
-    function toastDispose(toast) {
-        if (toast && toast._element !== null) {
-            if (toastPlacementExample) {
-                toastPlacementExample.classList.remove(selectedType);
-                DOMTokenList.prototype.remove.apply(toastPlacementExample.classList, selectedPlacement);
-            }
-            toast.dispose();
+            //Positive Value
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
         }
     }
-    // Placement Button click
-    if (toastPlacementBtn) {
-        toastPlacementBtn.onclick = function () {
-            if (toastPlacement) {
-                toastDispose(toastPlacement);
-            }
-            selectedType = document.querySelector('#selectTypeOpt').value;
-            selectedPlacement = document.querySelector('#selectPlacement').value.split(' ');
 
-            toastPlacementExample.classList.add(selectedType);
-            DOMTokenList.prototype.add.apply(toastPlacementExample.classList, selectedPlacement);
-            toastPlacement = new bootstrap.Toast(toastPlacementExample);
-            toastPlacement.show();
-        };
+    ctx.fill();
+    if (borderWidth) {
+        ctx.stroke();
     }
-})();
+};

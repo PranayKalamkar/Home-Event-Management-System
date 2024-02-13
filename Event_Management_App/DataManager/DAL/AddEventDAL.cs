@@ -67,7 +67,7 @@ namespace Event_Management_App.DataManager.DAL
 
             _dBManager.InitDbCommand("GetDBImagebyID", CommandType.StoredProcedure);
 
-            _dBManager.AddCMDParam("@ID", ID);
+            _dBManager.AddCMDParam("@I_ID", ID);
 
             DataSet ds = _dBManager.ExecuteDataSet();
 
